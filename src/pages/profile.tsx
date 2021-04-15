@@ -1,6 +1,6 @@
 import React from "react";
 // import "../styles/global.css";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function Profile() {
@@ -11,7 +11,7 @@ export default function Profile() {
   const education = "Macquarie Universtiy, NSW, Australia";
   return (
     <>
-      <Navbar transparent />
+      <Header title="Profile"/>
       <main className="profile-page">
         <section className="relative block" style={{ height: 500 }}>
           <div
