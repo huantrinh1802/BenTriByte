@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+// @ts-ignore
+import nightwind from "nightwind/helper";
+import DarkModeToggle from "react-dark-mode-toggle";
 
-//TODO: convert to TypeScript
 
 type NavBarProps = {
   transparent: boolean
@@ -8,6 +10,8 @@ type NavBarProps = {
 
 const NavBar: React.FC<NavBarProps> = ({transparent}) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => true);
+  
   return (
     <>
       <nav
@@ -15,7 +19,7 @@ const NavBar: React.FC<NavBarProps> = ({transparent}) => {
           (transparent
             ? "top-0 absolute z-50 w-full"
             : "relative shadow-lg bg-white") +
-          " flex flex-wrap items-center justify-between px-2 py-3 "
+          " flex flex-wrap items-center justify-between px-2 py-3 bg-gray-100"
         }
       >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
@@ -29,6 +33,9 @@ const NavBar: React.FC<NavBarProps> = ({transparent}) => {
             >
               King Cong Studio
             </a>
+            
+
+            
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -44,7 +51,7 @@ const NavBar: React.FC<NavBarProps> = ({transparent}) => {
           </div>
           <div
             className={
-              "lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none" +
+              "lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none bg-gray-100" +
               (navbarOpen ? " block rounded shadow-lg" : " hidden")
             }
             id="example-navbar-warning"
@@ -144,7 +151,7 @@ const NavBar: React.FC<NavBarProps> = ({transparent}) => {
                   className={
                     (transparent
                       ? "bg-white text-gray-800 active:bg-gray-100"
-                      : "bg-pink-500 text-white active:bg-pink-600") +
+                      : "bg-blue-700 text-white active:bg-pink-600") +
                     " text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
                   }
                   type="button"
@@ -152,6 +159,20 @@ const NavBar: React.FC<NavBarProps> = ({transparent}) => {
                 >
                   <i className="fas fa-arrow-alt-circle-down"></i> Download
                 </button>
+              </li>
+              <li className="flex items-center">
+                  <DarkModeToggle
+                    className="px-3 py-4 lg:py-2 sm:ml-3 sm:mb-3"
+                    onChange={() => {
+                      nightwind.toggle();
+                      setIsDarkMode(!isDarkMode);
+                      console.log(isDarkMode);
+                      
+                    }}
+                    checked={isDarkMode}
+                    size={50}
+                  />
+
               </li>
             </ul>
           </div>

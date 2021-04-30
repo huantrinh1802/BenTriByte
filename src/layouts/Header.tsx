@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Router from 'next/router';
 import Head from 'next/head';
 import NavBar from './Navbar';
+// @ts-ignore
+import nightwind from "nightwind/helper";
 
 type HeaderProps = {
     title: string;
@@ -30,12 +32,12 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta name="mobile-web-app-capable" content="yes" />
-
+                <script dangerouslySetInnerHTML={{ __html: nightwind.init() }} />
                 <link rel="manifest" href="/manifest.json"></link>
                 <title>{title}</title>
             </Head>
             {/* <Loader loading={this.state.loading} /> */}
-            <NavBar transparent>
+            <NavBar transparent={false}>
                 <main className="profile-page">
                     <section className="relative block" style={{ height: 500 }}>
                         <div
