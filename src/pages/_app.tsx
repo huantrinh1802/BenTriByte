@@ -2,9 +2,14 @@
 import type { AppProps /*, AppContext */ } from 'next/app'
 import "../styles/global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider defaultTheme="light" attribute="class">
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for
