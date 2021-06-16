@@ -12,8 +12,11 @@ const Home = () => {
   React.useEffect(() => {
     //@ts-ignore
     const typed = new Typed(typeTarget.current, {
-      strings: ["<strong>First</strong> sentence.", "&amp; a second sentence."],
-      typeSpeed: 40,
+      strings: ["<strong>First</strong> sentence.", "<strong>First</strong> time?"],
+      typeSpeed: 100,
+      backSpeed: 50,
+      smartBackspace: true,
+      loop: true
     });
 
     return () => {
@@ -22,7 +25,7 @@ const Home = () => {
   }, []);
   return (
   <>
-  <Header title="Index"/>
+  <Header title="Home Page"/>
   {/* <div className="text-" */}
   <span className="text-black" ref={typeTarget} />;
   <Footer />
