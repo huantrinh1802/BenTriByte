@@ -4,7 +4,7 @@ title: First post
 description: Lorem ipsum dolor sit amet
 pubDate: Jul 08 2022
 heroImage: /placeholder-hero.jpg
-date: 2023-02-19T15:57:12.395+11:00
+date: 2023-02-18T15:57:12+11:00
 thumbnail: /images/uploads/screen-shot-2023-01-11-at-12.28.08.png
 rating: 1
 ---
