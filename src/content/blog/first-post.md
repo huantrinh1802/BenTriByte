@@ -21,8 +21,3 @@ Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperd
 
 
 
-
-![](/images/uploads/spending_phone.svg)
-
-
-
