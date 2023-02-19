@@ -1,7 +1,17 @@
 ---
 const today = new Date();
 ---
-
+<script>
+	if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
 <footer>
 	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
 </footer>
