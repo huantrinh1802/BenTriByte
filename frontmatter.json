@@ -2,8 +2,12 @@
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.content.pageFolders": [
     {
-      "title": "contents",
-      "path": "[[workspace]]/src/contents"
+      "title": "blogs",
+      "path": "[[workspace]]/src/contents/blogs"
+    },
+    {
+      "title": "projects",
+      "path": "[[workspace]]/src/contents/projects"
     }
   ]
 }
