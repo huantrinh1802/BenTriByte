@@ -1,0 +1,26 @@
+:root {
+  --sk-header-height: 56px;
+}
+
+html,
+body {
+  @apply h-full overflow-hidden;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.ks-skill-icon-wrapper > svg {
+  width: 100%;
+  height: 100%;
+}
