@@ -1,0 +1,67 @@
+:root {
+  --sk-header-height: 56px;
+}
+
+html,
+body {
+  @apply h-full overflow-hidden;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.ks-skill-icon-wrapper > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ks-skill-icon-wrapper:not(.rotated) > svg {
+  animation: rotate-anticlockwise 1s ease-in-out forwards;
+}
+.rotated > svg {
+  animation: rotate-clockwise 1s ease-in-out forwards;
+}
+.ks-skill-icon-wrapper:not(.rotated) > div {
+  animation: rotate-clockwise 1s ease-in-out backwards;
+}
+.rotated > div {
+  animation: rotate-anticlockwise 1s ease-in-out backwards;
+}
+@keyframes rotate-anticlockwise {
+  0% {
+    rotate: y 0deg;
+    opacity: 1;
+  }
+  50% {
+    rotate: y 90deg;
+    opacity: 0;
+  }
+  100% {
+    rotate: y 180deg;
+    opacity: 0;
+  }
+}
+@keyframes rotate-clockwise {
+  0% {
+    rotate: y 180deg;
+    opacity: 0;
+  }
+  50% {
+    rotate: y 90deg;
+    opacity: 0;
+  }
+  100% {
+    rotate: y 0deg;
+    opacity: 1;
+  }
+}
