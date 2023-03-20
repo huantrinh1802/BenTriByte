@@ -30,9 +30,6 @@ const config = {
 				'/blogs/'
 			]
 		},
-		paths: {
-			base: dev ? '' : '/KingCongPortFolio',
-		}
 	}
 };
 
