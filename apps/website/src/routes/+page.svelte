@@ -2,6 +2,7 @@
   import TypeWriter from '$lib/components/TypeWriter.svelte';
   import AboutMe from '$contents/about-me.md';
   import Skills from '$contents/skills.svx';
+  import { base } from '$app/paths';
   const contents = [AboutMe, Skills];
 </script>
 
@@ -9,7 +10,7 @@
   <section class="ks-hero-section snap-normal snap-center h-full flex flex-col-reverse lg:flex-row gap-10 md:gap-2">
     <img
       class="mx-auto my-auto mb-auto md:w-1/2"
-      srcset="/images/hero.svg"
+      srcset={`./images/hero.svg`}
       alt="King Studio Hero"
     />
     <TypeWriter
