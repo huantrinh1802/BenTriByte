@@ -1,0 +1,42 @@
+<script lang="ts">
+  import '../app.postcss';
+  import '@skeletonlabs/skeleton/styles/all.css';
+  import '../theme.postcss';
+  import { AppShell } from '@skeletonlabs/skeleton';
+  import Header from '$lib/layout/Header.svelte';
+  import { browser } from '$app/environment';
+  const callback = function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fadeIn');
+      } else {
+        entry.target.classList.remove('animate-fadeIn');
+      }
+    });
+  };
+  if (browser) {
+    const observer = new IntersectionObserver(callback);
+    const targets = document.querySelectorAll('.show-on-scroll');
+    targets.forEach(function (target) {
+      target.classList.add('opacity-0');
+      observer.observe(target);
+    });
+  }
+  const menuItems = [
+    { name: 'Home', href: '/' },
+    { name: 'My Resume', href: '/resume' },
+    { name: 'Blogs', href: '/blogs' },
+  ];
+</script>
+
+<AppShell>
+  <svelte:fragment slot="header"><Header {menuItems} /></svelte:fragment>
+  <!-- <svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment> -->
+  <!-- <svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
+  <!-- <svelte:fragment slot="pageHeader">Page Header</svelte:fragment> -->
+  <!-- Router Slot -->
+  <slot />
+  <!-- ---- / ---- -->
+  <!-- <svelte:fragment slot="pageFooter">Page Footer</svelte:fragment> -->
+  <!-- <svelte:fragment slot="footer">Footer</svelte:fragment> -->
+</AppShell>

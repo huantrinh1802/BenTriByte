@@ -17,5 +17,8 @@
   "singleAttributePerLine": true,
   "useTabs": false,
   "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
-  "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
+  "overrides": [
+    { "files": "*.svelte", "options": { "parser": "svelte" } },
+    { "files": ["*.svx"], "options": { "parser": "mdx" } }
+  ]
 }
