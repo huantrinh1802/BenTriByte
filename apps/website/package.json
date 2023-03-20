@@ -19,6 +19,7 @@
     "@iconify/json": "^2.2.35",
     "@skeletonlabs/skeleton": "^0.124.2",
     "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/adapter-static": "^2.0.1",
     "@sveltejs/kit": "^1.5.0",
     "@tailwindcss/typography": "^0.5.9",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
