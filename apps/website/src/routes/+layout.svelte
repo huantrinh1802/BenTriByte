@@ -24,8 +24,8 @@
   }
   const menuItems = [
     { name: 'Home', href: '/' },
-    { name: 'My Resume', href: '/resume' },
-    { name: 'Blogs', href: '/blogs' },
+    // { name: 'My Resume', href: '/resume' },
+    // { name: 'Blogs', href: '/blogs' },
   ];
 </script>
 
