@@ -14,6 +14,7 @@
   let animating: boolean = false;
   let duration: number = 1;
   let direction: boolean = true;
+  export let logoOnly: boolean = true;
   async function animate() {
     direction = !direction;
     if (browser) {
@@ -32,11 +33,23 @@
 </script>
 
 <div
-  class="relative rotate"
+  class="rotate relative flex h-full justify-center items-center"
   style={`--dashoffset: ${percentage};`}
   on:mouseenter={animate}
   on:mouseleave={handleMouseMove}
 >
+  <div
+    class="ks-skill-icon-wrapper h-full w-full relative grow flex items-center justify-center "
+    class:rotated={direction}
+    class:logo-only={logoOnly}
+  >
+    <div class="absolute ks-banner-logo h-full w-full p-[20%] grow flex items-center justify-center">
+      <slot name="logo" />
+    </div>
+    <div class="absolute ks-banner-content flex items-center justify-center">
+      <slot name="content" />
+    </div>
+  </div>
   <svg
     class="absolute w-full h-full"
     viewBox="0 0 36 36"
@@ -49,19 +62,10 @@
       a 15.9155 15.9155 0 0 1 0 -31.831"
       fill="none"
       stroke={hsl}
-      stroke-width="1"
+      stroke-width="1.5"
       stroke-dasharray={`${percentage}, 100`}
     />
   </svg>
-  <div
-    class="ks-skill-icon-wrapper p-20 flex items-center justify-center "
-    class:rotated={direction}
-  >
-    <slot name="logo" />
-    <div class="absolute flex items-center justify-center">
-      <slot name="content" />
-    </div>
-  </div>
 </div>
 
 <style>
@@ -75,7 +79,7 @@
       stroke-dashoffset: 0;
     }
   }
-  .ks-skill-icon-wrapper.rotated > div {
+  .ks-skill-icon-wrapper > .ks-banner-content {
     opacity: 0;
   }
 </style>
