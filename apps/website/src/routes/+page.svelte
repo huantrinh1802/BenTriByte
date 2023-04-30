@@ -6,7 +6,7 @@
   const contents = [AboutMe, Skills];
 </script>
 
-<div class="snap-y snap-mandatory h-[calc(100vh-var(--sk-header-height))] overflow-y-auto w-screen">
+<div class="snap-y snap-mandatory h-[calc(100vh-var(--sk-header-height))] overflow-y-auto w-screen px-10">
   <section class="ks-hero-section snap-normal snap-center h-full flex flex-col-reverse lg:flex-row gap-10 md:gap-2">
     <img
       class="mx-auto my-auto mb-auto md:w-1/2"
