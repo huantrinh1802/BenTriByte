@@ -15,8 +15,11 @@
       max={100}
       title="Percentage"
     />
-    <div class="h-1/2 w-1/2 mx-auto">
-      <SkillBanner {percentage}>
+    <div class="h-20 w-20">
+      <SkillBanner
+        {percentage}
+        logoOnly={false}
+      >
         <Python slot="logo" />
         <div slot="content">I am very good at</div>
       </SkillBanner>
