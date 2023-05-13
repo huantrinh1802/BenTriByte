@@ -18,7 +18,7 @@
       current++;
     }, 200);
   }
-  function reset() {
+  export function reset() {
     if (end) {
       end = false;
       currentWords = [];

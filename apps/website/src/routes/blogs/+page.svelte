@@ -1,9 +1,17 @@
 <script lang="ts">
   import type { PageData } from './$types';
   export let data: PageData;
-  $: console.log(data.blog.default.render());
+  const { blogs } = data;
+  $: console.log(blogs);
 </script>
 
-<div class="prose prose-invert">
-  {@html data.blog.default.render().html}
-</div>
+{#each blogs as item}
+  <div class="prose prose-invert">
+    {JSON.stringify(item)}
+    <img
+      src={item.preview}
+      alt=""
+      loading="lazy"
+    />
+  </div>
+{/each}
