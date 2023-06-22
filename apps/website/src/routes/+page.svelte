@@ -29,7 +29,7 @@
     </div>
     <img
       class="mx-auto my-auto mb-auto rounded-3xl max-w-lg relative object-cover"
-      srcset={`/images/hero.png`}
+      srcset={`${base}/images/hero.png`}
       alt="King Studio Hero" />
   </section>
   {#each contents as content}
