@@ -24,8 +24,8 @@
     });
   }
   const menuItems = [
-    { name: 'Home', href: `/` },
-    { name: 'My Resume', href: '/resume' },
+    { name: 'Home', href: `${base}/` },
+    { name: 'My Resume', href: `${base}/resume` },
     // { name: 'Blogs', href: '/blogs' },
   ];
 </script>
