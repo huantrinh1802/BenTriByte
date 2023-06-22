@@ -30,6 +30,9 @@ const config = {
 				'/blogs/'
 			]
 		},
+		paths: {
+			base: dev ? '' : process.env.BASE_PATH,
+		}
 	}
 };
 
