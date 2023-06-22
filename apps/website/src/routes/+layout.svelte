@@ -25,13 +25,17 @@
   }
   const menuItems = [
     { name: 'Home', href: `./` },
-    // { name: 'My Resume', href: '/resume' },
+    { name: 'My Resume', href: '/resume' },
     // { name: 'Blogs', href: '/blogs' },
   ];
 </script>
 
-<AppShell>
-  <svelte:fragment slot="header"><Header {menuItems} /></svelte:fragment>
+<AppShell slotPageContent="print:bg-white">
+  <svelte:fragment slot="header">
+    <div class="print:hidden">
+      <Header {menuItems} />
+    </div>
+  </svelte:fragment>
   <!-- <svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment> -->
   <!-- <svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
   <!-- <svelte:fragment slot="pageHeader">Page Header</svelte:fragment> -->
