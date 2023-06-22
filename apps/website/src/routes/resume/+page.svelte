@@ -131,7 +131,7 @@
 
 <style lang="postcss">
   .kcp-profile-photo {
-    background-image: url('images/hero_no_filter.png');
+    background-image: url('./images/hero_no_filter.png');
     background-size: cover;
     background-position: 20% 20%;
   }
