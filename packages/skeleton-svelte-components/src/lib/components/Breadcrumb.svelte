@@ -37,13 +37,11 @@
       <li class="crumb">
         <a
           class="mle-link"
-          href={bc.url}>{bc.name}</a
-        >
+          href={bc.url}>{bc.name}</a>
       </li>
       <li
         class="crumb-separator"
-        aria-hidden
-      >
+        aria-hidden>
         &rsaquo;
       </li>
     {:else}

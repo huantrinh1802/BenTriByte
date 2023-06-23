@@ -1,11 +1,11 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   import { fade, slide } from 'svelte/transition';
-  export let words: string = 'Hello world';
-  export let style: string = 'text-4xl';
+  export let words = 'Hello world';
+  export let style = 'text-4xl';
   let currentWords = [];
   let current = 0;
-  let end: boolean = false;
+  let end = false;
   function start() {
     let autoplay = setInterval(() => {
       if (current < words.length) {

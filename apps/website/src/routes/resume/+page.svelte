@@ -75,33 +75,33 @@
   const skills = [{ title: 'Python', percentage: 90 }];
 </script>
 
-<div class="print:hidden flex p-2">
+<div class="flex p-2 print:hidden">
   <button
     class="btn variant-filled-primary ml-auto"
     on:click={() => window.print()}>
     Print
   </button>
 </div>
-<div class="md:grid print:grid flex flex-col kcp-layout h-full overflow-over">
-  <div class="kcp-profile flex md:flex-row print:flex-row flex-col items-center">
+<div class="kcp-layout overflow-over flex h-full flex-col print:grid md:grid">
+  <div class="kcp-profile flex flex-col items-center print:flex-row md:flex-row">
     <div
       style={`background-image: url('${base}/images/hero_no_filter.png')`}
-      class="kcp-profile-photo flex-shrink-0 bg-primary-700 z-10 border-white border-4 rounded-full flex justify-center items-center print:w-40 print:h-40 w-60 h-60 p-8" />
-    <div class="md:-ml-10 print:-ml-10 md:mt-0 print:mt-0 -mt-8 rounded-md z-0 bg-primary-700 flex justify-center items-center w-full print:h-32 h-40">
+      class="kcp-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-primary-700 p-8 print:h-40 print:w-40" />
+    <div class="z-0 -mt-8 flex h-40 w-full items-center justify-center rounded-md bg-primary-700 print:-ml-10 print:mt-0 print:h-32 md:-ml-10 md:mt-0">
       <div>
         <h1>Cong Anh Huan Trinh</h1>
         <h2>Software Engineer</h2>
       </div>
     </div>
   </div>
-  <div class="kcp-summary flex-col flex gap-4">
+  <div class="kcp-summary flex flex-col gap-4">
     <Accordion class="print:hidden">
       <AccordionItem>
         <svelte:fragment slot="summary">Contacts</svelte:fragment>
         <svelte:fragment slot="content">
           {#each contacts as contact}
             <a
-              class="flex items-center !text-white print:!text-teal-900 gap-2 break-all print:!text-xs"
+              class="flex items-center gap-2 break-all !text-white print:!text-xs print:!text-teal-900"
               href={contact.href}>
               <svelte:component
                 this={contact.icon}
@@ -124,11 +124,11 @@
         </svelte:fragment>
       </AccordionItem>
     </Accordion>
-    <div class="print:flex hidden flex-col px-10 gap-4 border-slate-200 rounded-md py-4 print:py-1 print:px-1 border">
-      <h2 class="text-center print:text-black print:!text-lg">Contacts</h2>
+    <div class="hidden flex-col gap-4 rounded-md border border-slate-200 px-10 py-4 print:flex print:py-1 print:px-1">
+      <h2 class="text-center print:!text-lg print:text-black">Contacts</h2>
       {#each contacts as contact}
         <a
-          class="flex items-center !text-white print:!text-teal-900 gap-2 break-all print:!text-xs"
+          class="flex items-center gap-2 break-all !text-white print:!text-xs print:!text-teal-900"
           href={contact.href}>
           <svelte:component
             this={contact.icon}
@@ -138,8 +138,8 @@
       {/each}
       <div class="kcp-history" />
     </div>
-    <div class="print:flex hidden flex-col px-10 gap-4 border-slate-200 rounded-md py-4 border">
-      <h2 class="text-center print:text-black print:!text-lg">Skills</h2>
+    <div class="hidden flex-col gap-4 rounded-md border border-slate-200 px-10 py-4 print:flex">
+      <h2 class="text-center print:!text-lg print:text-black">Skills</h2>
       <div>
         {#each skills as skill}
           <ProgressBar
@@ -149,19 +149,19 @@
       </div>
     </div>
   </div>
-  <div class="kcp-history flex-col flex justify-center gap-2 print:gap-1 print:text-black px-6 print:px-0">
+  <div class="kcp-history flex flex-col justify-center gap-2 px-6 print:gap-1 print:px-0 print:text-black">
     <div class="flex flex-col">
-      <h2 class="text-center print:text-black print:!text-lg py-2">Experiences</h2>
+      <h2 class="py-2 text-center print:!text-lg print:text-black">Experiences</h2>
       {#each experiences as content}
         <History {content} />
-        <hr class="h-px my-8 print:my-0 bg-gray-200 border-0 dark:bg-gray-700" />
+        <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700 print:my-0" />
       {/each}
     </div>
     <div class="flex flex-col">
-      <h2 class="text-center print:text-black print:!text-lg py-2">Educations</h2>
+      <h2 class="py-2 text-center print:!text-lg print:text-black">Educations</h2>
       {#each educations as content}
         <History {content} />
-        <hr class="h-px my-8 print:my-0 bg-gray-200 border-0 dark:bg-gray-700" />
+        <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700 print:my-0" />
       {/each}
     </div>
   </div>

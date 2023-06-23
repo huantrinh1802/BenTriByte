@@ -11,10 +11,10 @@
     let hue = (120 / 100) * percentage;
     return `hsl(${hue}, 100%, 30%)`;
   })();
-  let animating: boolean = false;
-  let duration: number = 1;
-  let direction: boolean = true;
-  export let logoOnly: boolean = true;
+  let animating = false;
+  let duration = 1;
+  let direction = true;
+  export let logoOnly = true;
   async function animate() {
     direction = !direction;
     if (browser) {
@@ -33,27 +33,24 @@
 </script>
 
 <div
-  class="rotate relative flex h-full justify-center items-center"
+  class="rotate relative flex h-full items-center justify-center"
   style={`--dashoffset: ${percentage};`}
   on:mouseenter={animate}
-  on:mouseleave={handleMouseMove}
->
+  on:mouseleave={handleMouseMove}>
   <div
-    class="ks-skill-icon-wrapper h-full w-full relative grow flex items-center justify-center "
+    class="ks-skill-icon-wrapper relative flex h-full w-full grow items-center justify-center "
     class:rotated={direction}
-    class:logo-only={logoOnly}
-  >
-    <div class="absolute ks-banner-logo h-full w-full p-[20%] grow flex items-center justify-center">
+    class:logo-only={logoOnly}>
+    <div class="ks-banner-logo absolute flex h-full w-full grow items-center justify-center p-[20%]">
       <slot name="logo" />
     </div>
-    <div class="absolute ks-banner-content flex items-center justify-center">
+    <div class="ks-banner-content absolute flex items-center justify-center">
       <slot name="content" />
     </div>
   </div>
   <svg
-    class="absolute w-full h-full"
-    viewBox="0 0 36 36"
-  >
+    class="absolute h-full w-full"
+    viewBox="0 0 36 36">
     <path
       id="progress-bar"
       class:progress-bar-animating={animating}
@@ -63,8 +60,7 @@
       fill="none"
       stroke={hsl}
       stroke-width="1.5"
-      stroke-dasharray={`${percentage}, 100`}
-    />
+      stroke-dasharray={`${percentage}, 100`} />
   </svg>
 </div>
 
