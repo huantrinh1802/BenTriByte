@@ -1,5 +1,4 @@
 <script lang="ts">
-
   export let component: any;
   export let props: any[] = [];
   export let numberOfCols = 3;
@@ -9,7 +8,6 @@
   {#each props as prop}
     <svelte:component
       this={component}
-      {...prop}
-    />
+      {...prop} />
   {/each}
 </div>

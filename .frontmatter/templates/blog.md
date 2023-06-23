@@ -1,11 +1,11 @@
 ---
 title: First blog
-description: ""
+description: ''
 date: 2023-02-21T11:36:54.546Z
 preview: /apps/website/contents/assets/images/success-stories-homepage.jpg
-draft: ""
-tags: ""
-categories: ""
+draft: ''
+tags: ''
+categories: ''
 ---
 
 # Header 1
