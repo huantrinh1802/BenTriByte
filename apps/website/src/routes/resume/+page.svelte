@@ -4,9 +4,9 @@
   import Email from '~icons/material-symbols/attach-email-rounded';
   import GitHub from '~icons/skill-icons/github-dark';
   import LinkedIn from '~icons/skill-icons/linkedin';
-  import { ProgressBar } from '@skeletonlabs/skeleton';
   import { base } from '$app/paths';
-  export let data: PageData;
+  import ProgressBar from '$lib/components/ProgressBar.svelte';
+  import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
   const contacts = [
     { href: 'mailto:huantrinh1802@gmail.com', icon: Email, text: 'huantrinh1802@gmail.com' },
     { href: 'https://www.github.com/huantrinh1802', icon: GitHub, text: 'huantrinh1802' },
@@ -72,14 +72,22 @@
       location: 'Fairvale High School, Fairfield NSW, Australia',
     },
   ];
+  const skills = [{ title: 'Python', percentage: 90 }];
 </script>
 
-<div class="grid kcp-layout h-full overflow-over">
-  <div class="kcp-profile flex items-center">
+<div class="print:hidden flex p-2">
+  <button
+    class="btn variant-filled-primary ml-auto"
+    on:click={() => window.print()}>
+    Print
+  </button>
+</div>
+<div class="md:grid print:grid flex flex-col kcp-layout h-full overflow-over">
+  <div class="kcp-profile flex md:flex-row print:flex-row flex-col items-center">
     <div
       style={`background-image: url('${base}/images/hero_no_filter.png')`}
       class="kcp-profile-photo flex-shrink-0 bg-primary-700 z-10 border-white border-4 rounded-full flex justify-center items-center print:w-40 print:h-40 w-60 h-60 p-8" />
-    <div class="-ml-10 z-0 bg-primary-700 flex justify-center items-center w-full print:h-32 h-40">
+    <div class="md:-ml-10 print:-ml-10 md:mt-0 print:mt-0 -mt-8 rounded-md z-0 bg-primary-700 flex justify-center items-center w-full print:h-32 h-40">
       <div>
         <h1>Cong Anh Huan Trinh</h1>
         <h2>Software Engineer</h2>
@@ -87,11 +95,40 @@
     </div>
   </div>
   <div class="kcp-summary flex-col flex gap-4">
-    <div class="flex flex-col px-10 gap-4 border-slate-200 rounded-md py-4 print:py-1 print:px-1 border">
+    <Accordion class="print:hidden">
+      <AccordionItem>
+        <svelte:fragment slot="summary">Contacts</svelte:fragment>
+        <svelte:fragment slot="content">
+          {#each contacts as contact}
+            <a
+              class="flex items-center !text-white print:!text-teal-900 gap-2 break-all print:!text-xs"
+              href={contact.href}>
+              <svelte:component
+                this={contact.icon}
+                class="text-2xl print:!text-sm" />
+              <p class="print:!text-xs">{contact.text}</p>
+            </a>
+          {/each}
+        </svelte:fragment>
+      </AccordionItem>
+    </Accordion>
+    <Accordion class="print:hidden">
+      <AccordionItem>
+        <svelte:fragment slot="summary">Skills</svelte:fragment>
+        <svelte:fragment slot="content">
+          {#each skills as skill}
+            <ProgressBar
+              title={skill.title}
+              percentage={skill.percentage} />
+          {/each}
+        </svelte:fragment>
+      </AccordionItem>
+    </Accordion>
+    <div class="print:flex hidden flex-col px-10 gap-4 border-slate-200 rounded-md py-4 print:py-1 print:px-1 border">
       <h2 class="text-center print:text-black print:!text-lg">Contacts</h2>
       {#each contacts as contact}
         <a
-          class="flex items-center gap-2 break-all print:!text-xs"
+          class="flex items-center !text-white print:!text-teal-900 gap-2 break-all print:!text-xs"
           href={contact.href}>
           <svelte:component
             this={contact.icon}
@@ -101,32 +138,30 @@
       {/each}
       <div class="kcp-history" />
     </div>
-    <div class="flex flex-col px-10 gap-4 border-slate-200 rounded-md py-4 border">
+    <div class="print:flex hidden flex-col px-10 gap-4 border-slate-200 rounded-md py-4 border">
       <h2 class="text-center print:text-black print:!text-lg">Skills</h2>
       <div>
-        <ProgressBar
-          meter="bg-primary-800"
-          value={80} />
+        {#each skills as skill}
+          <ProgressBar
+            title={skill.title}
+            percentage={skill.percentage} />
+        {/each}
       </div>
     </div>
   </div>
-  <div class="kcp-history flex-col flex justify-center gap-2 print:gap-1 print:text-black">
+  <div class="kcp-history flex-col flex justify-center gap-2 print:gap-1 print:text-black px-6 print:px-0">
     <div class="flex flex-col">
-      <h2 class="text-center print:text-black print:!text-lg">Experiences</h2>
+      <h2 class="text-center print:text-black print:!text-lg py-2">Experiences</h2>
       {#each experiences as content}
         <History {content} />
-        <!-- {#if content.hasSeparator} -->
         <hr class="h-px my-8 print:my-0 bg-gray-200 border-0 dark:bg-gray-700" />
-        <!-- {/if} -->
       {/each}
     </div>
     <div class="flex flex-col">
-      <h2 class="text-center print:text-black print:!text-lg">Educations</h2>
+      <h2 class="text-center print:text-black print:!text-lg py-2">Educations</h2>
       {#each educations as content}
         <History {content} />
-        <!-- {#if content.hasSeparator} -->
         <hr class="h-px my-8 print:my-0 bg-gray-200 border-0 dark:bg-gray-700" />
-        <!-- {/if} -->
       {/each}
     </div>
   </div>
