@@ -7,28 +7,28 @@
   const contents = [AboutMe, Skills];
   let typewriter;
   let timer;
-  const debounce = (value) => {
+  const debounce = (event) => {
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => {
-      helloName = value;
+      helloName = event.target.value;
       typewriter.reset();
     }, 900);
   };
 </script>
 
-<div class="snap-y snap-mandatory h-[calc(100vh-var(--sk-header-height))] overflow-y-auto w-screen px-10">
-  <section class="ks-hero-section snap-normal snap-center h-full grid md:grid-cols-2 grid-cols-1 gap-10 md:gap-10">
-    <div class="flex flex-col my-auto gap-4">
+<div class="h-[calc(100vh-var(--sk-header-height))] w-screen snap-y snap-mandatory overflow-y-auto px-10">
+  <section class="ks-hero-section grid h-full snap-center snap-normal grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
+    <div class="my-auto flex flex-col gap-4">
       <TypeWriter
         style="text-4xl font-bold md:min-w-[50%] md:relative "
         words={`print("Hello ${helloName}")`}
         bind:this={typewriter} />
       <input
-        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        on:input={({ target: { value } }) => debounce(value)} />
+        class="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+        on:input={debounce} />
     </div>
     <img
-      class="mx-auto my-auto mb-auto rounded-3xl max-w-lg relative object-cover"
+      class="relative mx-auto my-auto mb-auto max-w-lg rounded-3xl object-cover"
       srcset={`${base}/images/hero.png`}
       alt="King Studio Hero" />
   </section>

@@ -29,7 +29,7 @@
         type="number"
         bind:value={percentage} />
     </svelte:fragment>
-    <div class="h-1/2 w-1/2 mx-auto">
+    <div class="mx-auto h-1/2 w-1/2">
       <SkillBanner {percentage}>
         <AWS slot="logo" />
       </SkillBanner>
