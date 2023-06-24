@@ -173,6 +173,13 @@
       'history break summary';
     grid-template-columns: 1fr 1px 30ch;
   }
+  @media print {
+    .kcp-layout {
+      grid-template-areas:
+        'profile summary'
+        'history summary';
+    }
+  }
   .kcp-profile {
     grid-area: profile;
   }
