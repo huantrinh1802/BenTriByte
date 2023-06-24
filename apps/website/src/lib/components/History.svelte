@@ -24,7 +24,7 @@
     <p class="py-2">{content.summary}</p>
   {/if}
   {#if content.tasks}
-    <ul class="list">
+    <ul class="list-disc pl-6 flex flex-col gap-2 print:gap-0">
       {#each content.tasks as task}
         <li class="!whitespace-normal">
           <span><RightArrow /></span>
