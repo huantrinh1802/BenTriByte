@@ -33,6 +33,8 @@
 </script>
 
 <div
+  role="button"
+  tabindex="0"
   class="rotate relative flex h-full items-center justify-center"
   style={`--dashoffset: ${percentage};`}
   on:mouseenter={animate}

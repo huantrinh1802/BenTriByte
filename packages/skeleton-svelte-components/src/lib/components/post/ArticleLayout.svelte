@@ -21,9 +21,9 @@
               class="mle-link"
               href={`${prevUrl}?tag=${tag}`}>#{tag}</a>
           {/each}
-          <time class="ml-auto !text-primary-700-200-token">{new Date(article.date).toLocaleDateString()}</time>
+          <time class="!text-primary-700-200-token ml-auto">{new Date(article.date).toLocaleDateString()}</time>
         </div>
-        <div class="md-wrapper prose max-w-none dark:prose-invert">
+        <div class="md-wrapper prose dark:prose-invert max-w-none">
           {@html article?.content.html}
         </div>
       </div>
