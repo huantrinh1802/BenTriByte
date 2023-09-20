@@ -1,4 +1,3 @@
-
 const config = {
   darkMode: 'class',
   content: ['./src/**/*.{html,js,svelte,ts,svx}', require('path').join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts,svx}')],
