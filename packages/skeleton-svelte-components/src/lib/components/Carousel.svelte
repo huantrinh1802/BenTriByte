@@ -89,7 +89,7 @@
       }
     }}
     type="button"
-    class="controls top-0 left-0"
+    class="controls left-0 top-0"
     data-carousel-prev="">
     <span class="item">
       <p>GT</p>
@@ -107,7 +107,7 @@
       }
     }}
     type="button"
-    class="controls top-0 right-0"
+    class="controls right-0 top-0"
     data-carousel-next="">
     <span class="item flex items-center justify-center">
       >

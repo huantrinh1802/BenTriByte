@@ -23,7 +23,7 @@
           {/each}
           <time class="!text-primary-700-200-token ml-auto">{new Date(article.date).toLocaleDateString()}</time>
         </div>
-        <div class="md-wrapper prose dark:prose-invert max-w-none">
+        <div class="md-wrapper prose max-w-none dark:prose-invert">
           {@html article?.content.html}
         </div>
       </div>
