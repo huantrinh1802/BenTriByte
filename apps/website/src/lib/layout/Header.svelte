@@ -11,7 +11,9 @@
 
 <AppBar>
   <svelte:fragment slot="lead"
-    ><button class="btn btn-sm mr-4 sm:hidden" on:click={() => drawerStore.open({id: 'sidebar'})}>
+    ><button
+      class="btn btn-sm mr-4 sm:hidden"
+      on:click={() => drawerStore.open({ id: 'sidebar' })}>
       <span>
         <svg
           viewBox="0 0 100 80"
@@ -32,7 +34,7 @@
     </button>
     <p>Kong Studio</p></svelte:fragment>
   <svelte:fragment slot="trail">
-    <ul class="gap-4 hidden sm:flex">
+    <ul class="hidden gap-4 sm:flex">
       {#each menuItems as item}
         {#if item.href != undefined}
           <li><a href={item.href}>{item.name}</a></li>
@@ -45,10 +47,9 @@
             </button>
           </li>
           <div data-popup={item.id}>
-            <ul
-              class="flex flex-col gap-4 bg-surface-800 rounded-md p-4 shadow-md">
+            <ul class="flex flex-col gap-4 rounded-md bg-surface-800 p-4 shadow-md">
               {#each item.subItems as subItem}
-                <li class="bg-primary-700 py-2 px-4 rounded-md">
+                <li class="rounded-md bg-primary-700 px-4 py-2">
                   <a href={subItem.href}>
                     {subItem.name}
                   </a>

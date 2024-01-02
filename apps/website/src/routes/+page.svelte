@@ -12,7 +12,7 @@
     timer = setTimeout(() => {
       helloName = event.target.value;
       if (helloName.length === 0) {
-        helloName = 'World'
+        helloName = 'World';
       }
       typewriter.reset();
     }, 900);
