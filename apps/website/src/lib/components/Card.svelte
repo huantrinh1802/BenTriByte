@@ -8,8 +8,8 @@
   <div class="@xs:flex-row flex flex-col items-center gap-2 text-gray-500">
     <div class="flex w-full flex-wrap gap-2">
       {#each content?.tags as tag}
-        <span class="inline-flex items-center rounded bg-primary-400 px-2.5 py-1 text-xs font-medium !text-primary-800 dark:bg-primary-500 dark:text-primary-800">
-          <a href={`${baseUrl}?tag=${tag}`}>#{tag}</a>
+        <span class="inline-flex items-center rounded bg-primary-600 px-2.5 py-1 text-base font-medium text-white dark:bg-primary-500">
+          <a class="text-inherit" href={`${baseUrl}?tag=${tag}`}>#{tag}</a>
         </span>
       {/each}
     </div>
@@ -20,7 +20,7 @@
     <img
       loading="lazy"
       class="@md:h-full mx-auto my-0 h-fit w-full rounded-md object-fill"
-      src={`${base}/${content?.preview ?? '/images/blogs/blog_placeholder.jpg'}`}
+      src={`${base}/${content?.preview ?? 'images/blogs/blog_placeholder.jpg'}`}
       alt="" />
     <!-- <div class="flex h-full w-full"> -->
     <h4 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"><a href={`${baseUrl}/${content?.slug}`}>{content?.title}</a></h4>
