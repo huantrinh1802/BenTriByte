@@ -10,7 +10,7 @@
     "strict": false
   },
   "extends": "./.svelte-kit/tsconfig.json",
-  "exclude": ["**/*.md", "**/*.svx"],
+  "exclude": ["**/*.md", "**/*.svx"]
   // "paths": {
   //   "$contents": ["./src/contents"],
   //   "$contents/*": ["./src/contents/*"]

@@ -12,6 +12,6 @@ export const load = (async ({ parent, params }) => {
   //     blogs.push({ ...metadata, slug });
   //   }
   // }
-  return {blogs: blogGroups['blogs'][params['type']], type: params.type}
+  return { blogs: blogGroups['blogs'][params['type']], type: params.type };
   // return { blogs };
 }) satisfies LayoutServerLoad;

@@ -3,22 +3,22 @@
   export let baseUrl = '/';
 </script>
 
-<article class="card @container grid w-full gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800">
+<article class="@container card grid w-full gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800">
   <div class="@xs:flex-row flex flex-col items-center gap-2 text-gray-500">
     <div class="flex w-full flex-wrap gap-2">
       {#each content?.tags as tag}
-        <span class="dark:text-primary-800 bg-primary-400 !text-primary-800 dark:bg-primary-500 inline-flex items-center rounded px-2.5 py-1 text-xs font-medium">
+        <span class="inline-flex items-center rounded bg-primary-400 px-2.5 py-1 text-xs font-medium !text-primary-800 dark:bg-primary-500 dark:text-primary-800">
           <a href={`${baseUrl}?tag=${tag}`}>#{tag}</a>
         </span>
       {/each}
     </div>
-    <span class="text-primary-700-200-token @xs:block ml-auto hidden justify-self-end text-sm">{new Date(content.date).toLocaleDateString()}</span>
+    <span class="@xs:block text-primary-700-200-token ml-auto hidden justify-self-end text-sm">{new Date(content.date).toLocaleDateString()}</span>
   </div>
-  <span class="text-primary-700-200-token @xs:hidden ml-auto justify-self-end text-sm">{new Date(content.date).toLocaleDateString()}</span>
+  <span class="@xs:hidden text-primary-700-200-token ml-auto justify-self-end text-sm">{new Date(content.date).toLocaleDateString()}</span>
   <div class="@md:flex-row flex flex-col gap-4">
     <img
       loading="lazy"
-      class="@md:h-full mx-auto h-fit w-full rounded-md object-fill my-0"
+      class="@md:h-full mx-auto my-0 h-fit w-full rounded-md object-fill"
       src={content?.preview ?? '/images/blogs/blog_placeholder.jpg'}
       alt="" />
     <!-- <div class="flex h-full w-full"> -->
@@ -29,7 +29,7 @@
   <div class="flex items-center">
     <a
       href={`${baseUrl}/${content?.slug}`}
-      class="text-primary-600 dark:text-primary-400 ml-auto inline-flex items-center font-medium hover:underline">
+      class="ml-auto inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-400">
       Read more
       <svg
         class="ml-2 h-4 w-4"
