@@ -24,6 +24,9 @@ export default defineConfig({
       ],
     },
   },
+  css: {
+    transformer: 'postcss'
+  },
   assetsInclude: ['**/*.svx', '**/*.md'],
   resolve: {
     alias: {
