@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   export let content: any;
   export let baseUrl = '/';
 </script>
@@ -19,7 +20,7 @@
     <img
       loading="lazy"
       class="@md:h-full mx-auto my-0 h-fit w-full rounded-md object-fill"
-      src={content?.preview ?? '/images/blogs/blog_placeholder.jpg'}
+      src={`${base}/${content?.preview ?? '/images/blogs/blog_placeholder.jpg'}`}
       alt="" />
     <!-- <div class="flex h-full w-full"> -->
     <h4 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"><a href={`${baseUrl}/${content?.slug}`}>{content?.title}</a></h4>

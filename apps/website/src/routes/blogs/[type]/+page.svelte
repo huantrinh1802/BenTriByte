@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Paginator, type PaginationSettings } from '@skeletonlabs/skeleton';
+  import { base } from '$app/paths';
   import type { PageData } from './$types';
   import Card from '$lib/components/Card.svelte';
   export let data: PageData;
@@ -23,7 +24,7 @@
     {#each paginatedBlogs as item}
       <Card
         content={item}
-        baseUrl={`/blogs/${type}`} />
+        baseUrl={`${base}/blogs/${type}`} />
     {/each}
   </div>
   <Paginator bind:settings={paginationSettings} />
