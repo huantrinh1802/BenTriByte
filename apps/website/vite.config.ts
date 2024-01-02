@@ -25,7 +25,7 @@ export default defineConfig({
     },
   },
   css: {
-    transformer: 'postcss'
+    transformer: 'postcss',
   },
   assetsInclude: ['**/*.svx', '**/*.md'],
   resolve: {
