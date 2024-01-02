@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Paginator, type PaginationSettings } from '@skeletonlabs/skeleton';
+  import { base } from '$app/paths';
   import type { PageData } from './$types';
   import { type BlogMetadata } from '$lib/types/blog';
   import Card from '$lib/components/Card.svelte';
@@ -36,7 +36,7 @@
         {#each blogs.slice(0, 2) as blog}
           <Card
             content={blog}
-            baseUrl={`/blogs/${name}`} />
+            baseUrl={`${base}/blogs/${name}`} />
         {/each}
       </div>
     </div>
