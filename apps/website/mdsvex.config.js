@@ -7,8 +7,8 @@ const config = defineConfig({
     dashes: 'oldschool',
   },
 
-  remarkPlugins: [],
-  rehypePlugins: [],
+  // remarkPlugins: [],
+  // rehypePlugins: [],
 });
 
 export default config;
