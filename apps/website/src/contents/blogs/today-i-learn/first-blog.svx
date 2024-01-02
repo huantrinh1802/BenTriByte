@@ -2,7 +2,7 @@
 title: First blog
 description: ''
 date: 2022-02-21
-preview: /images/blogs/blog_placeholder.jpg
+preview: images/blogs/blog_placeholder.jpg
 draft: false
 tags: ['programming', 'svelte', 'frontend', 'javascript']
 categories: ''
