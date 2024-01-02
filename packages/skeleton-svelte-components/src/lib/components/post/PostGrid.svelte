@@ -14,15 +14,15 @@
   export let baseUrl = '/';
   export let filter: Filter = { tag: [], type: null };
   let page = {
-    offset: 0,
+    page: 0,
     limit: 15,
     size: posts.length,
     amounts: [15, 25],
   };
   $: page.size = posts.length;
   $: paginatedSource = posts.slice(
-    page.offset * page.limit, // start
-    page.offset * page.limit + page.limit // end
+    page.page * page.limit, // start
+    page.page * page.limit + page.limit // end
   );
   function checkTags(tags: string[]) {
     return tags.some((t) => filter?.tag?.includes(t));
