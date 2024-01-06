@@ -1,5 +1,6 @@
 import { redirect } from '@sveltejs/kit';
 import type { PageServerData } from './$types';
+import { base } from '$app/paths';
 
 export const load = (async ({ parent, params }) => {
   const blogGroups = await parent();
@@ -10,5 +11,5 @@ export const load = (async ({ parent, params }) => {
     });
     return { blogs, type: params.type, year: params?.year, years: blogGroups['blogs'][params['type']].years };
   }
-  throw redirect(302, `/blogs/${params.type}/${blogGroups['blogs'][params['type']].years.at(-1)}`);
+  throw redirect(302, `${base}/blogs/${params.type}/${blogGroups['blogs'][params['type']].years.at(-1)}`);
 }) satisfies PageServerData;
