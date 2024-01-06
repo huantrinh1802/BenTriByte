@@ -90,6 +90,7 @@
     dialog.showModal();
   }
 </script>
+
 <svelte:head><title>Ben Trinh's skills</title></svelte:head>
 <section class="ks-section">
   <div class="prose gap-4 px-4 py-6 dark:prose-invert prose-headings:my-2 prose-p:my-0 sm:px-10">
@@ -157,6 +158,7 @@
       {#if currentContent === content.skill && content.contents != null}
         <ul>
           {#each content.contents as skillContent}
+            <!-- eslint-disable-next-line svelte/no-at-html-tags -->
             <li>{@html skillContent}</li>
           {/each}
         </ul>

@@ -4,7 +4,6 @@
   import { base } from '$app/paths';
 
   let helloName = 'World';
-  const contents = [AboutMe];
   let typewriter;
   let timer;
   const debounce = (event) => {
@@ -70,6 +69,6 @@
 
 <style lang="postcss">
   .ks-section {
-    @apply mx-auto flex min-h-full snap-start flex-col gap-4 md:justify-center md:w-[75ch] px-4;
+    @apply mx-auto flex min-h-full snap-start flex-col gap-4 px-4 md:w-[75ch] md:justify-center;
   }
 </style>

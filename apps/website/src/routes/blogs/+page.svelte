@@ -8,6 +8,7 @@
   let blogGroups: { string: { years: string[]; items: BlogMetadata[] } } | undefined = undefined;
   $: ({ blogs: blogGroups } = data);
 </script>
+
 <svelte:head><title>Ben Trinh's All Blogs</title></svelte:head>
 <div class="prose p-4 dark:prose-invert md:p-10">
   <h1>Blogs</h1>

@@ -17,21 +17,21 @@ const config = {
           css: {
             maxWidth: '100dvw', // add required value here
             h1: {
-              textWrap: 'balance'
+              textWrap: 'balance',
             },
             h2: {
-              textWrap: 'balance'
+              textWrap: 'balance',
             },
             h3: {
-              textWrap: 'balance'
+              textWrap: 'balance',
             },
             h4: {
-              textWrap: 'balance'
+              textWrap: 'balance',
             },
             p: {
               // maxWidth: "var(--p-max-width, 65ch)",
-              textWrap: 'pretty'
-            }
+              textWrap: 'pretty',
+            },
           },
         },
       },
