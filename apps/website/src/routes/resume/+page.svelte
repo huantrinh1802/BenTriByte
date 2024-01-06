@@ -94,14 +94,15 @@
     };
   });
 </script>
-
+<svelte:head><title>Ben Trinh's resume</title></svelte:head>
 <div class="flex p-2 print:hidden">
   <button
     class="variant-filled-primary btn ml-auto"
     on:click={() => {
       document.getElementById('page').scrollTo(0, 0);
       window.print();
-    }}>
+    }}
+  >
     Print
   </button>
 </div>
@@ -109,7 +110,8 @@
   <div class="kcp-profile flex flex-col items-center print:flex-row md:flex-row">
     <div
       style={`background-image: url('${base}/images/hero_no_filter.png')`}
-      class="kcp-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-primary-700 p-8 print:h-40 print:w-40" />
+      class="kcp-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-primary-700 p-8 print:h-40 print:w-40"
+    />
     <div class="z-0 -mt-8 flex h-40 w-full items-center justify-center rounded-md bg-primary-700 print:-ml-10 print:mt-0 print:h-32 md:-ml-10 md:mt-0">
       <div>
         <h1 class="text-white print:!text-lg">Cong Anh Huan Trinh</h1>
@@ -125,10 +127,12 @@
           {#each contacts as contact}
             <a
               class="!text-primary-900-50-token flex items-center gap-2 break-all print:!text-xs print:!text-teal-900"
-              href={contact.href}>
+              href={contact.href}
+            >
               <svelte:component
                 this={contact.icon}
-                class="text-2xl print:!text-sm" />
+                class="text-2xl print:!text-sm"
+              />
               <p class="print:!text-xs">{contact.text}</p>
             </a>
           {/each}
@@ -142,7 +146,8 @@
           {#each skills as skill}
             <ProgressBar
               title={skill.title}
-              percentage={skill.percentage} />
+              percentage={skill.percentage}
+            />
           {/each}
         </svelte:fragment>
       </AccordionItem>
@@ -154,7 +159,8 @@
           {#each languages as language}
             <ProgressBar
               title={language.title}
-              percentage={language.percentage} />
+              percentage={language.percentage}
+            />
           {/each}
         </svelte:fragment>
       </AccordionItem>
@@ -164,10 +170,12 @@
       {#each contacts as contact}
         <a
           class="flex items-center gap-2 break-all !text-white print:!text-xs print:!text-teal-900"
-          href={contact.href}>
+          href={contact.href}
+        >
           <svelte:component
             this={contact.icon}
-            class="text-2xl print:!text-sm" />
+            class="text-2xl print:!text-sm"
+          />
           <p class="print:!text-xs">{contact.text}</p>
         </a>
       {/each}
@@ -179,7 +187,8 @@
         {#each skills as skill}
           <ProgressBar
             title={skill.title}
-            percentage={skill.percentage} />
+            percentage={skill.percentage}
+          />
         {/each}
       </div>
     </div>
@@ -189,7 +198,8 @@
         {#each languages as language}
           <ProgressBar
             title={language.title}
-            percentage={language.percentage} />
+            percentage={language.percentage}
+          />
         {/each}
       </div>
     </div>
@@ -199,14 +209,14 @@
       <h2 class="py-2 text-center print:!text-lg print:text-black">Experiences</h2>
       {#each experiences as content}
         <History {content} />
-        <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700 print:my-1" />
+        <hr class="my-8 h-px border-0 bg-gray-200 print:my-1 dark:bg-gray-700" />
       {/each}
     </div>
     <div class="flex flex-col">
       <h2 class="py-2 text-center print:!text-lg print:text-black">Educations</h2>
       {#each educations as content}
         <History {content} />
-        <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700 print:my-1" />
+        <hr class="my-8 h-px border-0 bg-gray-200 print:my-1 dark:bg-gray-700" />
       {/each}
     </div>
   </div>

@@ -9,7 +9,10 @@
     <div class="flex w-full flex-wrap gap-2">
       {#each content?.tags as tag}
         <span class="inline-flex items-center rounded bg-primary-600 px-2.5 py-1 text-base font-medium text-white dark:bg-primary-500">
-          <a class="text-inherit" href={`${baseUrl}?tag=${tag}`}>#{tag}</a>
+          <a
+            class="text-inherit"
+            href={`${baseUrl}?tag=${tag}`}>#{tag}</a
+          >
         </span>
       {/each}
     </div>
@@ -21,7 +24,8 @@
       loading="lazy"
       class="@md:h-full mx-auto my-0 h-fit w-full rounded-md object-fill"
       src={`${base}/${content?.preview ?? 'images/blogs/blog_placeholder.jpg'}`}
-      alt="" />
+      alt=""
+    />
     <!-- <div class="flex h-full w-full"> -->
     <h4 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"><a href={`${baseUrl}/${content?.slug}`}>{content?.title}</a></h4>
     <p class="text-primary-700-200-token font-light">{content?.summary}</p>
@@ -30,7 +34,8 @@
   <div class="flex items-center">
     <a
       href={`${baseUrl}/${content?.slug}`}
-      class="ml-auto inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-400">
+      class="ml-auto inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-400"
+    >
       Read more
       <svg
         class="ml-2 h-4 w-4"
@@ -40,7 +45,9 @@
         ><path
           fill-rule="evenodd"
           d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-          clip-rule="evenodd" /></svg>
+          clip-rule="evenodd"
+        /></svg
+      >
     </a>
   </div>
 </article>

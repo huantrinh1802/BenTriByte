@@ -30,7 +30,7 @@
   start();
 </script>
 
-<span class={`typewriter h-fit ${style}`}>
+<span class={`typewriter h-fit ${style}`} style="font-family: 'Santanelli';">
   {#each currentWords as char}
     {char}
   {/each}

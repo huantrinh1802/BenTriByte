@@ -1,83 +1,64 @@
-<script lang="ts">
-  import { browser } from '$app/environment';
+<script
+  context="module"
+  lang="ts"
+>
+  type ProgrammingLanguage = 'Python' | 'Rust' | 'Javascript';
+  type CloudProvider = 'AWS' | 'Vercel' | 'Netlify';
+  type Technology = 'IonicJS' | 'Jinja' | 'PostgreSQL';
+  type Framework = 'SvelteJS' | 'VueJS' | 'ReactJS';
 
-  export let percentage = 85;
-  $: hsl = (() => {
-    if (percentage >= 100) {
-      percentage = 100;
-    } else if (percentage <= 0) {
-      percentage = 1;
-    }
-    let hue = (120 / 100) * percentage;
-    return `hsl(${hue}, 100%, 30%)`;
-  })();
-  let animating = false;
-  let duration = 1;
-  let direction = true;
-  export let logoOnly = true;
-  async function animate() {
-    direction = !direction;
-    if (browser) {
-      animating = true;
-      new Promise((resolve) => {
-        setTimeout(() => {
-          animating = false;
-          resolve;
-        }, duration * 1000);
-      });
-    }
-  }
-  function handleMouseMove(e: MouseEvent) {
-    direction = !direction;
-  }
+  export type Skill = ProgrammingLanguage | CloudProvider | Framework | Technology;
 </script>
 
-<div
-  role="button"
-  tabindex="0"
-  class="rotate relative flex h-full items-center justify-center"
-  style={`--dashoffset: ${percentage};`}
-  on:mouseenter={animate}
-  on:mouseleave={handleMouseMove}>
-  <div
-    class="ks-skill-icon-wrapper relative flex h-full w-full grow items-center justify-center"
-    class:rotated={direction}
-    class:logo-only={logoOnly}>
-    <div class="ks-banner-logo absolute flex h-full w-full grow items-center justify-center p-[20%]">
-      <slot name="logo" />
-    </div>
-    <div class="ks-banner-content absolute flex items-center justify-center">
-      <slot name="content" />
-    </div>
-  </div>
-  <svg
-    class="absolute h-full w-full"
-    viewBox="0 0 36 36">
-    <path
-      id="progress-bar"
-      class:progress-bar-animating={animating}
-      d="M18 2.0845
-      a 15.9155 15.9155 0 0 1 0 31.831
-      a 15.9155 15.9155 0 0 1 0 -31.831"
-      fill="none"
-      stroke={hsl}
-      stroke-width="1.5"
-      stroke-dasharray={`${percentage}, 100`} />
-  </svg>
+<script lang="ts">
+  import Python from '~icons/skill-icons/python-dark';
+  import AWS from '~icons/skill-icons/aws-dark';
+  import VueJS from '~icons/skill-icons/vuejs-dark';
+  import Javascript from '~icons/skill-icons/javascript';
+  import Rust from '~icons/fa-brands/rust';
+  import SvelteJS from '~icons/skill-icons/svelte';
+  import MoreUp from '~icons/carbon/popup';
+  import Jinja from '~icons/file-icons/jinja';
+  import IonicJS from '~icons/logos/ionic-icon';
+  import ReactJS from '~icons/skill-icons/react-dark';
+  import PostgreSQL from '~icons/skill-icons/postgresql-dark';
+  import Vercel from '~icons/skill-icons/vercel-dark';
+  import Netlify from '~icons/skill-icons/netlify-dark';
+  import ProgressBar from './ProgressBar.svelte';
+
+  const icons = {
+    Python,
+    Rust,
+    Javascript,
+    AWS,
+    SvelteJS,
+    VueJS,
+    IonicJS,
+    Jinja,
+    ReactJS,
+    PostgreSQL,
+    Vercel,
+    Netlify,
+  };
+  export let onClick;
+  export let percentage = 85;
+  export let skill: Skill = null;
+</script>
+
+<div class="prose grid place-items-center gap-4 rounded-lg bg-primary-700 p-4 prose-headings:my-0 dark:bg-slate-700">
+  <h4 class="text-center text-white">{skill}</h4>
+  <svelte:component
+    this={icons[skill]}
+    class="h-16 w-16 text-white"
+  />
+  {#if onClick != null}
+    <button
+      class="btn"
+      title={`More about my ${skill} experience`}
+      on:click={() => onClick(skill)}
+    >
+      <MoreUp class="h-10 w-10 text-white" />
+    </button>
+  {/if}
+  <ProgressBar {percentage} />
 </div>
-
-<style>
-  .progress-bar-animating {
-    stroke-dashoffset: var(--dashoffset);
-    animation: complete 1s linear forwards;
-  }
-
-  @keyframes complete {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  .ks-skill-icon-wrapper > .ks-banner-content {
-    opacity: 0;
-  }
-</style>

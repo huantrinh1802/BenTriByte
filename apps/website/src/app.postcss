@@ -3,6 +3,11 @@
 @tailwind utilities;
 @tailwind variants;
 
+@font-face {
+  font-family: Santanelli;
+  src: url('/fonts/Santanelli.otf') format('opentype');
+}
+
 :root {
   --sk-header-height: 56px;
 }
@@ -117,4 +122,8 @@ body {
   100% {
     rotate: y 0deg;
   }
+}
+
+.progress-bar-meter {
+  background-color: var(--progress-bar-colour);
 }
