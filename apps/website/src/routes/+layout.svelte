@@ -5,8 +5,12 @@
   import Header from '$lib/layout/Header.svelte';
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
+  import type { AfterNavigate } from '@sveltejs/kit';
+  import { afterNavigate } from '$app/navigation';
+  import Top from '~icons/mdi/arrow-top';
   import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
   import { storePopup, initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
+
   import hljs from 'highlight.js/lib/core';
 
   // Import each language module you require
@@ -19,6 +23,14 @@
   import python from 'highlight.js/lib/languages/python';
   import { storeHighlightJs } from '@skeletonlabs/skeleton';
   import Navigation from '$lib/layout/Navigation.svelte';
+
+  afterNavigate((params: AfterNavigate) => {
+    const isNewPage: boolean = params.from?.url.pathname !== params.to?.url.pathname;
+    const elemPage = document.querySelector('#page');
+    if (isNewPage && elemPage !== null) {
+      elemPage.scrollTop = 0;
+    }
+  });
   hljs.registerLanguage('xml', xml); // for HTML
   hljs.registerLanguage('css', css);
   hljs.registerLanguage('json', json);
@@ -49,7 +61,7 @@
   }
   const menuItems = [
     { name: 'Home', id: 'hone', href: `${base}/` },
-    { name: 'My Resume', id: 'resume', href: `${base}/resume` },
+    { name: 'My Skills', id: 'skills', href: `${base}/skills` },
     {
       name: 'Blogs',
       id: 'blogs',
@@ -58,6 +70,7 @@
         { id: 'today-i-learn', name: 'Today I Learn', href: `${base}/blogs/today-i-learn` },
       ],
     },
+    { name: 'My Resume', id: 'resume', href: `${base}/resume` },
   ];
 </script>
 
@@ -67,16 +80,19 @@
       <button
         on:click={() => drawerStore.close()}
         type="button"
-        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
+        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         aria-controls="mobile-menu-2"
-        aria-expanded="false">
+        aria-expanded="false"
+      >
         <span class="sr-only">Close main menu</span>
         <svg
           class="dark: h-6 w-6 fill-primary-800 dark:fill-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 512"
           ><path
-            d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" /></svg>
+            d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"
+          /></svg
+        >
       </button>
       <Navigation {menuItems} />
     </div>
@@ -97,3 +113,15 @@
   <!-- <svelte:fragment slot="pageFooter">Page Footer</svelte:fragment> -->
   <!-- <svelte:fragment slot="footer">Footer</svelte:fragment> -->
 </AppShell>
+<button
+  type="button"
+  on:click={() => {
+    const sections = document.querySelector('#sections');
+    if (sections != null) {
+      sections.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      document.querySelector('#page').scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }}
+  class="variant-filled btn-icon fixed bottom-10 right-10"><Top /></button
+>

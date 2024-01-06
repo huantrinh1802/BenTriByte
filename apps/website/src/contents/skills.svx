@@ -13,19 +13,19 @@ categories: ''
   '$lib/components/SkillBanner.svelte'; import SvelteJS from '~icons/skill-icons/svelte';
 </script>
 
-# My Skills
+## My Skills
 
-## Professional Skills
+<div class="grid grid-cols-2">
+<div>
+
+### Professional Skills
+
+#### Programming Languages
 
 <div class="flex gap-4">
   <div class=" h-28 w-28">
     <SkillBanner percentage={80}>
       <Python slot="logo" />
-    </SkillBanner>
-  </div>
-  <div class=" h-28 w-28">
-    <SkillBanner percentage={70}>
-      <AWS slot="logo" />
     </SkillBanner>
   </div>
   <div class=" h-28 w-28">
@@ -35,12 +35,25 @@ categories: ''
   </div>
 </div>
 
-## Hobbyhorsical Skills
+#### Cloud Providers
 
 <div class="flex gap-4">
   <div class=" h-28 w-28">
-    <SkillBanner percentage={80}>
-      <SvelteJS slot="logo" />
+    <SkillBanner percentage={70}>
+      <AWS slot="logo" />
     </SkillBanner>
   </div>
+</div>
+</div>
+
+  <div>
+    <h3>Non-pro Skills</h3>
+    <div class="flex gap-4">
+      <div class=" h-28 w-28">
+        <SkillBanner percentage={80}>
+          <SvelteJS slot="logo" />
+        </SkillBanner>
+      </div>
+    </div>
+  </h3>
 </div>

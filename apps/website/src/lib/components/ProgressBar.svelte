@@ -68,16 +68,31 @@
     }
     return `hsl(${hue}, 100%, 25%)`;
   }
+  $: hsl = (() => {
+    if (percentage >= 100) {
+      percentage = 100;
+    } else if (percentage <= 0) {
+      percentage = 1;
+    }
+    let hue = (120 / 100) * percentage;
+    return `hsl(${hue}, 100%, 30%)`;
+  })();
 </script>
 
-<div class="flex flex-col print:!min-w-fit md:min-w-[224px]">
+<div class="flex w-full flex-col print:!min-w-fit">
   <div class="mb-1 flex justify-between">
     <span class="text-primary-900-50-token text-base font-medium print:!text-primary-900">{title}</span>
     <!-- <span class="text-sm font-medium text-blue-700 dark:text-white">{percentage}%</span> -->
   </div>
-  <div class="bg-surface-800-100-token h-2.5 w-full rounded-full print:bg-gray-800">
+  <!-- <div class="bg-surface-800-100-token h-2.5 w-full rounded-full print:bg-gray-800">
     <div
       class={`h-2.5 rounded-full`}
       style={`width: ${percentage}%; background-color: ${getColor(percentage, false)}`} />
+  </div> -->
+  <div class="h-2.5 w-full rounded-full bg-white print:bg-gray-800 dark:bg-surface-800">
+    <div
+      class={`h-2.5 rounded-full`}
+      style={`width: ${percentage}%; background-color: ${hsl}`}
+    />
   </div>
 </div>

@@ -1,6 +1,6 @@
 <script lang="ts">
   export let Hst: any;
-  import SkillBanner from '../components/SkillBanner.svelte';
+  import SkillBadge from '../components/SkillBadge.svelte';
   import Python from '~icons/skill-icons/python-dark';
   import AWS from '~icons/skill-icons/aws-dark';
   let percentage = 50;
@@ -15,13 +15,12 @@
       max={100}
       title="Percentage"
     />
-
-    <SkillBanner
-      {percentage}
-      skill="Python"
-    >
-      <div slot="content">I am very good at</div>
-    </SkillBanner>
+    <div class="h-20 w-20">
+      <SkillBadge {percentage}>
+        <Python slot="logo" />
+        <div slot="content">I am very good at</div>
+      </SkillBadge>
+    </div>
   </Hst.Variant>
   <Hst.Variant title="AWS">
     <svelte:fragment slot="controls">
@@ -30,8 +29,10 @@
         bind:value={percentage}
       />
     </svelte:fragment>
-    <SkillBanner {percentage}>
-      <AWS slot="logo" />
-    </SkillBanner>
+    <div class="mx-auto h-1/2 w-1/2">
+      <SkillBadge {percentage}>
+        <AWS slot="logo" />
+      </SkillBadge>
+    </div>
   </Hst.Variant>
 </Hst.Story>
