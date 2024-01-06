@@ -1,5 +1,13 @@
 <script lang="ts">
-  export let content: any = null;
+  type HistoryContent = {
+    title: string;
+    subtitle: string;
+    timeline: string;
+    location: string;
+    summary: string;
+    tasks: string[];
+  };
+  export let content: HistoryContent = null;
 </script>
 
 <div class="flex flex-col gap-3 print:block print:break-before-auto print:gap-1">

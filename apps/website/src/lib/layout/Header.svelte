@@ -4,11 +4,6 @@
   import Terminal from '~icons/icon-park-solid/terminal';
   export let menuItems = null;
   const drawerStore = getDrawerStore();
-  const popupClick = {
-    event: 'click',
-    target: 'popupClick',
-    placement: 'top',
-  };
 </script>
 
 <AppBar background="bg-primary-700 text-white rounded">
@@ -40,11 +35,11 @@
       </span>
     </button>
     <a
-      class="flex gap-4 items-center"
+      class="flex items-center gap-4"
       aria-label="Home"
       href={`${base}/`}
     >
-      <Terminal/>
+      <Terminal />
       <p style="font-family: 'Santanelli';">BenTri Byte</p>
     </a>
   </svelte:fragment>

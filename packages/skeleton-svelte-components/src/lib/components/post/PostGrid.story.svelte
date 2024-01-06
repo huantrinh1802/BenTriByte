@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let Hst: any;
+  import type { Hst as HstType } from '@histoire/plugin-svelte';
+  export let Hst: HstType;
   import PostGrid from './PostGrid.svelte';
   const recentBlogs = [
     {

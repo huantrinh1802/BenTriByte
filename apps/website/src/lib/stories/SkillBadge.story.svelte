@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let Hst: any;
+  import type { Hst as HstType } from '@histoire/plugin-svelte';
+  export let Hst: HstType;
   import SkillBadge from '../components/SkillBadge.svelte';
   import Python from '~icons/skill-icons/python-dark';
   import AWS from '~icons/skill-icons/aws-dark';

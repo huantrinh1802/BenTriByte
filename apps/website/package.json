@@ -1,6 +1,6 @@
 {
-  "name": "kingcongportfolio",
-  "version": "0.0.2",
+  "name": "bentribyte",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "dev": "vite dev",
