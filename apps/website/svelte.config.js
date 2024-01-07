@@ -27,7 +27,7 @@ const config = {
       $contents: path.resolve('./src/contents'),
     },
     prerender: {
-      entries: ['/blogs/'],
+      entries: ['/blogs/', '/projects/'],
     },
     paths: {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
