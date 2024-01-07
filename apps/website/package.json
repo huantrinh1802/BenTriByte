@@ -32,6 +32,8 @@
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-svelte": "^2.33.2",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
     "highlight.js": "^11.9.0",
     "histoire": "^0.17.6",
     "mdsvex": "^0.11.0",
@@ -53,5 +55,10 @@
     "vite": "^5.0.0",
     "vite-plugin-image-optimizer": "^1.1.7"
   },
-  "type": "module"
+  "type": "module",
+  "pnpm": {
+    "overrides": {
+      "postcss@<8.4.31": ">=8.4.31"
+    }
+  }
 }
