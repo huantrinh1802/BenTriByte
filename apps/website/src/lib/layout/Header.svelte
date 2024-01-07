@@ -1,7 +1,6 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { AppBar, LightSwitch, popup, getDrawerStore } from '@skeletonlabs/skeleton';
-  import Terminal from '~icons/icon-park-solid/terminal';
   export let menuItems = null;
   const drawerStore = getDrawerStore();
 </script>
@@ -15,7 +14,7 @@
       <span>
         <svg
           viewBox="0 0 100 80"
-          class="fill-token h-4 w-4"
+          class="h-4 w-4 fill-white"
         >
           <rect
             width="100"
@@ -39,7 +38,49 @@
       aria-label="Home"
       href={`${base}/`}
     >
-      <Terminal />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+      >
+        <rect
+          x="2"
+          y="10"
+          width="44"
+          height="28"
+          fill="#007777"
+          stroke="none"
+        />
+        <defs>
+          <mask id="ipSTerminal0">
+            <g
+              fill="none"
+              stroke-linejoin="round"
+              stroke-width="4"
+            >
+              <rect
+                class="!fill-white !stroke-white"
+                width="40"
+                height="32"
+                x="4"
+                y="8"
+                rx="2"
+              />
+              <path
+                stroke="#000"
+                stroke-linecap="round"
+                d="m12 18l7 6l-7 6m11 2h13"
+              />
+            </g>
+          </mask>
+        </defs>
+        <path
+          class="!fill-white"
+          d="M0 0h48v48H0z"
+          mask="url(#ipSTerminal0)"
+        />
+      </svg>
       <p style="font-family: 'Santanelli';">BenTri Byte</p>
     </a>
   </svelte:fragment>

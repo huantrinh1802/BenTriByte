@@ -23,7 +23,10 @@
   import python from 'highlight.js/lib/languages/python';
   import { storeHighlightJs } from '@skeletonlabs/skeleton';
   import Navigation from '$lib/layout/Navigation.svelte';
-
+  import { convertKebabToTitle } from '$lib/utils/strings';
+  import Footer from '$lib/layout/Footer.svelte';
+  import { page } from '$app/stores';
+  export let data;
   afterNavigate((params: AfterNavigate) => {
     const isNewPage: boolean = params.from?.url.pathname !== params.to?.url.pathname;
     const elemPage = document.querySelector('#page');
@@ -61,16 +64,37 @@
   }
   const menuItems = [
     { name: 'Home', id: 'hone', href: `${base}/` },
-    { name: 'My Skills', id: 'skills', href: `${base}/skills` },
+    {
+      name: 'About Me',
+      id: 'about-me',
+      // href: `${base}/skills`,
+      subItems: [
+        { name: 'Intro', id: 'intro', href: `${base}#intro` },
+        { name: 'My Skills', id: 'skills', href: `${base}/skills` },
+        // { name: 'My Projects', id: 'projects', href: `${base}/projects` },
+        { name: 'My Resume', id: 'resume', href: `${base}/resume` },
+      ],
+    },
     {
       name: 'Blogs',
       id: 'blogs',
       subItems: [
         { id: 'all-blogs', name: 'All Blogs', href: `${base}/blogs` },
-        { id: 'today-i-learn', name: 'Today I Learn', href: `${base}/blogs/today-i-learn` },
+        ...data.blogs.map((blog) => {
+          return { id: blog, name: convertKebabToTitle(blog), href: `${base}/blogs/${blog}` };
+        }),
+        // { id: 'today-i-learn', name: 'Today I Learn', href: `${base}/blogs/today-i-learn` },
       ],
     },
-    { name: 'My Resume', id: 'resume', href: `${base}/resume` },
+  ];
+  const socials = [
+    // {
+    //   name: 'Email',
+    //   label: 'huantrinh1802@gmail.com',
+    //   href: 'mailto:huantrinh1802@gmail.com',
+    // },
+    { href: 'https://www.github.com/huantrinh1802', name: 'GitHub', label: 'gh/huantrinh1802' },
+    { href: 'https://www.linkedin.com/in/huantrinh1802', name: 'LinkedIn', label: 'in/huantrinh1802' },
   ];
 </script>
 
@@ -98,7 +122,10 @@
     </div>
   {/if}
 </Drawer>
-<AppShell slotPageContent="print:bg-white">
+<AppShell
+  slotPageContent="print:bg-white"
+  scrollbarGutter="stable"
+>
   <svelte:fragment slot="header">
     <div class="print:hidden">
       <Header {menuItems} />
@@ -110,8 +137,16 @@
   <!-- Router Slot -->
   <slot />
   <!-- ---- / ---- -->
-  <!-- <svelte:fragment slot="pageFooter">Page Footer</svelte:fragment> -->
-  <!-- <svelte:fragment slot="footer">Footer</svelte:fragment> -->
+  <svelte:fragment slot="pageFooter">
+    <div class:hidden={$page.route.id === '/'}>
+      <Footer {socials} />
+    </div>
+  </svelte:fragment>
+  <svelte:fragment slot="footer"
+    ><div class:hidden={$page.route.id !== '/'}>
+      <Footer {socials} />
+    </div></svelte:fragment
+  >
 </AppShell>
 <button
   type="button"
@@ -123,5 +158,5 @@
       document.querySelector('#page').scrollTo({ top: 0, behavior: 'smooth' });
     }
   }}
-  class="variant-filled btn-icon fixed bottom-10 right-10"><Top /></button
+  class="variant-filled btn-icon fixed bottom-10 right-4"><Top /></button
 >
