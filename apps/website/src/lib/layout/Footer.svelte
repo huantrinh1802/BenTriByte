@@ -4,6 +4,7 @@
   import GitHub from '~icons/skill-icons/github-dark';
   import LinkedIn from '~icons/skill-icons/linkedin';
   import Address from '~icons/mdi/map-marker-radius-outline';
+  import { base } from '$app/paths';
   type Social = {
     name: string;
     label: string;
@@ -15,12 +16,12 @@
 <footer class="relative bg-gray-800 p-2 sm:p-4">
   <div class="flex">
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-1 sm:gap-6">
-      <div>
-        <h2 class="mb-6 !text-xl font-semibold text-white">Reach Me @</h2>
+      <div class="grid gap-4">
+        <h2 class="!text-xl font-semibold text-white">Reach Me @</h2>
         <ul class="flex gap-4 text-gray-600 dark:text-gray-400">
           {#if socials != null}
             {#each socials as social}
-              <li class="mb-4 flex gap-4">
+              <li class="flex gap-4">
                 <a
                   href={social.href}
                   class="pointer flex gap-2 text-white hover:underline"
@@ -46,12 +47,12 @@
       </div>
     </div>
   </div>
-  <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700" />
-  <div class="flex-col sm:flex sm:items-center sm:justify-center">
+  <hr class="my-4 border-gray-200 sm:mx-auto dark:border-gray-700" />
+  <div class="flex-col flex items-center justify-center">
     <span class="text-primary-600-300-token text-sm sm:text-center"
       >© {new Date().getFullYear()}
       <a
-        href="/"
+        href={`${base}/`}
         aria-label="Go to Home"
         class="mle-link hover:underline">BenTri Byte.</a
       >
