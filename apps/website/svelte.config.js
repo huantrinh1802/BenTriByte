@@ -23,7 +23,7 @@ const config = {
 
   kit: {
     adapter: adapter({
-      strict: true
+      strict: true,
     }),
     alias: {
       $contents: path.resolve('./src/contents'),
