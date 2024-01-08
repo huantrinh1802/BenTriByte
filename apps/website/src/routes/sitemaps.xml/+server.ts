@@ -1,5 +1,6 @@
 import type { BlogMetadata } from '$lib/types/blog';
 import type { RequestHandler } from './$types';
+export const prerender = true;
 function generate_url(loc: string, lastmod: string) {
   if (loc.includes('localhost')) {
     return `<url><loc>${loc}</loc><lastmod>${lastmod}</lastmod></url>`;
