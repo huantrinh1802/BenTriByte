@@ -8,7 +8,8 @@ import { customTheme } from './custom-theme';
 
 const config = {
   darkMode: 'class',
-  content: ['./src/**/*.{html,js,svelte,ts,svx}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
+  content: ['./src/**/*.{html,js,svelte,ts,svx}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts,svx}')],
+  
 
   theme: {
     extend: {

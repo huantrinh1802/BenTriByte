@@ -3,10 +3,16 @@ import { defineConfig } from 'vite';
 import { HstSvelte } from '@histoire/plugin-svelte';
 import Icons from 'unplugin-icons/vite';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
-
+import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 export default defineConfig({
   plugins: [
     sveltekit(),
+    purgeCss({
+      safelist: {
+        // any selectors that begin with "hljs-" will not be purged
+      greedy: [/^hljs-/, /.*\/.*/],
+      },
+    }),
     ViteImageOptimizer(),
     Icons({
       compiler: 'svelte',
