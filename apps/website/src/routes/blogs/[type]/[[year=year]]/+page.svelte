@@ -47,7 +47,7 @@
       <Card
         content={item}
         baseUrl={`${base}/blogs/${type}/${year}`}
-        placeholderImage='images/blogs/blog_placeholder.avif'
+        placeholderImage="images/blogs/blog_placeholder.avif"
       />
     {/each}
   </div>
