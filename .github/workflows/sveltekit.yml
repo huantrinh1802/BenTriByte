@@ -2,10 +2,9 @@ name: Deploy SvelteKit Static site to Pages
 
 on:
   # Runs on pushes targeting the default branch
-  push:
-    branches: ['main']
   workflow_run:
     workflows: ['CI']
+    branches: [main]
     types:
       - completed
   # Allows you to run this workflow manually from the Actions tab
@@ -31,6 +30,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
