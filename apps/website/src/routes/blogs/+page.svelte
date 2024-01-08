@@ -20,6 +20,7 @@
           <Card
             content={blog}
             baseUrl={`${base}/blogs/${name}/${blog.date.split('-')[0]}`}
+            placeholderImage='images/blogs/blog_placeholder.avif'
           />
         {/each}
       </div>
