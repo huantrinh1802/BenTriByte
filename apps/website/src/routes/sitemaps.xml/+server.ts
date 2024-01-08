@@ -1,4 +1,4 @@
-import { base } from '$app/paths';
+import { PUBLIC_SITE_URL } from '$env/static/public';
 import type { BlogMetadata } from '$lib/types/blog';
 import type { RequestHandler } from './$types';
 export const prerender = true;
@@ -12,17 +12,17 @@ function generate_url(loc: string, lastmod: string) {
 export const GET = (async () => {
   //   const { data } = await siteMapStore.fetch({ event });
   const urls: string[] = [
-    generate_url(`${base}/`, new Date().toISOString()),
-    generate_url(`${base}/skills`, new Date().toISOString()),
-    generate_url(`${base}/resume`, new Date().toISOString()),
-    // generate_url(`${base}/en/services/migration`, new Date().toISOString()),
-    // generate_url(`${base}/vi/services/migration`, new Date().toISOString()),
-    // generate_url(`${base}/en/services/legal`, new Date().toISOString()),
-    // generate_url(`${base}/vi/services/legal`, new Date().toISOString()),
-    // generate_url(`${base}/en/services/education`, new Date().toISOString()),
-    // generate_url(`${base}/vi/services/education`, new Date().toISOString()),
-    // generate_url(`${base}/en/services/employment`, new Date().toISOString()),
-    // generate_url(`${base}/vi/services/employment`, new Date().toISOString()),
+    generate_url(`${PUBLIC_SITE_URL}/`, new Date().toISOString()),
+    generate_url(`${PUBLIC_SITE_URL}/skills`, new Date().toISOString()),
+    generate_url(`${PUBLIC_SITE_URL}/resume`, new Date().toISOString()),
+    // generate_url(`${PUBLIC_SITE_URL}/en/services/migration`, new Date().toISOString()),
+    // generate_url(`${PUBLIC_SITE_URL}/vi/services/migration`, new Date().toISOString()),
+    // generate_url(`${PUBLIC_SITE_URL}/en/services/legal`, new Date().toISOString()),
+    // generate_url(`${PUBLIC_SITE_URL}/vi/services/legal`, new Date().toISOString()),
+    // generate_url(`${PUBLIC_SITE_URL}/en/services/education`, new Date().toISOString()),
+    // generate_url(`${PUBLIC_SITE_URL}/vi/services/education`, new Date().toISOString()),
+    // generate_url(`${PUBLIC_SITE_URL}/en/services/employment`, new Date().toISOString()),
+    // generate_url(`${PUBLIC_SITE_URL}/vi/services/employment`, new Date().toISOString()),
   ];
   const modules: Record<string, { metadata: BlogMetadata; content: object }> = await import.meta.glob('$contents/blogs/**/*.svx', { eager: true });
   for (const modulePath in modules) {
@@ -31,23 +31,23 @@ export const GET = (async () => {
     const year = paths.at(-2);
     const type = paths.at(-3);
     const file: { metadata: BlogMetadata; content: object } = modules[modulePath];
-    urls.push(generate_url(`${base}/${type}/${year}/${slug}`, new Date(file.metadata.date).toISOString()));
+    urls.push(generate_url(`${PUBLIC_SITE_URL}/${type}/${year}/${slug}`, new Date(file.metadata.date).toISOString()));
   }
   //   data?.agents.forEach((agent) => {
   //     agent.localizations.forEach((localizedAgent) => {
-  //       const loc = `${base}/${localizedAgent.locale}/agents/${localizedAgent.slug}`;
+  //       const loc = `${PUBLIC_SITE_URL}/${localizedAgent.locale}/agents/${localizedAgent.slug}`;
   //       urls.push(generate_url(loc, new Date(localizedAgent.updatedAt).toISOString()));
   //     });
   //   });
   //   data?.posts.forEach((post) => {
   //     post.localizations.forEach((localizedPost) => {
-  //       const loc = `${base}/${localizedPost.locale}/services/${localizedPost.type?.toLowerCase()}/${localizedPost.slug}`;
+  //       const loc = `${PUBLIC_SITE_URL}/${localizedPost.locale}/services/${localizedPost.type?.toLowerCase()}/${localizedPost.slug}`;
   //       urls.push(generate_url(loc, new Date(localizedPost.updatedAt).toISOString()));
   //     });
   //   });
   //   data?.blogs.forEach((blog) => {
   //     blog.localizations.forEach((localizedBlog) => {
-  //       const loc = `${base}/${localizedBlog.locale}/blogs/${localizedBlog.slug}`;
+  //       const loc = `${PUBLIC_SITE_URL}/${localizedBlog.locale}/blogs/${localizedBlog.slug}`;
   //       urls.push(generate_url(loc, new Date(localizedBlog.updatedAt).toISOString()));
   //     });
   //   });
