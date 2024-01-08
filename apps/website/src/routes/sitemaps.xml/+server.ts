@@ -9,7 +9,7 @@ function generate_url(loc: string, lastmod: string) {
     return `<url><loc>https://${loc}</loc><lastmod>${lastmod}</lastmod></url>`;
   }
 }
-export const GET = (async (event) => {
+export const GET = (async () => {
   //   const { data } = await siteMapStore.fetch({ event });
   const urls: string[] = [
     generate_url(`${base}/`, new Date().toISOString()),
