@@ -112,7 +112,7 @@
 
 <Drawer width="lg:w-80 w-4/5">
   {#if $drawerStore.id === 'sidebar'}
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-4 pb-4">
       <button
         on:click={() => drawerStore.close()}
         type="button"
@@ -167,11 +167,11 @@
       <Footer {socials} />
     </div>
   </svelte:fragment>
-  <svelte:fragment slot="footer"
-    ><div class:hidden={$page.route.id !== '/'}>
+  <svelte:fragment slot="footer">
+    <div class:hidden={$page.route.id !== '/'}>
       <Footer {socials} />
-    </div></svelte:fragment
-  >
+    </div>
+  </svelte:fragment>
 </AppShell>
 <button
   type="button"

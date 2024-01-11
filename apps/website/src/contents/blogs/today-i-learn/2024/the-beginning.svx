@@ -1,5 +1,5 @@
 ---
-title:  "Embracing the Journey: Chronicles of Daily Learning"
+title: 'Embracing the Journey: Chronicles of Daily Learning'
 description: ''
 date: 2024-01-05
 preview: images/blogs/blog_placeholder.avif
@@ -8,6 +8,9 @@ tags: ['programming']
 categories: ''
 summary: "This is a blog celebrating the author's daily discoveries and lessons, emphasizing that learning is a continuous, dynamic process. The blog aims to build a community of lifelong learners, offering a platform to share experiences and inspire each other. Readers are invited to join the collective pursuit of enlightenment, embracing curiosity and resilience in the journey of personal growth."
 ---
+
+## The startThe startThe startThe startThe start
+
 In the vast landscape of life, I find myself on an exhilarating journey of continuous learning. My first blog is a testament to the profound realisation that every day brings new opportunities to expand my knowledge and understanding of the world around me. It serves as a personal chronicle of the small victories, the stumbling blocks, and the countless lessons that shape my growth.
 
 The essence of my blog lies in the acknowledgment that learning is not confined to the structured confines of classrooms or the rigid boundaries of textbooks. Instead, it permeates every facet of my daily existence. Whether it's a snippet of wisdom gained from a chance encounter, a revelation sparked by a book I stumbled upon, or a valuable lesson extracted from a seemingly mundane experience, each day offers a fresh canvas for learning.
