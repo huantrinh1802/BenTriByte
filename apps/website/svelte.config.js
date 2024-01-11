@@ -16,7 +16,7 @@ const config = {
   preprocess: [
     vitePreprocess(),
     preprocess({
-      postcss: { configFilePath: path.join(__dirname, 'postcss.config.cjs') },
+      postcss: { configFilePath: path.join(__dirname, 'postcss.config.js') },
     }),
     mdsvex(mdsvexConfig),
   ],
