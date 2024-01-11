@@ -7,7 +7,9 @@
   font-family: Santanelli;
   src: url('/fonts/Santanelli.otf') format('opentype');
 }
-
+* {
+  min-width: none;
+}
 :root {
   --sk-header-height: 56px;
 }
@@ -58,22 +60,30 @@ body {
   animation: rotate-clockwise 1s ease-in-out backwards;
 }
 .ks-skill-icon-wrapper:not(.rotated):not(.logo-only) > .ks-banner-logo {
-  animation: rotate-anticlockwise 1s ease-in-out forwards, disappearing 1s ease-in-out forwards;
+  animation:
+    rotate-anticlockwise 1s ease-in-out forwards,
+    disappearing 1s ease-in-out forwards;
 }
 .ks-skill-icon-wrapper:not(.rotated):not(.logo-only) > .ks-banner-content {
-  animation: rotate-anticlockwise 1s ease-in-out forwards, appearing 1s ease-in-out forwards;
+  animation:
+    rotate-anticlockwise 1s ease-in-out forwards,
+    appearing 1s ease-in-out forwards;
 }
 .rotated > .ks-banner-logo {
   animation: rotate-clockwise 1s ease-in-out forwards;
 }
 .rotated:not(.logo-only) > .ks-banner-logo {
-  animation: rotate-clockwise 1s ease-in-out forwards, appearing 1s ease-in-out forwards;
+  animation:
+    rotate-clockwise 1s ease-in-out forwards,
+    appearing 1s ease-in-out forwards;
 }
 .rotated > .ks-banner-content {
   animation: rotate-anticlockwise 1s ease-in-out backwards;
 }
 .rotated:not(.logo-only) > .ks-banner-content {
-  animation: rotate-clockwise 1s ease-in-out forwards, disappearing 1s ease-in-out forwards;
+  animation:
+    rotate-clockwise 1s ease-in-out forwards,
+    disappearing 1s ease-in-out forwards;
 }
 .ks-banner-logo > svg {
   flex-grow: 1;
