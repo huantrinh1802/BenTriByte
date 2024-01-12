@@ -21,7 +21,7 @@
 <svelte:head><title>Ben Trinh's Homepage</title></svelte:head>
 <div
   id="sections"
-  class="h-[calc(100dvh-var(--sk-header-height)-198px)] w-screen snap-y snap-mandatory overflow-y-auto px-4 sm:h-[calc(100dvh-var(--sk-header-height)-204px)] sm:px-10"
+  class="h-[calc(100dvh-var(--sk-header-height)-198px)] w-full snap-y snap-mandatory overflow-y-auto px-4 sm:h-[calc(100dvh-180px)] sm:px-10"
 >
   <section class="ks-hero-section show-on-scroll hide-scrollbar grid h-full snap-start grid-cols-1 gap-10 overflow-y-auto p-4 md:grid-cols-2 md:gap-10">
     <div class="my-auto flex flex-col gap-4">
@@ -39,7 +39,7 @@
       </div>
       <p>My name is Ben</p>
       <p>Welcome to my page,</p>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
         <a
           href={`${base}#intro`}
           class="variant-filled-primary btn">Introduction</a
@@ -74,6 +74,6 @@
 
 <style lang="postcss">
   .ks-section {
-    @apply mx-auto flex snap-start flex-col gap-4 px-4 md:w-[75ch] md:justify-center;
+    @apply mx-auto flex snap-start flex-col gap-4 px-4 sm:w-[min(100%,80ch)] md:justify-center;
   }
 </style>
