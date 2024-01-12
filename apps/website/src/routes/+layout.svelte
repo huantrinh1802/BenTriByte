@@ -6,7 +6,7 @@
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
   import type { AfterNavigate } from '@sveltejs/kit';
-  import { afterNavigate } from '$app/navigation';
+  import { afterNavigate, onNavigate } from '$app/navigation';
   import Top from '~icons/mdi/arrow-top';
   import BtbIcon from '$lib/images/BtbIcon.svelte';
   import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
@@ -29,6 +29,16 @@
   import { page } from '$app/stores';
   import type { PageData } from './$types';
   export let data: PageData;
+  onNavigate((navigation) => {
+    if (!document.startViewTransition || navigation.from === navigation.to) return;
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
   afterNavigate((params: AfterNavigate) => {
     const isNewPage: boolean = params.from?.url.pathname !== params.to?.url.pathname;
     const elemPage = document.querySelector('#page');
