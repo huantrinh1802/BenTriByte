@@ -6,7 +6,8 @@ import { skeleton } from '@skeletonlabs/tw-plugin';
 
 import { customTheme } from './custom-theme';
 
-const config = {
+/** @type {import('tailwindcss').Config} */
+export default {
   darkMode: 'class',
   content: ['./src/**/*.{html,js,svelte,ts,svx}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts,svx}')],
 
@@ -41,4 +42,3 @@ const config = {
   plugins: [require('@tailwindcss/typography'), skeleton({ themes: { custom: [customTheme] } })],
 };
 
-export default config;
