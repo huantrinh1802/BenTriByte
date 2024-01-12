@@ -150,8 +150,8 @@
         aria-label="Home"
         href={`${base}/`}
       >
-        <BtbIcon />
-        <p style="font-family: 'Santanelli';">BenTri Byte</p>
+      <img alt="Webpage logo" src="/icon.svg"/>
+      <p style="font-family: 'Santanelli';">BenTri Byte</p>
       </a>
       <Navigation {menuItems} />
       <div class="mx-atuo flex w-full justify-center pb-4"><LightSwitch /></div>
