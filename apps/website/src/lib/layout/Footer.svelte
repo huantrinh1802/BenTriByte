@@ -61,7 +61,7 @@
     <span class="text-primary-600-300-token text-sm sm:text-center"
       >Built by
       <a
-        class="mle-link text-primary-200"
+        class="mle-link text-white font-semibold"
         rel="noopener noreferrer"
         target="_blank"
         href="https://github.com/huantrinh1802">Ben Trinh</a
