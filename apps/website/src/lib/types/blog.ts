@@ -5,7 +5,8 @@ export interface BlogMetadata {
   preview: string;
   draft: boolean;
   tags: string[];
-  slug: string;
+  slug?: string;
+  type?: string;
 }
 
 export interface Blog {
