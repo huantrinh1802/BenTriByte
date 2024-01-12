@@ -39,7 +39,7 @@
       aria-label="Home"
       href={`${base}/`}
     >
-      <BtbIcon/>
+      <img alt="Webpage logo" src="/icon.svg"/>
       <p style="font-family: 'Santanelli';">BenTri Byte</p>
     </a>
   </svelte:fragment>
