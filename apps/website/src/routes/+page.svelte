@@ -27,39 +27,40 @@
     <div class="my-auto flex flex-col gap-4">
       <div class="my-auto flex flex-col gap-4">
         <TypeWriter
-          style="text-4xl font-bold md:min-w-[50%] md:relative "
+          style="text-4xl md:relative "
           words={`Hello {{${helloName}}},`}
           bind:this={typewriter}
         />
         <input
           placeholder="Your name"
-          class="focus:shadow-outline w-40 appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+          maxlength="24"
+          class={`${helloName.length > 12 ? 'w-64' : 'w-40'} focus:shadow-outline appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none`}
           on:input={debounce}
         />
       </div>
-      <p>My name is Ben</p>
-      <p>Welcome to my page,</p>
+      <p class="font-serif">My name is Ben.</p>
+      <p class="font-serif">Welcome to my page,</p>
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
         <a
           href={`${base}#intro`}
-          class="variant-filled-primary btn">Introduction</a
+          class="variant-filled-primary btn font-serif">Introduction</a
         >
         <a
           href={`${base}/skills`}
-          class="variant-filled-primary btn">My Skills</a
+          class="variant-filled-primary btn font-serif">My Skills</a
         >
         <a
           href={`${base}/resume`}
-          class="variant-filled-primary btn">My Blogs</a
+          class="variant-filled-primary btn font-serif">My Resume</a
         >
         <a
           href={`${base}/blogs`}
-          class="variant-filled-primary btn">My Blogs</a
+          class="variant-filled-primary btn font-serif">My Blogs</a
         >
       </div>
     </div>
     <img
-      class="relative mx-auto my-auto mb-auto max-w-[300px] rounded-3xl object-cover"
+      class="relative mx-auto my-auto mb-auto max-w-[400px] rounded-3xl object-cover"
       srcset={`${base}/images/hero.png`}
       alt="BenTri Byte Hero"
     />
