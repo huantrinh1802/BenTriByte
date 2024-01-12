@@ -44,33 +44,34 @@
 
 <style lang="postcss">
   .active {
+    --decorate-corner-size: 1em;
     position: relative;
     @apply bg-surface-900;
   }
   .active:not(:hover)::after {
     content: '';
     position: absolute;
-    bottom: -1.0em;
+    bottom: calc(var(--decorate-corner-size) * -1);
     right: 0;
     background-color: red;
-    width: 1em;
-    height: 1em;
-    box-shadow: 4px -4px 0 4px rgb(var(--color-surface-900)); 
+    width: var(--decorate-corner-size);
+    height: var(--decorate-corner-size);
+    box-shadow: 4px -4px 0 4px rgb(var(--color-surface-900));
     @apply bg-surface-800 rounded-tr-2xl;
     z-index: 0;
   }
   .active:not(:hover)::before {
     content: '';
     position: absolute;
-    top: -1.0em;
+    top: calc(var(--decorate-corner-size) * -1);
     right: 0;
-    width: 1em;
-    height: 1em;
+    width: var(--decorate-corner-size);
+    height: var(--decorate-corner-size);
     box-shadow: 4px 4px 0 4px rgb(var(--color-surface-900)); 
     @apply bg-surface-800 rounded-br-2xl;
     z-index: 0;
   }
-  .highlight {
-    @apply hover:bg-primary-600 hover:text-white hover:z-20;
+  .highlight:hover {
+    @apply bg-primary-600 text-white z-20;
   }
 </style>
