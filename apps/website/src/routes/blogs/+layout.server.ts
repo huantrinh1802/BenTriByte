@@ -15,12 +15,12 @@ export const load = (async () => {
       }
       if (file && typeof file === 'object' && 'metadata' in file && !file?.metadata?.draft) {
         const metadata: BlogMetadata = file?.metadata;
-        blogs[type].items.push({ ...metadata, slug });
+        blogs[type].items.push({ ...metadata, slug, type });
       }
     } else {
       if (file && typeof file === 'object' && 'metadata' in file && !file?.metadata?.draft) {
         const metadata: BlogMetadata = file?.metadata;
-        blogs = { ...blogs, [type]: { years: [year], items: [{ ...metadata, slug }] } };
+        blogs = { ...blogs, [type]: { years: [year], items: [{ ...metadata, slug, type }] } };
       }
     }
   }
