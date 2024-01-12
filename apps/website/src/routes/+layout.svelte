@@ -1,13 +1,14 @@
 <script lang="ts">
   import '../app.postcss';
   import 'highlight.js/styles/github-dark.css';
-  import { AppShell, Drawer } from '@skeletonlabs/skeleton';
+  import { AppShell, Drawer, LightSwitch } from '@skeletonlabs/skeleton';
   import Header from '$lib/layout/Header.svelte';
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
   import type { AfterNavigate } from '@sveltejs/kit';
   import { afterNavigate } from '$app/navigation';
   import Top from '~icons/mdi/arrow-top';
+  import BtbIcon from '$lib/images/BtbIcon.svelte';
   import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
   import { storePopup, initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
 
@@ -70,7 +71,7 @@
       id: 'about-me',
       // href: `${base}/skills`,
       subItems: [
-        { name: 'Intro', id: 'intro', href: `${base}#intro` },
+        { name: 'Intro', id: 'intro', href: `${base}/#intro` },
         { name: 'My Skills', id: 'skills', href: `${base}/skills` },
         // { name: 'My Projects', id: 'projects', href: `${base}/projects` },
         { name: 'My Resume', id: 'resume', href: `${base}/resume` },
@@ -105,13 +106,13 @@
       <button
         on:click={() => drawerStore.close()}
         type="button"
-        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
         aria-controls="mobile-menu-2"
         aria-expanded="false"
       >
         <span class="sr-only">Close main menu</span>
         <svg
-          class="dark: h-6 w-6 fill-primary-800 dark:fill-white"
+          class="dark: fill-primary-800 h-6 w-6 dark:fill-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 512"
           ><path
@@ -128,11 +129,24 @@
   scrollbarGutter="stable"
 >
   <svelte:fragment slot="header">
-    <div class="print:hidden">
+    <div class="print:hidden sm:hidden">
       <Header {menuItems} />
     </div>
   </svelte:fragment>
-  <!-- <svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment> -->
+  <svelte:fragment slot="sidebarLeft">
+    <div class="bg-surface-800 hidden h-full flex-col gap-6 pl-4 pt-4 sm:flex">
+      <a
+        class="flex items-center gap-4"
+        aria-label="Home"
+        href={`${base}/`}
+      >
+        <BtbIcon />
+        <p style="font-family: 'Santanelli';">BenTri Byte</p>
+      </a>
+      <Navigation {menuItems} />
+      <div class="mx-atuo flex w-full justify-center pb-4"><LightSwitch /></div>
+    </div>
+  </svelte:fragment>
   <!-- <svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
   <!-- <svelte:fragment slot="pageHeader">Page Header</svelte:fragment> -->
   <!-- Router Slot -->

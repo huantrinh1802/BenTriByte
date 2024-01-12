@@ -23,9 +23,3 @@
     {@html content}
   </div>
 </div>
-
-<style lang="postcss">
-  /* div > * {
-    text-wrap: pretty;
-  } */
-</style>
