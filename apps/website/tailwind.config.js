@@ -41,4 +41,3 @@ export default {
 
   plugins: [require('@tailwindcss/typography'), skeleton({ themes: { custom: [customTheme] } })],
 };
-
