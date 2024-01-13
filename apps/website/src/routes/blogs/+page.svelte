@@ -25,7 +25,7 @@
 <svelte:head><title>Ben Trinh's All Blogs</title></svelte:head>
 <div class="prose p-4 dark:prose-invert md:p-10">
   <h1>Blogs</h1>
-  {#if $page.url.searchParams.getAll('tag').length === 0}
+  {#if browser && $page.url.searchParams.getAll('tag').length === 0}
     {#each Object.entries(blogGroups) as [name, blogs]}
       <div>
         <a
