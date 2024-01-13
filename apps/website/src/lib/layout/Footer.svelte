@@ -13,18 +13,18 @@
   export let socials: Social[] = [];
 </script>
 
-<footer class="relative bg-gray-800 p-2 sm:p-4">
+<footer class="bg-surface-100-800-token relative p-2 text-gray-600 sm:p-4 dark:text-gray-400">
   <div class="flex">
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-1 sm:gap-6">
       <div class="grid gap-4">
-        <h2 class="!text-xl font-semibold text-white">Reach Me @</h2>
-        <ul class="flex gap-4 text-gray-600 dark:text-gray-400">
+        <h2 class="!text-xl font-semibold">Reach Me @</h2>
+        <ul class="flex gap-4">
           {#if socials != null}
             {#each socials as social}
               <li class="flex gap-4">
                 <a
                   href={social.href}
-                  class="pointer flex gap-2 text-white hover:underline"
+                  class="pointer flex gap-2 hover:underline"
                   aria-label={social.label}
                 >
                   {#if social.name === 'Phone'}
@@ -48,8 +48,8 @@
     </div>
   </div>
   <hr class="my-4 border-gray-200 sm:mx-auto dark:border-gray-700" />
-  <div class="flex flex-col items-center justify-center">
-    <span class="text-primary-600-300-token text-sm sm:text-center"
+  <div class="text-primary-700-200-token flex flex-col items-center justify-center">
+    <span class="text-sm sm:text-center"
       >© {new Date().getFullYear()}
       <a
         href={`${base}/`}
@@ -58,10 +58,10 @@
       >
       All Rights Reserved.
     </span>
-    <span class="text-primary-600-300-token text-sm sm:text-center"
+    <span class="text-sm sm:text-center"
       >Built by
       <a
-        class="mle-link text-white font-semibold"
+        class="mle-link text-lg font-semibold"
         rel="noopener noreferrer"
         target="_blank"
         href="https://github.com/huantrinh1802">Ben Trinh</a
