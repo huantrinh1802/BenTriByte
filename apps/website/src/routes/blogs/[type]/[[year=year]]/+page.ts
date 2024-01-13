@@ -1,8 +1,5 @@
 import { redirect } from '@sveltejs/kit';
 import type { PageData } from './$types';
-import { browser } from '$app/environment';
-import { base } from '$app/paths';
-import { PUBLIC_SITE_URL } from '$env/static/public';
 
 export const load = (async ({ parent, params }) => {
   const blogGroups = await parent();
