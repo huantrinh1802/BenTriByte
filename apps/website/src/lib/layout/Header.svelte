@@ -6,10 +6,10 @@
   const drawerStore = getDrawerStore();
 </script>
 
-<AppBar background="bg-primary-700 text-white rounded">
+<AppBar background="bg-primary-700 text-white rounded-b">
   <svelte:fragment slot="lead"
     ><button
-      class="btn btn-sm mr-4 sm:hidden"
+      class="mr-4 sm:hidden"
       on:click={() => drawerStore.open({ id: 'sidebar' })}
     >
       <span>
@@ -39,7 +39,10 @@
       aria-label="Home"
       href={`${base}/`}
     >
-      <img alt="Webpage logo" src="/icon.svg"/>
+      <BtbIcon
+        bg="bg-white"
+        partColor="fill-primary-700"
+      />
       <p style="font-family: 'Santanelli';">BenTri Byte</p>
     </a>
   </svelte:fragment>

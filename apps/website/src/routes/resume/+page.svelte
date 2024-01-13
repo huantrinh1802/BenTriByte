@@ -95,24 +95,13 @@
 </script>
 
 <svelte:head><title>Ben Trinh's resume</title></svelte:head>
-<div class="flex p-2 print:hidden">
-  <button
-    class="variant-filled-primary btn ml-auto"
-    on:click={() => {
-      document.getElementById('page').scrollTo(0, 0);
-      window.print();
-    }}
-  >
-    Print
-  </button>
-</div>
-<div class="kcp-layout overflow-over flex h-full flex-col print:grid md:grid">
+<div class="kcp-layout overflow-over flex flex-col print:grid md:grid">
   <div class="kcp-profile flex flex-col items-center print:flex-row md:flex-row">
     <div
       style={`background-image: url('${base}/images/hero_no_filter.png')`}
-      class="kcp-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-primary-700 p-8 print:h-40 print:w-40"
+      class="kcp-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-primary-500 p-8 print:h-40 print:w-40"
     />
-    <div class="z-0 -mt-8 flex h-40 w-full items-center justify-center rounded-md bg-primary-700 print:-ml-10 print:mt-0 print:h-32 md:-ml-10 md:mt-0">
+    <div class="z-0 -mt-8 flex h-40 w-full items-center justify-center rounded-md bg-primary-500 print:-ml-10 print:mt-0 print:h-32 md:-ml-10 md:mt-0">
       <div>
         <h1 class="text-white print:!text-lg">Cong Anh Huan Trinh</h1>
         <h2 class="text-white print:!text-base">Software Engineer</h2>
@@ -220,6 +209,17 @@
       {/each}
     </div>
   </div>
+</div>
+<div class="flex p-2 print:hidden">
+  <button
+    class="variant-filled-primary btn ml-auto"
+    on:click={() => {
+      document.getElementById('page').scrollTo(0, 0);
+      window.print();
+    }}
+  >
+    Print
+  </button>
 </div>
 
 <style lang="postcss">
