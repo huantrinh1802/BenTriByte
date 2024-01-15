@@ -122,7 +122,7 @@
       >
         <span class="sr-only">Close main menu</span>
         <svg
-          class="dark: h-6 w-6 fill-primary-800 dark:fill-white"
+          class="h-6 w-6 dark:fill-primary-800 dark:fill-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 512"
           ><path
@@ -139,12 +139,12 @@
   scrollbarGutter="stable"
 >
   <svelte:fragment slot="header">
-    <div class="print:hidden sm:hidden">
+    <div class="print:hidden md:hidden">
       <Header {menuItems} />
     </div>
   </svelte:fragment>
   <svelte:fragment slot="sidebarLeft">
-    <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 sm:flex">
+    <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 print:!hidden md:flex">
       <a
         class="flex items-center gap-4 bg-transparent"
         aria-label="Home"
@@ -163,15 +163,9 @@
   <slot />
   <!-- ---- / ---- -->
   <svelte:fragment slot="pageFooter">
-    <div class:hidden={$page.route.id === '/'}>
-      <Footer {socials} />
-    </div>
+    <Footer {socials} />
   </svelte:fragment>
-  <svelte:fragment slot="footer">
-    <div class:hidden={$page.route.id !== '/'}>
-      <Footer {socials} />
-    </div>
-  </svelte:fragment>
+  <svelte:fragment slot="footer"></svelte:fragment>
 </AppShell>
 <button
   type="button"
@@ -183,5 +177,5 @@
       document.querySelector('#page').scrollTo({ top: 0, behavior: 'smooth' });
     }
   }}
-  class="variant-filled btn-icon fixed bottom-10 right-4"><Top /></button
+  class="variant-filled btn-icon fixed bottom-10 right-4 print:hidden"><Top /></button
 >
