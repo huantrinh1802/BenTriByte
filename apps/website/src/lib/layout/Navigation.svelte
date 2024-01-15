@@ -6,7 +6,7 @@
   const drawerStore = getDrawerStore();
 </script>
 
-<div class={`hide-scrollbar flex min-w-[20ch] flex-col gap-4 overflow-y-auto py-2 pl-4 ${bg} h-full`}>
+<div class={`hide-scrollbar flex min-w-[20ch] flex-col gap-4 overflow-y-auto py-2 pl-4 print:hidden ${bg} h-full`}>
   {$page.url.hash}
   {#each menuItems as item}
     {#if item.href != undefined}
