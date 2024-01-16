@@ -8,7 +8,7 @@ function generate_url(loc: string, lastmod: string, metadata: BlogMetadata) {
   <link>${loc}</link>
   <pubDate>${lastmod}</pubDate>
   <description>
-  <![CDATA[<img height="100" width="100" src="/${metadata.preview}"/><p>${metadata.description}</p><span>${metadata.summary}</p>]]></description>
+  <![CDATA[<img height="100" width="100" src="${PUBLIC_SITE_URL}/${metadata.preview}"/><p>${metadata.description}</p><span>${metadata.summary}</p>]]></description>
   </item>`;
 }
 export const GET = async () => {
