@@ -26,7 +26,6 @@
   import Navigation from '$lib/layout/Navigation.svelte';
   import { convertKebabToTitle } from '$lib/utils/strings';
   import Footer from '$lib/layout/Footer.svelte';
-  import { page } from '$app/stores';
   import type { PageData } from './$types';
   export let data: PageData;
   onNavigate((navigation) => {

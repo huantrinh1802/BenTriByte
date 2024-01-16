@@ -29,24 +29,6 @@ export const GET = (async () => {
     const file: { metadata: BlogMetadata; content: object } = modules[modulePath];
     urls.push(generate_url(`${PUBLIC_SITE_URL}/${type}/${year}/${slug}`, new Date(file.metadata.date).toISOString()));
   }
-  //   data?.agents.forEach((agent) => {
-  //     agent.localizations.forEach((localizedAgent) => {
-  //       const loc = `${PUBLIC_SITE_URL}/${localizedAgent.locale}/agents/${localizedAgent.slug}`;
-  //       urls.push(generate_url(loc, new Date(localizedAgent.updatedAt).toISOString()));
-  //     });
-  //   });
-  //   data?.posts.forEach((post) => {
-  //     post.localizations.forEach((localizedPost) => {
-  //       const loc = `${PUBLIC_SITE_URL}/${localizedPost.locale}/services/${localizedPost.type?.toLowerCase()}/${localizedPost.slug}`;
-  //       urls.push(generate_url(loc, new Date(localizedPost.updatedAt).toISOString()));
-  //     });
-  //   });
-  //   data?.blogs.forEach((blog) => {
-  //     blog.localizations.forEach((localizedBlog) => {
-  //       const loc = `${PUBLIC_SITE_URL}/${localizedBlog.locale}/blogs/${localizedBlog.slug}`;
-  //       urls.push(generate_url(loc, new Date(localizedBlog.updatedAt).toISOString()));
-  //     });
-  //   });
   return new Response(
     `<?xml version="1.0" encoding="UTF-8" ?>
       <urlset

@@ -5,6 +5,7 @@
   import Card from '$lib/components/Card.svelte';
   import { convertKebabToTitle } from '$lib/utils/strings';
   import { goto } from '$app/navigation';
+  import RSS from '~icons/foundation/rss';
   export let data: PageData;
   $: ({ blogs, type, year, years } = data);
   let paginationSettings = {
@@ -24,7 +25,18 @@
 <svelte:head><title>{convertKebabToTitle(type)} - {year}</title></svelte:head>
 <div class="flex flex-col gap-4 p-10">
   <div class="prose mx-auto dark:prose-invert">
-    <h1>{convertKebabToTitle(type)}</h1>
+    <div class="flex gap-4 pb-4">
+      <h1 class="m-0">{convertKebabToTitle(type)}</h1>
+      <a
+        title="Subscribe to RSS"
+        aria-label="Subscribe to RSS"
+        target="_blank"
+        href={`${base}/blogs/feed`}
+        class="btn btn-icon flex bg-primary-500"
+      >
+        <RSS class=" text-2xl" /></a
+      >
+    </div>
     <!-- <label
       for="years"
       class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Select an option</label
