@@ -1,5 +1,6 @@
 export interface BlogMetadata {
   title: string;
+  description?: string;
   summary: string | undefined;
   date: string;
   preview: string;

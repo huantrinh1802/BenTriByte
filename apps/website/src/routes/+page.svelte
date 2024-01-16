@@ -40,7 +40,7 @@
       </div>
       <p class="font-serif">My name is Ben.</p>
       <p class="font-serif">Welcome to my page,</p>
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
         <a
           href={`${base}#intro`}
           class="variant-filled-primary btn font-serif">Introduction</a
@@ -61,7 +61,9 @@
     </div>
     <img
       class="relative mx-auto my-auto mb-auto w-full rounded-3xl object-cover sm:max-w-[400px]"
-      srcset={`${base}/images/hero.png`}
+      srcset={`${base}/images/hero.avif`}
+      height="100%"
+      width="100%"
       alt="BenTri Byte Hero"
     />
   </section>
