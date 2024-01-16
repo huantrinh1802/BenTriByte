@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { base } from '$app/paths';
+  import RSS from '~icons/foundation/rss';
   import type { PageData } from './$types';
   import { TableOfContents, popup, tocCrawler } from '@skeletonlabs/skeleton';
   // import type { PageData } from './$types';
@@ -9,7 +11,7 @@
 
 <svelte:head><title>{metadata.title}</title></svelte:head>
 
-<div class="prose relative grid p-10 dark:prose-invert md:grid-cols-[1fr_20ch]">
+<div class="prose relative grid gap-4 p-10 dark:prose-invert lg:grid-cols-[1fr_20ch]">
   <button
     type="button"
     use:popup={{ event: 'click', target: 'toc', placement: 'bottom' }}
@@ -23,8 +25,19 @@
   </div>
 
   <div class="grid gap-4">
-    <h1 class="text-center">{metadata.title}</h1>
-    <div class="flex flex-col justify-between gap-4 sm:mx-auto sm:w-[85ch] md:flex-row">
+    <div class="flex gap-4 pb-4">
+      <h1 class="m-0 text-center">{metadata.title}</h1>
+      <a
+        title="Subscribe to RSS"
+        aria-label="Subscribe to RSS"
+        target="_blank"
+        href={`${base}/blogs/feed`}
+        class="btn btn-icon flex h-10 w-10 bg-primary-500"
+      >
+        <RSS class=" text-2xl" /></a
+      >
+    </div>
+    <div class="flex flex-col justify-between gap-4 sm:mx-auto sm:w-[min(100%,80ch)] lg:flex-row">
       <div class="flex flex-wrap gap-4">
         {#each metadata.tags as tag}
           <a href={`/blogs?tag=${tag}`}>#{tag}</a>
@@ -42,7 +55,7 @@
       </div>
     </div>
   </div>
-  <div class="relative hidden md:block">
+  <div class="relative hidden lg:block">
     <TableOfContents
       class="sticky top-0"
       regionList="pl-0"

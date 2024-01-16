@@ -6,6 +6,7 @@
   import { convertKebabToTitle } from '$lib/utils/strings';
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
+  import RSS from '~icons/foundation/rss';
   export let data: PageData;
   let blogGroups: { string: { years: string[]; items: BlogMetadata[] } } | undefined = undefined;
   $: ({ blogs: blogGroups } = data);
@@ -24,7 +25,18 @@
 
 <svelte:head><title>Ben Trinh's All Blogs</title></svelte:head>
 <div class="prose p-4 dark:prose-invert md:p-10">
-  <h1>Blogs</h1>
+  <div class="flex gap-4">
+    <h1 class="m-0">Blogs</h1>
+    <a
+      title="Subscribe to RSS"
+      aria-label="Subscribe to RSS"
+      target="_blank"
+      href={`${base}/blogs/feed`}
+      class="btn btn-icon flex bg-primary-500"
+    >
+      <RSS class=" text-2xl" /></a
+    >
+  </div>
   {#if browser && $page.url.searchParams.getAll('tag').length === 0}
     {#each Object.entries(blogGroups) as [name, blogs]}
       <div>
@@ -34,7 +46,7 @@
         >
           <h2>{convertKebabToTitle(name)}</h2>
         </a>
-        <div class="grid auto-rows-auto gap-4 md:grid-cols-3">
+        <div class="grid auto-rows-auto gap-4 md:grid-cols-2 lg:grid-cols-3">
           {#each blogs.items.slice(0, 2) as blog}
             <Card
               content={blog}
@@ -46,7 +58,7 @@
       </div>
     {/each}
   {:else if filteredBlogs.length > 0}
-    <div class="grid auto-rows-auto gap-4 md:grid-cols-3">
+    <div class="grid auto-rows-auto gap-4 md:grid-cols-2 lg:grid-cols-3">
       {#each filteredBlogs as blog}
         <Card
           content={blog}
