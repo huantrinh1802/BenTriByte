@@ -1,1 +1,1 @@
-{"apps":{"website":{"src":{"routes":{"blogs":{"[type]":{"[[year]]":{},"[[year=year]]":{}}},"projects":{}}},"static":{"images":{"blogs":{}}}}}}
+{"apps":{"website":{"src":{"routes":{"blogs":{"[type]":{"[[year]]":{},"[[year=year]]":{}}},"projects":{}},"lib":{"images":{}}},"static":{"images":{"blogs":{}}}}}}
