@@ -4,8 +4,10 @@ import { HstSvelte } from '@histoire/plugin-svelte';
 import Icons from 'unplugin-icons/vite';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { purgeCss } from 'vite-plugin-tailwind-purgecss';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 export default defineConfig({
   plugins: [
+    enhancedImages(),
     sveltekit(),
     purgeCss({
       safelist: {
@@ -37,6 +39,13 @@ export default defineConfig({
   resolve: {
     alias: {
       $contents: './src/contents',
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
     },
   },
 });

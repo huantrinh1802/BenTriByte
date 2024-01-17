@@ -1,6 +1,7 @@
 <script lang="ts">
   import TypeWriter from '$lib/components/TypeWriter.svelte';
   import AboutMe from '$contents/about-me.md';
+  import HeroImage from '$lib/images/hero.avif?enhanced';
   import { base } from '$app/paths';
 
   let helloName = 'World';
@@ -18,16 +19,17 @@
   };
 </script>
 
+<svelte:window on:load={() => console.log('DOM loaded')} />
 <svelte:head><title>Ben Trinh's Homepage</title></svelte:head>
 <div
   id="sections"
-  class="w-full overflow-y-auto p-4 sm:px-10 md:snap-y md:snap-mandatory xl:h-[calc(100dvh-100px)]"
+  class="w-full gap-4 overflow-y-auto p-4 max-md:grid sm:px-10 md:snap-y md:snap-mandatory xl:h-[calc(100dvh-100px)]"
 >
   <section class="ks-hero-section hide-scrollbar grid snap-end grid-cols-1 gap-10 overflow-y-auto sm:p-4 md:h-full md:grid-cols-2 md:gap-10">
     <div class="my-auto flex flex-col gap-4">
       <div class="my-auto flex flex-col gap-4">
         <TypeWriter
-          style="text-4xl font-bold md:min-w-[50%] md:relative "
+          style="xl:text-4xl lg:text-xl text-md font-bold md:min-w-[50%] md:relative "
           words={`Hello {{${helloName}}},`}
           bind:this={typewriter}
         />
@@ -38,8 +40,8 @@
           on:input={debounce}
         />
       </div>
-      <p class="font-serif">My name is Ben.</p>
-      <p class="font-serif">Welcome to my page,</p>
+      <!-- <p class="font-serif">My name is Ben.</p>
+      <p class="font-serif">Welcome to my page,</p> -->
       <div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
         <a
           href={`${base}#intro`}
@@ -59,13 +61,14 @@
         >
       </div>
     </div>
-    <img
-      class="relative mx-auto my-auto mb-auto w-full rounded-3xl object-cover sm:max-w-[400px]"
-      srcset={`${base}/images/hero.avif`}
-      height="100%"
-      width="100%"
-      alt="BenTri Byte Hero"
-    />
+    <div class="flex items-center justify-center">
+      <enhanced:img
+        sizes="(min-width:1920px) 400px, (min-width:1080px) 400px, (min-width:768px) 240px, (max-width:768) 240px"
+        class="relative mx-auto my-auto w-full max-w-[400px] rounded-3xl object-cover max-sm:w-[240px]"
+        src={HeroImage}
+        alt="BenTri Byte Hero"
+      />
+    </div>
   </section>
   <section
     id="intro"

@@ -113,6 +113,7 @@
   {#if $drawerStore.id === 'sidebar'}
     <div class="flex flex-col gap-4 pb-4">
       <button
+        aria-label="Toggle sidebar"
         on:click={() => drawerStore.close()}
         type="button"
         class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -168,6 +169,7 @@
 </AppShell>
 <button
   type="button"
+  aria-label="Go to top"
   on:click={() => {
     const sections = document.querySelector('#sections');
     if (sections != null) {

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import RSS from '~icons/foundation/rss';
+  import TOC from '~icons/mdi/table-of-contents';
   import type { PageData } from './$types';
   import { TableOfContents, popup, tocCrawler } from '@skeletonlabs/skeleton';
   // import type { PageData } from './$types';
@@ -15,7 +16,7 @@
   <button
     type="button"
     use:popup={{ event: 'click', target: 'toc', placement: 'bottom' }}
-    class="variant-filled btn-icon absolute left-4 top-20 md:hidden">TOC</button
+    class="variant-filled btn-icon sticky left-4 top-10 md:hidden"><TOC class="text-lg" /></button
   >
   <div
     data-popup="toc"
