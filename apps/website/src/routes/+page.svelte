@@ -19,7 +19,6 @@
   };
 </script>
 
-<svelte:window on:load={() => console.log('DOM loaded')} />
 <svelte:head><title>Ben Trinh's Homepage</title></svelte:head>
 <div
   id="sections"
@@ -29,7 +28,7 @@
     <div class="my-auto flex flex-col gap-4">
       <div class="my-auto flex flex-col gap-4">
         <TypeWriter
-          style="xl:text-4xl lg:text-xl text-md font-bold md:min-w-[50%] md:relative "
+          style="xl:text-4xl lg:text-xl text-md font-bold md:min-w-[50%]"
           words={`Hello {{${helloName}}},`}
           bind:this={typewriter}
         />
