@@ -122,7 +122,7 @@
       >
         <span class="sr-only">Close main menu</span>
         <svg
-          class="h-6 w-6 dark:fill-primary-800 dark:fill-white"
+          class="h-6 w-6 dark:fill-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 512"
           ><path
