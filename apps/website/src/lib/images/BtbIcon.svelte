@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let bg: string = 'dark:bg-white bg-primary-700';
+  export let bg = 'dark:bg-white bg-primary-700';
   export let partColor = 'dark:fill-primary-700 fill-white';
 </script>
 
