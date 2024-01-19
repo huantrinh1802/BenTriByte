@@ -18,10 +18,7 @@
     use:popup={{ event: 'click', target: 'toc', placement: 'bottom' }}
     class="variant-filled btn-icon sticky left-4 top-10 md:hidden"><TOC class="text-lg" /></button
   >
-  <div
-    data-popup="toc"
-    class="max-h-[60dvh] w-max max-w-[80%] overflow-auto rounded-sm bg-surface-700 px-4 py-4"
-  >
+  <div data-popup="toc" class="max-h-[60dvh] w-max max-w-[80%] overflow-auto rounded-sm bg-surface-700 px-4 py-4">
     <TableOfContents />
   </div>
 
@@ -47,20 +44,13 @@
       <div class="ml-auto">{new Date(metadata.date).toLocaleDateString()}</div>
     </div>
     <div class="grid py-4 prose-headings:my-0">
-      <div
-        class="mx-auto w-[min(100%,80ch)]"
-        use:tocCrawler={{ mode: 'generate' }}
-      >
+      <div class="mx-auto w-[min(100%,80ch)]" use:tocCrawler={{ mode: 'generate' }}>
         <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         {@html content}
       </div>
     </div>
   </div>
   <div class="relative hidden lg:block">
-    <TableOfContents
-      class="sticky top-0"
-      regionList="pl-0"
-      regionListItem="list-disc"
-    />
+    <TableOfContents class="sticky top-0" regionList="pl-0" regionListItem="list-disc" />
   </div>
 </div>

@@ -1,7 +1,4 @@
-<script
-  context="module"
-  lang="ts"
->
+<script context="module" lang="ts">
   type ProgrammingLanguage = 'Python' | 'Rust' | 'Javascript';
   type CloudProvider = 'AWS' | 'Vercel' | 'Netlify';
   type Technology = 'IonicJS' | 'Jinja' | 'PostgreSQL';
@@ -47,16 +44,9 @@
 
 <div class="prose grid place-items-center gap-4 rounded-lg bg-primary-700 p-4 prose-headings:my-0 dark:bg-slate-700">
   <h4 class="text-center text-white">{skill}</h4>
-  <svelte:component
-    this={icons[skill]}
-    class="h-16 w-16 text-white"
-  />
+  <svelte:component this={icons[skill]} class="h-16 w-16 text-white" />
   {#if onClick != null}
-    <button
-      class="btn"
-      title={`More about my ${skill} experience`}
-      on:click={() => onClick(skill)}
-    >
+    <button class="btn" title={`More about my ${skill} experience`} on:click={() => onClick(skill)}>
       <MoreUp class="h-10 w-10 text-white" />
     </button>
   {/if}

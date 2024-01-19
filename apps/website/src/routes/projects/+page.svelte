@@ -10,17 +10,10 @@
       <h2 class="text-center">{repo.name}</h2>
       <div>{repo.description}</div>
       <div>
-        <a
-          target="_blank"
-          href={repo.homepageUrl}
-          class="btn">Visit the page</a
-        >
+        <a target="_blank" href={repo.homepageUrl} class="btn">Visit the page</a>
       </div>
       {#each repo.languages.nodes as language}
-        <div
-          class="language-wrapper"
-          style={`--backgroundColor: ${language.color}`}
-        >
+        <div class="language-wrapper" style={`--backgroundColor: ${language.color}`}>
           <p class="language">{language.name}</p>
         </div>
       {/each}

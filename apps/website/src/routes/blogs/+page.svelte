@@ -40,10 +40,7 @@
   {#if browser && $page.url.searchParams.getAll('tag').length === 0}
     {#each Object.entries(blogGroups) as [name, blogs]}
       <div>
-        <a
-          aria-label={`View more ${convertKebabToTitle(name)} blogs`}
-          href={`${base}/blogs/${name}`}
-        >
+        <a aria-label={`View more ${convertKebabToTitle(name)} blogs`} href={`${base}/blogs/${name}`}>
           <h2>{convertKebabToTitle(name)}</h2>
         </a>
         <div class="grid auto-rows-auto gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -70,10 +67,7 @@
   {:else}
     <div>
       <p>There is no blogs for current filters</p>
-      <a
-        href={`${base}/blogs`}
-        aria-label="Go back to blogs">Go back</a
-      >
+      <a href={`${base}/blogs`} aria-label="Go back to blogs">Go back</a>
     </div>
   {/if}
 </div>

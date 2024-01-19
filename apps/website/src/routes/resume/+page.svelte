@@ -101,7 +101,9 @@
       style={`background-image: url('${base}/images/hero_no_filter.png')`}
       class="kcp-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-primary-500 p-8 print:h-40 print:w-40"
     />
-    <div class="z-0 -mt-8 flex h-40 w-full items-center justify-center rounded-md bg-primary-500 print:-ml-10 print:mt-0 print:h-32 md:-ml-10 md:mt-0">
+    <div
+      class="z-0 -mt-8 flex h-40 w-full items-center justify-center rounded-md bg-primary-500 print:-ml-10 print:mt-0 print:h-32 md:-ml-10 md:mt-0"
+    >
       <div>
         <h1 class="text-white print:!text-lg">Cong Anh Huan Trinh</h1>
         <h2 class="text-white print:!text-base">Software Engineer</h2>
@@ -118,10 +120,7 @@
               class="!text-primary-900-50-token flex items-center gap-2 break-all print:!text-xs print:!text-teal-900"
               href={contact.href}
             >
-              <svelte:component
-                this={contact.icon}
-                class="text-2xl print:!text-sm"
-              />
+              <svelte:component this={contact.icon} class="text-2xl print:!text-sm" />
               <p class="print:!text-xs">{contact.text}</p>
             </a>
           {/each}
@@ -133,10 +132,7 @@
         <svelte:fragment slot="summary">Skills</svelte:fragment>
         <svelte:fragment slot="content">
           {#each skills as skill}
-            <ProgressBar
-              title={skill.title}
-              percentage={skill.percentage}
-            />
+            <ProgressBar title={skill.title} percentage={skill.percentage} />
           {/each}
         </svelte:fragment>
       </AccordionItem>
@@ -146,10 +142,7 @@
         <svelte:fragment slot="summary">Languages</svelte:fragment>
         <svelte:fragment slot="content">
           {#each languages as language}
-            <ProgressBar
-              title={language.title}
-              percentage={language.percentage}
-            />
+            <ProgressBar title={language.title} percentage={language.percentage} />
           {/each}
         </svelte:fragment>
       </AccordionItem>
@@ -161,10 +154,7 @@
           class="flex items-center gap-2 break-all !text-white print:!text-xs print:!text-teal-900"
           href={contact.href}
         >
-          <svelte:component
-            this={contact.icon}
-            class="text-2xl print:!text-sm"
-          />
+          <svelte:component this={contact.icon} class="text-2xl print:!text-sm" />
           <p class="print:!text-xs">{contact.text}</p>
         </a>
       {/each}
@@ -174,10 +164,7 @@
       <h2 class="text-center print:!text-lg print:text-black">Skills</h2>
       <div>
         {#each skills as skill}
-          <ProgressBar
-            title={skill.title}
-            percentage={skill.percentage}
-          />
+          <ProgressBar title={skill.title} percentage={skill.percentage} />
         {/each}
       </div>
     </div>
@@ -185,10 +172,7 @@
       <h2 class="text-center print:!text-lg print:text-black">Languages</h2>
       <div>
         {#each languages as language}
-          <ProgressBar
-            title={language.title}
-            percentage={language.percentage}
-          />
+          <ProgressBar title={language.title} percentage={language.percentage} />
         {/each}
       </div>
     </div>

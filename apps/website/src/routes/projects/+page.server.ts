@@ -36,6 +36,11 @@ export const load = (async () => {
       }
     }
   `;
-  const repositories: { viewer: { repositories: { nodes: Repository[] } } } = await request('https://api.github.com/graphql', document, null, { Authorization: `Bearer ${GITHUB_TOKEN}` });
+  const repositories: { viewer: { repositories: { nodes: Repository[] } } } = await request(
+    'https://api.github.com/graphql',
+    document,
+    null,
+    { Authorization: `Bearer ${GITHUB_TOKEN}` }
+  );
   return { repositories: repositories.viewer.repositories.nodes };
 }) satisfies PageServerData;

@@ -121,10 +121,7 @@
         aria-expanded="false"
       >
         <span class="sr-only">Close main menu</span>
-        <svg
-          class="h-6 w-6 dark:fill-white"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 320 512"
+        <svg class="h-6 w-6 dark:fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
           ><path
             d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"
           /></svg
@@ -134,10 +131,7 @@
     </div>
   {/if}
 </Drawer>
-<AppShell
-  slotPageContent="print:bg-white"
-  scrollbarGutter="stable"
->
+<AppShell slotPageContent="print:bg-white" scrollbarGutter="stable">
   <svelte:fragment slot="header">
     <div class="print:hidden md:hidden">
       <Header {menuItems} />
@@ -145,12 +139,8 @@
   </svelte:fragment>
   <svelte:fragment slot="sidebarLeft">
     <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 print:!hidden md:flex">
-      <a
-        class="flex items-center gap-4 bg-transparent"
-        aria-label="Home"
-        href={`${base}/`}
-      >
-        <BtbIcon />
+      <a class="flex flex-col items-center gap-2 bg-transparent" aria-label="Home" href={`${base}/`}>
+        <BtbIcon bg="bg-transparency px-2 h-16 w-16" partColor="dark:fill-white fill-primary-800" />
         <p style="font-family: 'Santanelli';">BenTri Byte</p>
       </a>
       <Navigation {menuItems} />
