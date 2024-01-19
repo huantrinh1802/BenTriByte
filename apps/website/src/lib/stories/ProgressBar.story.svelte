@@ -5,8 +5,5 @@
 </script>
 
 <Hst.Story>
-  <ProgressBar
-    percentage={50}
-    title="Python"
-  />
+  <ProgressBar percentage={50} title="Python" />
 </Hst.Story>

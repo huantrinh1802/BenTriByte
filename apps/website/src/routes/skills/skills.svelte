@@ -161,11 +161,7 @@
             <div class="row-span-2 grid grid-cols-2 grid-rows-subgrid gap-4 lg:grid-cols-3 xl:grid-cols-4">
               {#if skillGroup.items != null}
                 {#each skillGroup.items as content}
-                  <SkillBanner
-                    onClick={handleShowContent}
-                    percentage={content.percentage}
-                    skill={content.skill}
-                  />
+                  <SkillBanner onClick={handleShowContent} percentage={content.percentage} skill={content.skill} />
                 {/each}
               {/if}
             </div>
@@ -189,10 +185,7 @@
 >
   <div class="grid gap-2 p-4">
     <div class="flex items-center">
-      <button
-        class="ml-auto mr-2"
-        on:click={dialog.close()}><Close /></button
-      >
+      <button class="ml-auto mr-2" on:click={dialog.close()}><Close /></button>
     </div>
     {#each [...pro_lang_contents, ...pro_clouds_contents, ...pro_tech_contents, ...casual_lang_contents, ...casual_tech_contents] as content}
       {#if currentContent === content.skill}

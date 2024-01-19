@@ -1,7 +1,10 @@
 import type { LayoutServerData } from './$types';
 import { type BlogMetadata } from '$lib/types/blog';
 export const load = (async () => {
-  const modules: Record<string, { metadata: BlogMetadata; content: object }> = await import.meta.glob('$contents/blogs/**/*.svx', { eager: true });
+  const modules: Record<string, { metadata: BlogMetadata; content: object }> = await import.meta.glob(
+    '$contents/blogs/**/*.svx',
+    { eager: true }
+  );
   let blogs = {};
   for (const modulePath in modules) {
     const paths = modulePath.split('/');

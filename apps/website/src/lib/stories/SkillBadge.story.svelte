@@ -9,13 +9,7 @@
 
 <Hst.Story>
   <Hst.Variant title="Python">
-    <Hst.Slider
-      bind:value={percentage}
-      step={5}
-      min={5}
-      max={100}
-      title="Percentage"
-    />
+    <Hst.Slider bind:value={percentage} step={5} min={5} max={100} title="Percentage" />
     <div class="h-20 w-20">
       <SkillBadge {percentage}>
         <Python slot="logo" />
@@ -25,10 +19,7 @@
   </Hst.Variant>
   <Hst.Variant title="AWS">
     <svelte:fragment slot="controls">
-      Content: <input
-        type="number"
-        bind:value={percentage}
-      />
+      Content: <input type="number" bind:value={percentage} />
     </svelte:fragment>
     <div class="mx-auto h-1/2 w-1/2">
       <SkillBadge {percentage}>
