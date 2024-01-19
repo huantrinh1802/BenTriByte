@@ -10,5 +10,5 @@ export const load = (async ({ params }) => {
   } catch {
     redirect(301, `${base}/blogs/${params.type}`);
   }
-  return { content: blog.default.render().html, metadata: blog.metadata as BlogMetadata};
+  return { content: blog.default.render().html, metadata: blog.metadata as BlogMetadata };
 }) satisfies PageServerLoad;
