@@ -19,7 +19,10 @@
   };
 </script>
 
-<svelte:head><title>Ben Trinh's Homepage</title></svelte:head>
+<svelte:head>
+  <title>Ben Trinh's Homepage</title>
+  <meta name="description" content="Explore the limitless world of technology and programming with BenTriByte. Uncover insightful articles, tutorials, and cutting-edge insights on coding, development trends, and emerging technologies. Stay ahead in the fast-paced tech landscape with our expert-guided content."/>
+</svelte:head>
 <div
   id="sections"
   class="w-full gap-4 overflow-y-auto p-4 max-md:grid sm:px-10 md:snap-y md:snap-mandatory xl:h-[calc(100dvh-100px)]"
@@ -38,14 +41,14 @@
           placeholder="Your name"
           maxlength="24"
           class={`${
-            helloName.length > 12 ? 'w-64' : 'w-40'
-          } focus:shadow-outline appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none`}
+            helloName.length > 12 ? 'w-64' : 'w-44'
+          } h-12 focus:shadow-outline appearance-none rounded-md border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none`}
           on:input={debounce}
         />
       </div>
       <!-- <p class="font-serif">My name is Ben.</p>
       <p class="font-serif">Welcome to my page,</p> -->
-      <div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
+      <div class="grid grid-cols-2 gap-4 xl:grid-cols-3">
         <a href={`${base}#intro`} class="variant-filled-primary btn font-serif">Introduction</a>
         <a href={`${base}/skills`} class="variant-filled-primary btn font-serif">Skills</a>
         <a href={`${base}/resume`} class="variant-filled-primary btn font-serif">Resume</a>

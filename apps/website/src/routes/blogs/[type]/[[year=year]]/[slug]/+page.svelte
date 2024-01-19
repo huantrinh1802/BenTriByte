@@ -4,13 +4,15 @@
   import TOC from '~icons/mdi/table-of-contents';
   import type { PageData } from './$types';
   import { TableOfContents, popup, tocCrawler } from '@skeletonlabs/skeleton';
-  // import type { PageData } from './$types';
 
   export let data: PageData;
   $: ({ content, metadata } = data);
 </script>
 
-<svelte:head><title>{metadata.title}</title></svelte:head>
+<svelte:head>
+  <title>{metadata.title}</title>
+  <meta name="description" content={metadata.description}/>
+</svelte:head>
 
 <div class="prose relative grid gap-4 p-10 dark:prose-invert lg:grid-cols-[1fr_20ch]">
   <button
