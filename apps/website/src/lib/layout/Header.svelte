@@ -17,7 +17,7 @@
         </svg>
       </span>
     </button>
-    <a class="flex items-center gap-4 h-12" aria-label="Home" href={`${base}/`}>
+    <a class="flex h-12 items-center gap-4" aria-label="Home" href={`${base}/`}>
       <BtbIcon bg="h-10 w-10" partColor="fill-white" />
       <p style="font-family: 'Santanelli';">BenTri Byte</p>
     </a>

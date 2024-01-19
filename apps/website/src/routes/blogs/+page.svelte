@@ -25,7 +25,7 @@
 
 <svelte:head>
   <title>Ben Trinh's All Blogs</title>
-  <meta name="description" content="A wall of Ben Trinh's blogs"/>
+  <meta name="description" content="A wall of Ben Trinh's blogs" />
 </svelte:head>
 <div class="prose p-4 dark:prose-invert md:p-10">
   <div class="flex gap-4">

@@ -25,10 +25,9 @@
   );
 </script>
 
-
 <svelte:head>
   <title>{convertKebabToTitle(type)} - {year}</title>
-  <meta name="description" content={`All the blogs about ${convertKebabToTitle(type)} in ${year}`}/>
+  <meta name="description" content={`All the blogs about ${convertKebabToTitle(type)} in ${year}`} />
 </svelte:head>
 <div class="flex flex-col gap-4 p-10">
   <div class="prose mx-auto dark:prose-invert">

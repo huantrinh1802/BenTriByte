@@ -11,7 +11,7 @@
 
 <svelte:head>
   <title>{metadata.title}</title>
-  <meta name="description" content={metadata.description}/>
+  <meta name="description" content={metadata.description} />
 </svelte:head>
 
 <div class="prose relative grid gap-4 p-10 dark:prose-invert lg:grid-cols-[1fr_20ch]">

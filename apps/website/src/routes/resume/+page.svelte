@@ -96,7 +96,7 @@
 
 <svelte:head>
   <title>Ben Trinh's Resume</title>
-  <meta name="description" content="Summary of Ben Trinh's professional career."/>
+  <meta name="description" content="Summary of Ben Trinh's professional career." />
 </svelte:head>
 <div class="kcp-layout overflow-over flex flex-col print:grid md:grid">
   <div class="kcp-profile flex flex-col items-center print:break-after-avoid print:flex-row md:flex-row">
