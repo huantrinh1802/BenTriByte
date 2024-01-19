@@ -91,7 +91,10 @@
   }
 </script>
 
-<svelte:head><title>Ben Trinh's skills</title></svelte:head>
+<svelte:head>
+  <title>Ben Trinh's Skills</title>
+  <meta name="description" content="Summary of Ben Trinh's programming skills."/>
+</svelte:head>
 <section class="ks-section">
   <div class="prose gap-4 px-4 py-6 dark:prose-invert prose-headings:my-2 prose-p:my-0 sm:px-10">
     <h2>My Skills</h2>
