@@ -21,7 +21,10 @@
 
 <svelte:head>
   <title>Ben Trinh's Homepage</title>
-  <meta name="description" content="Explore the limitless world of technology and programming with BenTriByte. Uncover insightful articles, tutorials, and cutting-edge insights on coding, development trends, and emerging technologies. Stay ahead in the fast-paced tech landscape with our expert-guided content."/>
+  <meta
+    name="description"
+    content="Explore the limitless world of technology and programming with BenTriByte. Uncover insightful articles, tutorials, and cutting-edge insights on coding, development trends, and emerging technologies. Stay ahead in the fast-paced tech landscape with our expert-guided content."
+  />
 </svelte:head>
 <div
   id="sections"
@@ -42,7 +45,7 @@
           maxlength="24"
           class={`${
             helloName.length > 12 ? 'w-64' : 'w-44'
-          } h-12 focus:shadow-outline appearance-none rounded-md border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none`}
+          } focus:shadow-outline h-12 appearance-none rounded-md border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none`}
           on:input={debounce}
         />
       </div>
