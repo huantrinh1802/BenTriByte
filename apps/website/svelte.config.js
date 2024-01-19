@@ -1,9 +1,13 @@
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.js';
-import preprocess from 'svelte-preprocess';
+import sveltePreprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import path from 'path';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const dev = process.argv.includes('dev');
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,11 +16,10 @@ const config = {
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
   preprocess: [
-    preprocess({
-      defaults: {
-        style: 'postcss',
+    sveltePreprocess({
+      postcss: {
+        configFilePath: join(__dirname, 'postcss.config.cjs'),
       },
-      postcss: true,
     }),
     vitePreprocess(),
     mdsvex(mdsvexConfig),
