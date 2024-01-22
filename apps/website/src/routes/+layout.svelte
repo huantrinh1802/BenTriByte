@@ -81,9 +81,9 @@
       // href: `${base}/skills`,
       subItems: [
         { name: 'Me', id: 'intro', href: `${base}/#intro` },
-        { name: 'My Skills', id: 'skills', href: `${base}/skills` },
+        { name: 'Skills', id: 'skills', href: `${base}/skills` },
         // { name: 'My Projects', id: 'projects', href: `${base}/projects` },
-        { name: 'My Resume', id: 'resume', href: `${base}/resume` },
+        { name: 'Resume', id: 'resume', href: `${base}/resume` },
       ],
     },
     {
