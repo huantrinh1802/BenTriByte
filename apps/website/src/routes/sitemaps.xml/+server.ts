@@ -30,7 +30,9 @@ export const GET = (async () => {
     const year = paths.at(-2);
     const type = paths.at(-3);
     const file: { metadata: BlogMetadata; content: object } = modules[modulePath];
-    urls.push(generate_url(`${PUBLIC_SITE_URL}/${type}/${year}/${slug}`, new Date(file.metadata.date).toISOString()));
+    urls.push(
+      generate_url(`${PUBLIC_SITE_URL}/blogs/${type}/${year}/${slug}`, new Date(file.metadata.date).toISOString())
+    );
   }
   return new Response(
     `<?xml version="1.0" encoding="UTF-8" ?>
