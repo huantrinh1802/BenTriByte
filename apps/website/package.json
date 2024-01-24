@@ -17,7 +17,7 @@
   "devDependencies": {
     "@floating-ui/dom": "^1.5.3",
     "@histoire/plugin-svelte": "^0.17.6",
-    "@iconify/json": "^2.2.118",
+    "@iconify/json": "^2.2.172",
     "@skeletonlabs/skeleton": "2.6.1",
     "@skeletonlabs/tw-plugin": "^0.3.0",
     "@sveltejs/adapter-auto": "^3.0.0",
@@ -54,7 +54,7 @@
     "tailwindcss": "^3.4.0",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "unplugin-icons": "^0.15.3",
+    "unplugin-icons": "^0.18.2",
     "vite": "^5.0.12",
     "vite-plugin-image-optimizer": "^1.1.7",
     "vite-plugin-tailwind-purgecss": "^0.2.0"

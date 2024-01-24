@@ -9,7 +9,7 @@
   import { afterNavigate, onNavigate } from '$app/navigation';
   import Top from '~icons/mdi/arrow-top';
   import BtbIcon from '$lib/images/BtbIcon.svelte';
-  import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+  import { computePosition, autoUpdate, offset, shift, flip, arrow, hide } from '@floating-ui/dom';
   import { storePopup, initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
 
   import hljs from 'highlight.js/lib/core';
@@ -54,7 +54,7 @@
   hljs.registerLanguage('python', python);
   storeHighlightJs.set(hljs);
   initializeStores();
-  storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+  storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow, hide });
   const drawerStore = getDrawerStore();
   const callback = function (entries) {
     entries.forEach((entry) => {
