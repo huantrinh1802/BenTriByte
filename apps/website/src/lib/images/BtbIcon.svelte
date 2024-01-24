@@ -5,6 +5,7 @@
 
 <div class={`flex items-center justify-center rounded-2xl ${bg}`}>
   <svg
+    class="h-full w-full"
     viewBox="0 0 135.46667 135.46667"
     version="1.1"
     id="svg1"
