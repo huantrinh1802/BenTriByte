@@ -7,6 +7,7 @@
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
   import RSS from '~icons/foundation/rss';
+  import RssFeed from '$lib/components/RssFeed.svelte';
   export let data: PageData;
   let blogGroups: { string: { years: string[]; items: BlogMetadata[] } } | undefined = undefined;
   $: ({ blogs: blogGroups } = data);
@@ -27,18 +28,10 @@
   <title>Ben Trinh's All Blogs</title>
   <meta name="description" content="A wall of Ben Trinh's blogs" />
 </svelte:head>
-<div class="prose p-4 dark:prose-invert md:p-10">
+<div class="prose grid gap-4 p-4 dark:prose-invert md:p-10">
   <div class="flex gap-4">
     <h1 class="m-0">Blogs</h1>
-    <a
-      title="Subscribe to RSS"
-      aria-label="Subscribe to RSS"
-      target="_blank"
-      href={`${base}/blogs/feed`}
-      class="btn btn-icon flex bg-primary-500"
-    >
-      <RSS class=" text-2xl" /></a
-    >
+    <RssFeed />
   </div>
   {#if browser && $page.url.searchParams.getAll('tag').length === 0}
     {#each Object.entries(blogGroups) as [name, blogs]}
