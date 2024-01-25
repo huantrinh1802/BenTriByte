@@ -183,7 +183,7 @@
     grid-area: summary;
   }
   @media print {
-    :global(p, span) {
+    p {
       font-size: 12px;
       line-height: 16px;
     }
