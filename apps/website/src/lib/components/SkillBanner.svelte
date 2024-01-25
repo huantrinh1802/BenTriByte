@@ -4,7 +4,7 @@
   type Technology = 'IonicJS' | 'Jinja' | 'PostgreSQL';
   type Framework = 'SvelteJS' | 'VueJS' | 'ReactJS';
 
-  export type Skill = ProgrammingLanguage | CloudProvider | Framework | Technology;
+  export type Skill = ProgrammingLanguage | CloudProvider | Framework | Technology | string;
 </script>
 
 <script lang="ts">
