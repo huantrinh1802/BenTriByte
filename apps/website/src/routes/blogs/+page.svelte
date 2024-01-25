@@ -6,7 +6,6 @@
   import { convertKebabToTitle } from '$lib/utils/strings';
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
-  import RSS from '~icons/foundation/rss';
   import RssFeed from '$lib/components/RssFeed.svelte';
   export let data: PageData;
   let blogGroups: { string: { years: string[]; items: BlogMetadata[] } } | undefined = undefined;

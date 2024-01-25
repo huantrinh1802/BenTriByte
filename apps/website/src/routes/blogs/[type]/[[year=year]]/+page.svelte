@@ -5,7 +5,6 @@
   import Card from '$lib/components/Card.svelte';
   import { convertKebabToTitle } from '$lib/utils/strings';
   import { goto } from '$app/navigation';
-  import RSS from '~icons/foundation/rss';
   import RssFeed from '$lib/components/RssFeed.svelte';
   export let data: PageData;
   $: ({ blogs, type, year, years } = data);
