@@ -28,7 +28,7 @@
   <title>Ben Trinh's All Blogs</title>
   <meta name="description" content="A wall of Ben Trinh's blogs" />
 </svelte:head>
-<div class="prose grid gap-4 p-4 dark:prose-invert md:p-10">
+<div class="grid gap-4 p-4 md:p-10">
   <div class="flex gap-4">
     <h1 class="m-0">Blogs</h1>
     <RssFeed />
@@ -39,7 +39,7 @@
         <a aria-label={`View more ${convertKebabToTitle(name)} blogs`} href={`${base}/blogs/${name}`}>
           <h2>{convertKebabToTitle(name)}</h2>
         </a>
-        <div class="grid auto-rows-auto gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid auto-rows-auto gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {#each blogs.items.slice(0, 2) as blog}
             <Card
               content={blog}
@@ -51,7 +51,7 @@
       </div>
     {/each}
   {:else if filteredBlogs.length > 0}
-    <div class="grid auto-rows-auto gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid auto-rows-auto gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       {#each filteredBlogs as blog}
         <Card
           content={blog}

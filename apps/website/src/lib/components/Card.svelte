@@ -39,7 +39,7 @@
     <h4 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
       <a href={`${baseUrl}/${content?.slug}`}>{content?.title}</a>
     </h4>
-    <p class="text-primary-700-200-token font-light">{content?.summary}</p>
+    <!-- <p class="text-primary-700-200-token font-light">{content?.summary}</p> -->
     <!-- </div> -->
   </div>
   <div class="flex items-center">
