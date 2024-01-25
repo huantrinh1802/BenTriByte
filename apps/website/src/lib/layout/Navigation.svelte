@@ -17,7 +17,7 @@
       >
     {:else}
       <Accordion>
-        <AccordionItem padding="py-2 pl-2" regionCaret="!mx-4" hover="highlight">
+        <AccordionItem padding="py-2 pl-4" regionCaret="!mx-4" hover="highlight">
           <svelte:fragment slot="summary">{item.name}</svelte:fragment>
           <svelte:fragment slot="content">
             <div class="grid divide-black rounded-l-2xl dark:divide-white">
