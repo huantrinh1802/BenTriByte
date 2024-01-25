@@ -1,0 +1,264 @@
+{
+  "profile": {
+    "name": "Ben Trinh",
+    "fullName": "Cong Anh Huan Trinh",
+    "job": "Software Engineer",
+    "image": "images/hero_no_filter.avif"
+  },
+  "contacts": [
+    {
+      "href": "mailto:huantrinh1802@gmail.com",
+      "type": "email",
+      "text": "huantrinh1802@gmail.com",
+      "printText": "huantrinh1802@gmail.com"
+    },
+    { "href": "https://www.github.com/huantrinh1802", "type": "github", "text": "gh/huantrinh1802" },
+    { "href": "https://www.linkedin.com/in/huantrinh1802", "type": "linkedin", "text": "in/huantrinh1802" }
+  ],
+  "experiences": [
+    {
+      "title": "Full-stack Software Developer",
+      "subtitle": "Data Analytics Holdings (FA as Fonto)",
+      "timeline": "12/2021 - Present",
+      "location": "Lavender Bay NSW, Australia",
+      "summary": "At Fonto, I work primarily as Full-stack software developer, but I am also required to perform tasks in the IT department. I daily work with the CTO and PTO to develop and test high quality and secure code to all the projects.",
+      "tasks": [
+        "Maintaining and developing new features for hybrid applications using Python, PostgreSQL, GraphQL, Ionic and VueJS",
+        "Maintaining 3rd parties\"APIs including but not limited banking, survey panel and survey scripting",
+        "Using Figma to transfer the designs into the applications",
+        "Maintaining the company\"s websites using WordPress",
+        "Developing an internal application using Flask, Starlette, Jinja2 and PostgreSQL",
+        "Using AWS services - including but not limited to Elastic Beanstalk, ECS, S3, Lambda functions",
+        "Collaborating with teammates across departments using Bitbucket, Jira and Confluence",
+        "Analyse and evaluate system program needs, maintain technical program, end user documentation and operational procedures"
+      ]
+    },
+    {
+      "title": "Lead Software Developer",
+      "subtitle": "PIT-M3D Pty Ltd",
+      "timeline": "08/2019 - 11/2021",
+      "location": "Double Bay NSW, Australia",
+      "summary": "During the time at PIT-M3D, I managed a diverse software development team of 8 Python developers, front-end developers, data engineers and data scientists. Alongside other duties, I was responsible for hiring, managing, planning, structuring, the timely delivery, and the documentation of all development-related activities of our team, which focused on the development of transparent diagnostic decision-making tools.",
+      "tasks": [
+        "Designed and implemented scalable solutions for data extraction, analysis, retrieval and indexing",
+        "Prepared detailed reports on updates to project specifications, progress, identified conflicts and team activities",
+        "Revised, modulated and updated old code bases to modern development standards, reducing operating costs and improving functionality",
+        "Reviewed requirements, specifications and technical design documents to provide timely and meaningful feedback"
+      ]
+    },
+    {
+      "title": "Barista",
+      "subtitle": "Motown Coffee Brewer",
+      "timeline": "08/2019 - 11/2021",
+      "location": "Sydney NSW, Australia",
+      "summary": "The part-time job as Barista during my IT studies at Macquarie University taught me valuable socialising and customer-relationship skills, and further taught me how to self-manage resources and time. To this day, I value a good coffee.",
+      "tasks": [
+        "Educated co-workers and customers about new products and best practices",
+        "Prioritized drink requests while managing interruptions",
+        "Educated staff by sharing knowledge and expertise of coffees, teas and merchandise",
+        "Constantly expanded personal knowledge about coffee varieties"
+      ]
+    }
+  ],
+  "educations": [
+    {
+      "title": "Bachelor of Information Technology (Software Development) - Macquarie University",
+      "timeline": "03/2015 - 06/2021",
+      "location": "North Ryde NSW, Australia"
+    },
+    {
+      "title": "HSC - Fairvale High School",
+      "timeline": "09/2012 - 11/2014",
+      "location": "Fairfield NSW, Australia"
+    }
+  ],
+  "oldSkills": {
+    "pro": {
+      "title": "Professional Skills",
+      "items": {
+        "languages": {
+          "title": "Programming Languages",
+          "items": [
+            {
+              "percentage": 90,
+              "title": "Python",
+              "contents": ["Using professionally", "Using professionally"]
+            },
+            {
+              "percentage": 75,
+              "title": "Javascript",
+              "contents": ["Using professionally", ""]
+            }
+          ]
+        },
+        "techs": {
+          "title": "Technologies/Frameworks",
+          "items": [
+            {
+              "percentage": 80,
+              "title": "VueJS",
+              "contents": ["Using professionally", "Using professionally"]
+            },
+            {
+              "percentage": 80,
+              "title": "IonicJS",
+              "contents": ["Using professionally", "Using professionally"]
+            },
+            {
+              "percentage": 80,
+              "title": "PostgreSQL",
+              "contents": ["Using professionally", "Using professionally"]
+            },
+            {
+              "percentage": 80,
+              "title": "Jinja",
+              "contents": ["Using professionally", "Using professionally"]
+            }
+          ]
+        },
+        "clouds": {
+          "title": "Clouds/Platforms",
+          "items": [
+            {
+              "percentage": 80,
+              "title": "AWS",
+              "contents": ["Using professionally", "Using professionally"]
+            }
+          ]
+        }
+      }
+    },
+    "casual": {
+      "title": "Professional Skills",
+      "items": {
+        "languages": {
+          "title": "Programming Languages",
+          "items": [
+            {
+              "percentage": 25,
+              "title": "Rust",
+              "contents": ["Using professionally", "Using professionally"]
+            }
+          ]
+        },
+        "techs": {
+          "title": "Technologies/Frameworks",
+          "items": [
+            {
+              "percentage": 80,
+              "title": "SvelteJS",
+              "contents": ["<strong>Using</strong> professionally", "Using professionally"]
+            },
+            {
+              "percentage": 45,
+              "title": "ReactJS",
+              "contents": ["Using professionally", "Using professionally"]
+            }
+          ]
+        },
+        "clouds": {
+          "title": "Clouds/Platforms",
+          "items": [
+            {
+              "percentage": 80,
+              "title": "Vercel",
+              "contents": ["Using professionally", "Using professionally"]
+            },
+            {
+              "percentage": 80,
+              "title": "Netlify",
+              "contents": ["Using professionally", "Using professionally"]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "skills": {
+    "languages": {
+      "title": "Programming Languages",
+      "professional": [
+        {
+          "percentage": 90,
+          "title": "Python",
+          "contents": ["Using professionally", "Using professionally"]
+        },
+        {
+          "percentage": 75,
+          "title": "Javascript",
+          "contents": ["Using professionally", ""]
+        }
+      ],
+      "casual": [
+        {
+          "percentage": 25,
+          "title": "Rust",
+          "contents": ["Using professionally", "Using professionally"]
+        }
+      ]
+    },
+    "techs": {
+      "title": "Technologies - Frameworks",
+      "professional": [
+        {
+          "percentage": 80,
+          "title": "VueJS",
+          "contents": ["Using professionally", "Using professionally"]
+        },
+        {
+          "percentage": 80,
+          "title": "IonicJS",
+          "contents": ["Using professionally", "Using professionally"]
+        },
+        {
+          "percentage": 80,
+          "title": "PostgreSQL",
+          "contents": ["Using professionally", "Using professionally"]
+        },
+        {
+          "percentage": 80,
+          "title": "Jinja",
+          "contents": ["Using professionally", "Using professionally"]
+        }
+      ],
+      "casual": [
+        {
+          "percentage": 80,
+          "title": "SvelteJS",
+          "contents": ["<strong>Using</strong> professionally", "Using professionally"]
+        },
+        {
+          "percentage": 45,
+          "title": "ReactJS",
+          "contents": ["Using professionally", "Using professionally"]
+        }
+      ]
+    },
+    "clouds": {
+      "title": "Clouds - Platforms",
+      "professional": [
+        {
+          "percentage": 80,
+          "title": "AWS",
+          "contents": ["Using professionally", "Using professionally"]
+        }
+      ],
+      "casual": [
+        {
+          "percentage": 70,
+          "title": "Vercel",
+          "contents": ["Using professionally", "Using professionally"]
+        },
+        {
+          "percentage": 80,
+          "title": "Netlify",
+          "contents": ["Using professionally", "Using professionally"]
+        }
+      ]
+    }
+  },
+  "languages": [
+    { "title": "Vietnamese", "percentage": 95 },
+    { "title": "English", "percentage": 85 }
+  ]
+}
