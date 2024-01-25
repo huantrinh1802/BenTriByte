@@ -2,6 +2,7 @@
   import RSS from '~icons/foundation/rss';
   import { PUBLIC_SITE_URL } from '$env/static/public';
   import { popup, type PopupSettings } from '@skeletonlabs/skeleton';
+  export let style: string = '';
   let trigger: HTMLButtonElement;
   const popupClick: PopupSettings = {
     event: 'click',
@@ -27,7 +28,7 @@
   on:click={async () => {
     navigator.clipboard.writeText(`${PUBLIC_SITE_URL}/blogs/feed`);
   }}
-  class="btn btn-icon flex h-10 w-10 bg-primary-500"
+  class={`btn btn-icon h-10 w-10 bg-primary-500 ${style}`}
   use:popup={popupClick}
 >
   <RSS class="text-2xl text-white" />

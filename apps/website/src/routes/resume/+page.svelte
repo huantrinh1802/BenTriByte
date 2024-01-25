@@ -29,7 +29,7 @@
   <div class="kcp-profile flex flex-col items-center print:break-after-avoid print:flex-row lg:flex-row">
     <div
       style={`background-image: url('${base}/images/hero_no_filter.avif')`}
-      class="kcp-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-surface-200 bg-primary-500 p-8 print:h-40 print:w-40 dark:border-surface-900"
+      class="kcp-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-surface-200 bg-primary-500 p-8 print:h-40 print:w-40 print:!border-white dark:border-surface-900"
     />
     <div
       class="z-0 -mt-8 flex h-40 w-full items-center justify-center rounded-md bg-primary-500 print:-ml-10 print:mt-0 print:h-32 lg:-ml-10 lg:mt-0"
