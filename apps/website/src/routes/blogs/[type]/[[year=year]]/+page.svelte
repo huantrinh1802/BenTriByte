@@ -50,7 +50,7 @@
       {/each}
     </select>
   </div>
-  <div class="grid-col-1 grid grid-flow-dense gap-10 md:grid-cols-2 lg:mx-auto lg:grid-cols-3">
+  <div class="grid-col-1 grid grid-flow-dense gap-10 md:grid-cols-2 lg:mx-auto xl:grid-cols-3 2xl:grid-cols-4">
     {#each paginatedBlogs as item}
       <Card
         content={item}
