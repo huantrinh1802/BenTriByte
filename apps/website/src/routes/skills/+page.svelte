@@ -10,17 +10,16 @@
   let dialog;
   let currentContent = 'Python';
   type Resume = {
-    profile: any;
-    contacts: any;
+    profile: object;
+    contacts: object;
     skills: { [key: string]: { title: string; professional: Content[]; casual: Content[] } };
-    experiences: any;
-    educations: any;
-    languages: any;
-    oldSkills: any;
+    experiences: object;
+    educations: object;
+    languages: object;
   };
   const { skills }: Resume = resume;
   let displayContents = [];
-  Object.entries(skills).forEach(([_, skillSet]) => {
+  Object.values(skills).forEach((skillSet) => {
     skillSet.professional.map((item) => {
       displayContents.push(item);
     });
@@ -42,7 +41,7 @@
   <div class="prose gap-4 px-4 py-6 dark:prose-invert prose-headings:my-2 prose-p:my-0 sm:px-10">
     <h2>My Skills</h2>
     <div class="grid gap-2">
-      {#each Object.entries(skills) as [_, skillSet], index}
+      {#each Object.values(skills) as skillSet, index}
         <h3>{skillSet.title}</h3>
         <div class="bg grid divide-y divide-surface-600 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
           {#if skillSet.professional}
