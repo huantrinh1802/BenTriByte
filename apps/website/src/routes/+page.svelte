@@ -61,7 +61,7 @@
     <div class="flex items-center justify-center">
       <enhanced:img
         sizes="(min-width:1920px) 400px, (min-width:1080px) 400px, (min-width:768px) 240px, (max-width:768) 240px"
-        class="relative mx-auto my-auto w-full max-w-[400px] rounded-3xl object-cover max-sm:w-[240px]"
+        class="relative mx-auto my-auto w-full max-w-[400px] rounded-md bg-primary-600 object-cover p-2 max-sm:w-[240px] dark:bg-transparent"
         src={HeroImage}
         alt="BenTri Byte Hero"
       />

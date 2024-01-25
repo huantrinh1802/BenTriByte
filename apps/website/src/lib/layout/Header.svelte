@@ -7,16 +7,7 @@
 </script>
 
 <AppBar background="bg-primary-700 text-white rounded-b">
-  <svelte:fragment slot="lead"
-    ><button aria-label="Open sidebar" class="mr-4 sm:hidden" on:click={() => drawerStore.open({ id: 'sidebar' })}>
-      <span>
-        <svg viewBox="0 0 100 80" class="h-4 w-4 fill-white">
-          <rect width="100" height="20" />
-          <rect y="30" width="100" height="20" />
-          <rect y="60" width="100" height="20" />
-        </svg>
-      </span>
-    </button>
+  <svelte:fragment slot="lead">
     <a class="flex h-12 items-center gap-4" aria-label="Home" href={`${base}/`}>
       <BtbIcon bg="h-10 w-10" partColor="fill-white" />
       <p style="font-family: 'Santanelli';">BenTri Byte</p>
@@ -48,6 +39,15 @@
       {/each}
     </ul>
     <LightSwitch />
+    <button aria-label="Open sidebar" class="mr-4 sm:hidden" on:click={() => drawerStore.open({ id: 'sidebar' })}>
+      <span>
+        <svg viewBox="0 0 100 80" class="h-4 w-4 fill-white">
+          <rect width="100" height="20" />
+          <rect y="30" width="100" height="20" />
+          <rect y="60" width="100" height="20" />
+        </svg>
+      </span>
+    </button>
   </svelte:fragment>
   <!-- <svelte:fragment slot="headline" /> -->
 </AppBar>
