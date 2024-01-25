@@ -116,6 +116,7 @@
   ];
 </script>
 
+<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 <svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head>
 <Drawer width="lg:w-80 w-4/5">
   {#if $drawerStore.id === 'sidebar'}
