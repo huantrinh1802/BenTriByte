@@ -34,7 +34,7 @@
 </script>
 
 <svelte:head>
-  <title>Ben Trinh's Skills</title>
+  <title>My Skills</title>
   <meta name="description" content="Summary of Ben Trinh's programming skills." />
 </svelte:head>
 <section class="ks-section">
