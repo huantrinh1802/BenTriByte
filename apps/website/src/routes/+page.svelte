@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-  <title>Ben Trinh's Homepage</title>
+  <title>BenTriByte Homepage</title>
   <meta
     name="description"
     content="Explore the limitless world of technology and programming with BenTriByte. Uncover insightful articles, tutorials, and cutting-edge insights on coding, development trends, and emerging technologies. Stay ahead in the fast-paced tech landscape with our expert-guided content."
