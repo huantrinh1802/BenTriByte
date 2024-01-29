@@ -15,7 +15,7 @@
     github: GitHub,
     linkedin: LinkedIn,
   };
-  const { profile, contacts, experiences, educations, skills, languages, references, summary } = data.resume;
+  $: ({ profile, contacts, experiences, educations, skills, languages, references, summary } = data.resume);
   onMount(() => {
     window.onbeforeprint = () => {
       document.getElementById('page').scrollTo(0, 0);
