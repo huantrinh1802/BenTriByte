@@ -25,13 +25,16 @@ body {
 @media print {
   body,
   html,
-  .kcp-layout,
+  .btb-layout,
   #appShell {
     height: unset;
     overflow: unset;
   }
   div {
     break-inside: avoid;
+  }
+  #page {
+    scrollbar-gutter: unset !important;
   }
 }
 
