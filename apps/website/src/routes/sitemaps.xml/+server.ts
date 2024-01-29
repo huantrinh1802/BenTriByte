@@ -10,7 +10,7 @@ export const GET = (async () => {
   const urls: string[] = [
     generate_url(`${PUBLIC_SITE_URL}/`, new Date().toISOString()),
     generate_url(`${PUBLIC_SITE_URL}/skills`, new Date().toISOString()),
-    generate_url(`${PUBLIC_SITE_URL}/resume`, new Date().toISOString()),
+    generate_url(`${PUBLIC_SITE_URL}/resume/ben-trinh`, new Date().toISOString()),
     // generate_url(`${PUBLIC_SITE_URL}/en/services/migration`, new Date().toISOString()),
     // generate_url(`${PUBLIC_SITE_URL}/vi/services/migration`, new Date().toISOString()),
     // generate_url(`${PUBLIC_SITE_URL}/en/services/legal`, new Date().toISOString()),
