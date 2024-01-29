@@ -54,7 +54,7 @@
       <div class="grid grid-cols-2 gap-4 xl:grid-cols-3">
         <a href={`${base}#intro`} class="variant-filled-primary btn font-serif">Introduction</a>
         <a href={`${base}/skills`} class="variant-filled-primary btn font-serif">Skills</a>
-        <a href={`${base}/resume`} class="variant-filled-primary btn font-serif">Resume</a>
+        <a href={`${base}/resume/ben-trinh`} class="variant-filled-primary btn font-serif">Resume</a>
         <a href={`${base}/blogs`} class="variant-filled-primary btn font-serif">Blogs</a>
       </div>
     </div>

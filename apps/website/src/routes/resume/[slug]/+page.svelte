@@ -115,7 +115,7 @@
     </Accordion>
     <Accordion class="print:hidden">
       <AccordionItem>
-        <svelte:fragment slot="summary">Skills</svelte:fragment>
+        <svelte:fragment slot="summary"><h2 class="btb-section-heading">Skills</h2></svelte:fragment>
         <svelte:fragment slot="content">
           <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
           <div class="grid gap-4">
@@ -149,7 +149,7 @@
     </Accordion>
     <Accordion class="print:hidden">
       <AccordionItem>
-        <svelte:fragment slot="summary">Languages</svelte:fragment>
+        <svelte:fragment slot="summary"><h2 class="btb-section-heading">Languages</h2></svelte:fragment>
         <svelte:fragment slot="content">
           {#each languages as language}
             <ProgressBar title={language.title} percentage={language.percentage} />
@@ -260,6 +260,6 @@
     }
   }
   .btb-section-heading {
-    @apply py-2 text-center text-lg font-semibold underline print:text-black;
+    @apply py-2 text-lg font-semibold underline print:text-black lg:text-center;
   }
 </style>
