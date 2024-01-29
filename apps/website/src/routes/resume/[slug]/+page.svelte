@@ -99,7 +99,7 @@
     </div>
     <Accordion class="print:hidden">
       <AccordionItem>
-        <svelte:fragment slot="summary">Contacts</svelte:fragment>
+        <svelte:fragment slot="summary"><h2 class="btb-section-heading">Contacts</h2></svelte:fragment>
         <svelte:fragment slot="content">
           {#each contacts as contact}
             <a
@@ -260,6 +260,6 @@
     }
   }
   .btb-section-heading {
-    @apply py-2 text-lg font-semibold underline print:text-black lg:text-center;
+    @apply py-2 text-lg font-semibold underline print:text-black;
   }
 </style>
