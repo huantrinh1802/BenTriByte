@@ -1,0 +1,181 @@
+{
+  "profile": {
+    "name": "Amber Duong",
+    "fullName": "Hoai Anh Duong",
+    "job": "Social Worker",
+    "image": "images/amber.avif",
+    "themeColour": "#878CB0",
+    "showPhoto": false
+  },
+  "contacts": [
+    {
+      "href": "mailto:hoaianh2908@gmail.com",
+      "text": "hoaianh2908@gmail.com",
+      "type": "email",
+      "printText": "hoaianh2908@gmail.com"
+    },
+    { "href": null, "text": "Granville NSW, 2142 Australia", "printText": "Granville NSW, 2142 Australia" }
+  ],
+  "summary": "Social work graduate with strong academic record and high level of interpersonal skills. Enthusiastic, quick learner and have a high sense of responsibility. Keen to gain experiences in social work industry in general and case management in particular. Available for full-time employment.",
+  "experiences": [
+    {
+      "title": "Day Program Care Coordinator",
+      "subtitle": "Alpha Omega Management Consulting",
+      "timeline": "08/2022 - Present",
+      "location": "Cabramatta NSW, Australia",
+      "summary": null,
+      "tasks": [
+        "Providing team supervision and leadership regarding individual support services to people with disabilities, modelling quality service delivery through a person- centred active support; underpinned by the National Standards for Disability Services.",
+        "Being responsible for managing, planning, supervising and coordinating the work of Day Program support workers.",
+        "Monitoring and reviewing all general events and incidents; and developing systems to ensure the health and safety of individuals. Conducting investigations involving serious injuries to include making notifications to the NDIS and completing necessary documents.",
+        "Acting as a primary contact for Support Coordinators regarding programming questions about the Day Programs and making recommendations of the appropriate programs that suit the individual's needs.",
+        "Liaising with participants' health professionals to supervise Day Program staff in planning and coordinating services designed to: teach individuals life skills necessary to establish and maintain their independence and increase individuals' participation in social and community based activities, increase individuals' range of socially appropriate behaviours and habits to increase acceptance and integration in the community at large and assist individuals in maintaining health and safety skills.",
+        "Working on the development and ongoing management of future budgets, staffing, maintenance, and safety for the day program operations to provide quality support and engagement with individuals."
+      ]
+    },
+    {
+      "title": "NDIS Support Coordinator",
+      "subtitle": "Alpha Omega Management Consulting",
+      "timeline": "08/2022 - Present",
+      "location": "Cabramatta NSW, Australia",
+      "summary": null,
+      "tasks": [
+        "Managing a case load of 50 clients",
+        "Assisting participants to connect to and engage with, informal and mainstream funded supports and services as articulated in their NDIS Plan and which assist them achieve their goals.",
+        "Building and sustaining relationships with external service providers and mainstream supports for the purpose of maximising opportunity for participant.",
+        "Building capacity in participants and / or their family to maintain support relationships with the end goal being a reduction in the participants need for support coordination into the future.",
+        "Advocating for the rights and needs of individuals with disabilities and their families.",
+        "Maintaining accurate and reliable documentation and preparing relevant reports."
+      ]
+    },
+    {
+      "title": "NDIS Support Coordinator",
+      "subtitle": "Ability Connect",
+      "timeline": "11/2021 - 07/2022",
+      "location": "Bella Vista NSW, Australia",
+      "summary": null,
+      "tasks": [
+        "Strengthened and enhanced NDIS participants capacity to coordinate supports, self-direct and manage supports and participate in the community, including providing participants with assistance to resolve problems or issues that arise.",
+        "Utilised person-centred approach to identify and facilitate a range of support, and support providers to meet participants' identified needs along with ensuring mainstream services meet their obligations for example housing, education, justice and health.",
+        "Liaised with NDIA in relation to NDIS participants and their plans; and provided the NDIA reports on outcomes and success indicators within the agreed reporting frequency.",
+        "Ensured that support responses focus on participant goals and objectives.",
+        "Supported the Ability Connect team to develop professional services and supports to ensure the participants goals are maximised."
+      ]
+    },
+    {
+      "title": "Student Placement",
+      "subtitle": "Western Sydney University - Men's Health Information and Resource Centre",
+      "timeline": "02/2021 - 06/2021",
+      "location": "Parramatta NSW, Australia",
+      "summary": null,
+      "tasks": [
+        "Facilitated Nepalese Mental Health Literacy Community event in March with the collaboration of Western Sydney University and Australian Nepal Public Link",
+        "Utilised social work research methods to analyse raw data collected from social research surveys",
+        "Conducted interviews with elderly people who have experiences in transitions to promote old people's psychological and metal well-being",
+        "Established respectful relationship with older people and supported their engagement in group work activities with the aim of promoting their general well-being",
+        "Facilitated a wide range of group activities"
+      ]
+    },
+    {
+      "title": "Student Placement",
+      "subtitle": "Anglicare",
+      "timeline": "03/2019 - 07/2019",
+      "location": "Summer HIll NSW, Australia",
+      "summary": null,
+      "tasks": [
+        "Experienced in receiving initial phone contact in regard to client's inquiry about organisation's services",
+        "Conducted assessment in order to provide clients suitable services and referrals to maximise their potential outcomes using strength-based approach and client- centered approach",
+        "Advocated for client to get access to EAPA (Energy Account Payment Assistance)",
+        "Conducted assessments with Vietnamese clients who are from non - English speaking background"
+      ]
+    },
+    {
+      "title": "Volunteer",
+      "subtitle": "AIP Foundation",
+      "timeline": "07/2016 - 09/2016",
+      "location": "Hanoi, Vietnam",
+      "summary": null,
+      "tasks": [
+        "Distributed free helmets to students in almost every primary school in Hanoi in order to develop people's safety self-awareness.",
+        "Followed directions from supervisors and completed tasks within appropriate timeframe.",
+        "Offered support and assistance to community members.",
+        "Established and maintained relationships with fellow volunteers and organizational stakeholders.",
+        "Greeted guests and offered assistance in finding specific departments or personnel."
+      ]
+    },
+    {
+      "title": "Volunteer",
+      "subtitle": "Global Road Safety Partnership, GRSP",
+      "timeline": "06/2015 - 08/2015",
+      "location": "Hanoi, Vietnam",
+      "summary": null,
+      "tasks": [
+        "Engaged with stakeholders and community members and answered questions regarding volunteer programs.",
+        "Cultivated relationships and maintained regular communication with nonprofit agencies, schools, and social service agencies to solicit community needs.",
+        "Co-organised seminars which were related to Road Safety in Hanoi."
+      ]
+    },
+    {
+      "title": "Volunteer",
+      "subtitle": "Asia Injury Prevention (AIP)",
+      "timeline": "03/2015 - 05/2015",
+      "location": "Hanoi, Vietnam",
+      "summary": null,
+      "tasks": [
+        "Created invitations to potential sponsors with the aim of raising funding for many genital reconstruction surgeries for children who are in poverty",
+        "Arranged patients' checking appointments before and after every operation",
+        "Instructed patients and their families step by step at the hospital whenever the checks started",
+        "Helped organize and implement programs and projects to aid community and individuals.",
+        "Entered data into computer systems, updating records and files with new information.",
+        "Adhered to strict confidentiality policies in regard to personal and financial data.",
+        "Established and maintained relationships with fellow volunteers and organizational stakeholders."
+      ]
+    }
+  ],
+  "educations": [
+    {
+      "title": "Bachelor of Social Work - Western Sydney University",
+      "timeline": "07/2021",
+      "location": "Parramatta NSW, Australia"
+    }
+  ],
+  "references": [
+    {
+      "name": "Jennifer Dong",
+      "title": "NDIS Operations Manager",
+      "company": "Alpha Omega Management Consulting Pty Ltd",
+      "mobile": { "href": "tel:+61405835487", "text": "0405 835 487" },
+      "email": { "href": "mailto:jennifer@alphaomegaconsulting.com.au", "text": "jennifer@alphaomegaconsulting.com.au" }
+    },
+    {
+      "name": "Tiffany Ho",
+      "title": "NDIS Support Coordinator",
+      "company": "The Junction Works",
+      "mobile": { "href": "tel:+61405669205", "text": "0405 669 205" },
+      "email": { "href": "mailto:tiffanyh0831@gmail.com", "text": "tiffanyh0831@gmail.com" }
+    }
+  ],
+  "skills": {
+    "socialWork": {
+      "title": null,
+      "professional": [
+        { "title": "Prepare strategic plans for project", "percentage": null },
+        { "title": "Social work research skills", "percentage": null },
+        { "title": "Small group facilitation", "percentage": null },
+        { "title": "Interpersonal communication skills", "percentage": null },
+        { "title": "A high level of empathy and passion for the field", "percentage": null },
+        { "title": "Exceptionally compassionate and caring", "percentage": null },
+        { "title": "An ability to manage multiple tasks and stay organised", "percentage": null },
+        { "title": "Acquired First Aid certificates", "percentage": null },
+        { "title": "Case Documentation", "percentage": null },
+        { "title": "Case Management", "percentage": null },
+        { "title": "Cultural Competency", "percentage": null }
+      ],
+      "casual": null
+    }
+  },
+  "languages": [
+    { "title": "Vietnamese - Native", "percentage": 100 },
+    { "title": "English - Fluent", "percentage": 85 }
+  ]
+}
