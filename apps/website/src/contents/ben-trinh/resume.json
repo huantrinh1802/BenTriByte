@@ -3,8 +3,11 @@
     "name": "Ben Trinh",
     "fullName": "Cong Anh Huan Trinh",
     "job": "Software Engineer",
-    "image": "images/hero_no_filter.avif"
+    "image": "images/ben.avif",
+    "themeColour": "#008080",
+    "showPhoto": true
   },
+  "summary": null,
   "contacts": [
     {
       "href": "mailto:huantrinh1802@gmail.com",
@@ -140,5 +143,6 @@
   "languages": [
     { "title": "Vietnamese", "percentage": 95 },
     { "title": "English", "percentage": 85 }
-  ]
+  ],
+  "references": null
 }
