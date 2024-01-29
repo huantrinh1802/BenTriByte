@@ -5,12 +5,26 @@ export const load = (async () => {
     '$contents/blogs/**/*.svx',
     { eager: true }
   );
-  const blogs = [];
+  let blogs = {};
   for (const modulePath in modules) {
     const paths = modulePath.split('/');
+    const slug = paths.at(-1).split('.')[0];
+    const year = paths.at(-2);
     const type = paths.at(-3);
-    if (!(type in blogs)) {
-      blogs.push(type);
+    const file: { metadata: BlogMetadata; content: object } = modules[modulePath];
+    if (type in blogs) {
+      if (!(year in blogs[type].years)) {
+        blogs[type].years.push(year);
+      }
+      if (file && typeof file === 'object' && 'metadata' in file && !file?.metadata?.draft) {
+        const metadata: BlogMetadata = file?.metadata;
+        blogs[type].items.push({ ...metadata, slug, type });
+      }
+    } else {
+      if (file && typeof file === 'object' && 'metadata' in file && !file?.metadata?.draft) {
+        const metadata: BlogMetadata = file?.metadata;
+        blogs = { ...blogs, [type]: { years: [year], items: [{ ...metadata, slug, type }] } };
+      }
     }
   }
   return { blogs };
