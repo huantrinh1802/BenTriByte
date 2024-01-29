@@ -1,22 +1,10 @@
 <script lang="ts">
-  import resume from '$contents/ben/resume.json';
+  import resume from '$contents/ben-trinh/resume.json';
   import Close from '~icons/icon-park/close';
   import SkillBanner, { type Skill } from '$lib/components/SkillBanner.svelte';
-  type Content = {
-    percentage: number;
-    title: Skill;
-    contents: string[];
-  };
+  import { type Resume } from '$lib/types/resume';
   let dialog;
   let currentContent = 'Python';
-  type Resume = {
-    profile: object;
-    contacts: object;
-    skills: { [key: string]: { title: string; professional: Content[]; casual: Content[] } };
-    experiences: object;
-    educations: object;
-    languages: object;
-  };
   const { skills }: Resume = resume;
   let displayContents = [];
   Object.values(skills).forEach((skillSet) => {
