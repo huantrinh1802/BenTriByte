@@ -89,7 +89,7 @@
       subItems: [
         { name: 'Me', id: 'intro', href: `${base}/#intro` },
         { name: 'Skills', id: 'skills', href: `${base}/skills` },
-        // { name: 'My Projects', id: 'projects', href: `${base}/projects` },
+        { name: 'Projects', id: 'projects', href: `${base}/projects` },
         { name: 'Resume', id: 'resume', href: `${base}/resume/ben-trinh` },
       ],
     },
