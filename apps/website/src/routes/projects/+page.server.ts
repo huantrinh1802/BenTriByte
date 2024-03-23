@@ -21,6 +21,7 @@ export const load = (async () => {
             description
             name
             homepageUrl
+            url
             primaryLanguage {
               color
               name
@@ -29,6 +30,13 @@ export const load = (async () => {
               nodes {
                 color
                 name
+              }
+            }
+            repositoryTopics(first: 20) {
+              nodes {
+                topic {
+                  name
+                }
               }
             }
           }
