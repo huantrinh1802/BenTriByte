@@ -1,11 +1,11 @@
 <script lang="ts">
-  import resume from '$contents/ben-trinh/resume.json';
   import Close from '~icons/icon-park/close';
   import SkillBanner, { type Skill } from '$lib/components/SkillBanner.svelte';
   import { type Resume } from '$lib/types/resume';
+  export let data;
   let dialog: HTMLDialogElement;
   let currentContent = 'Python';
-  const { skills }: Resume = resume;
+  const { skills } = data.resume as Resume;
   let displayContents = [];
   Object.values(skills).forEach((skillSet) => {
     skillSet.professional.map((item) => {

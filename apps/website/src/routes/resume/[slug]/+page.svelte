@@ -5,6 +5,7 @@
   import LinkedIn from '~icons/skill-icons/linkedin';
   import Mobile from '~icons/fluent/call-20-regular';
   import { base } from '$app/paths';
+  import { type Resume } from '$lib/types/resume';
   import ProgressBar from '$lib/components/ProgressBar.svelte';
   import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
   import { onMount } from 'svelte';
@@ -15,7 +16,7 @@
     github: GitHub,
     linkedin: LinkedIn,
   };
-  $: ({ profile, contacts, experiences, educations, skills, languages, references, summary } = data.resume);
+  $: ({ profile, contacts, experiences, educations, skills, languages, references, summary } = data.resume as Resume);
   onMount(() => {
     window.onbeforeprint = () => {
       document.getElementById('page').scrollTo(0, 0);
@@ -66,7 +67,7 @@
       <div class="grid break-inside-auto gap-4">
         {#each Object.values(skills) as skillSet}
           {#if skillSet.title}
-            <strong class="text-md">{skillSet.title}</strong>
+            <strong class="text-md">{skillSet?.title}</strong>
           {/if}
           <div class="grid gap-2">
             {#each skillSet.professional as item}

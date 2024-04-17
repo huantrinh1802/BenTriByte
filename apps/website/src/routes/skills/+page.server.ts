@@ -1,4 +1,4 @@
-import type { LayoutServerLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { request, gql } from 'graphql-request';
 import { GITHUB_TOKEN } from '$env/static/private';
 type StorageRepo = {
@@ -42,12 +42,13 @@ export const load = (async () => {
     { owner: 'huantrinh1802', name: 'file_storage' },
     { Authorization: `Bearer ${GITHUB_TOKEN}` }
   );
-  return repositories.repository.object.entries.reduce((current, entry) => {
-    if (entry.name == 'ben_resume.json') {
-      return { ...current, 'ben-trinh': JSON.parse(entry.object.text) };
-    }
-    if (entry.name == 'amber_resume.json') {
-      return { ...current, 'amber-duong': JSON.parse(entry.object.text) };
-    }
-  }, {});
-}) satisfies LayoutServerLoad;
+  return {
+    resume: JSON.parse(
+      repositories.repository.object.entries.find((entry) => {
+        if (entry.name == 'ben_resume.json') {
+          return entry;
+        }
+      }).object.text
+    ),
+  };
+}) satisfies PageServerLoad;
