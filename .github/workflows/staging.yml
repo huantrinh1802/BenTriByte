@@ -4,7 +4,7 @@ on:
   # Runs on pushes targeting the default branch
   workflow_run:
     workflows: ['CI']
-    branches: [main]
+    branches: ['staging']
     types:
       - completed
   # Allows you to run this workflow manually from the Actions tab
@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2.4.0
+      - uses: pnpm/action-setup@v3.4.0
         with:
           version: 8
       - uses: actions/setup-node@v4.0.1
@@ -54,19 +54,6 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
           PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3.0.1
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ${{ env.BUILD_PATH }}/build
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - uses: actions/deploy-pages@v4.0.5
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4.0.5
