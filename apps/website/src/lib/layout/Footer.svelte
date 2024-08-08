@@ -14,7 +14,7 @@
   export let socials: Social[] = [];
 </script>
 
-<footer class="bg-surface-100-800-token relative p-4 text-gray-600 print:hidden sm:p-4 dark:text-gray-400">
+<footer class="bg-surface-100-800-token relative p-4 text-gray-600 dark:text-gray-400 sm:p-4 print:hidden">
   <!-- <div class="flex">
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-1 sm:gap-6">
       <div class="grid gap-4">

@@ -28,18 +28,18 @@
   <title>{profile['name']}'s Resume</title>
   <meta name="description" content={`Summary of ${profile['name']}'s professional career.`} />
 </svelte:head>
-<div class="btb-layout overflow-over flex flex-col print:grid print:px-2 lg:grid">
-  <div class="btb-profile flex flex-col items-center print:break-after-avoid print:flex-row lg:flex-row">
+<div class="btb-layout overflow-over flex flex-col lg:grid print:grid print:px-2">
+  <div class="btb-profile flex flex-col items-center lg:flex-row print:break-after-avoid print:flex-row">
     {#if profile.showPhoto}
       <div
         style={`background-image: url('${base}/${profile.image}'); background-color: ${profile.themeColour};`}
-        class="btb-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-surface-200 bg-primary-500 p-8 print:h-40 print:w-40 print:!border-white dark:border-surface-900"
+        class="btb-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-surface-200 bg-primary-500 p-8 dark:border-surface-900 print:h-40 print:w-40 print:!border-white"
       />
     {/if}
     <div
       style={`background-color: ${profile.themeColour};`}
-      class={`z-0 -mt-8 flex h-40 w-full items-center justify-center rounded-md print:mt-0 print:h-32 lg:mt-0 ${
-        profile.showPhoto ? 'print:-ml-10 lg:-ml-10' : ''
+      class={`z-0 -mt-8 flex h-40 w-full items-center justify-center rounded-md lg:mt-0 print:mt-0 print:h-32 ${
+        profile.showPhoto ? 'lg:-ml-10 print:-ml-10' : ''
       }`}
     >
       <div>
@@ -163,24 +163,24 @@
     {#if summary}
       <h2 class="btb-section-heading">Summary</h2>
       <p>{summary}</p>
-      <hr class="my-8 h-[2px] border-0 bg-gray-700 print:my-1 dark:bg-gray-200" />
+      <hr class="my-8 h-[2px] border-0 bg-gray-700 dark:bg-gray-200 print:my-1" />
     {/if}
     <h2 class="btb-section-heading">Experiences</h2>
     <div class="flex flex-col gap-2">
       {#each experiences as content, index}
         <History {content} />
         {#if index != experiences.length - 1}
-          <hr class="my-8 h-px border-0 bg-gray-200 print:my-1 dark:bg-gray-700" />
+          <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700 print:my-1" />
         {/if}
       {/each}
     </div>
-    <hr class="my-8 h-[2px] border-0 bg-gray-700 print:my-1 dark:bg-gray-200" />
+    <hr class="my-8 h-[2px] border-0 bg-gray-700 dark:bg-gray-200 print:my-1" />
     <div class="flex flex-col gap-4">
       <h2 class="btb-section-heading">Educations</h2>
       {#each educations as content, index}
         <History {content} />
         {#if index != educations.length - 1}
-          <hr class="my-8 h-px border-0 bg-gray-200 print:my-1 dark:bg-gray-700" />
+          <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700 print:my-1" />
         {/if}
       {/each}
     </div>
@@ -191,8 +191,8 @@
           {#each references as ref}
             <div class="grid gap-2 print:break-after-auto print:gap-1">
               <h3 class="font-semibold print:!text-base">{ref.name}</h3>
-              <h4 class="text-gray-800 print:!text-sm print:!text-gray-800 dark:text-gray-200">{ref.title}</h4>
-              <h5 class="text-gray-800 print:!text-[10px] print:!text-gray-800 dark:text-gray-200">
+              <h4 class="text-gray-800 dark:text-gray-200 print:!text-sm print:!text-gray-800">{ref.title}</h4>
+              <h5 class="text-gray-800 dark:text-gray-200 print:!text-[10px] print:!text-gray-800">
                 {ref.company}
               </h5>
               <a class="flex items-center gap-2 break-all text-sm print:!text-gray-900" href={ref.mobile.href}>
@@ -204,7 +204,7 @@
                 <p class="print:!text-xs">{ref.email.text}</p>
               </a>
             </div>
-            <hr class="my-8 h-px border-0 bg-gray-200 print:my-1 dark:bg-gray-700" />
+            <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700 print:my-1" />
           {/each}
         </div>
       </div>
