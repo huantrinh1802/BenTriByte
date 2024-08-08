@@ -47,7 +47,7 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build SvelteKit
         run: |
-          echo "GH_TOKEN=$GH_TOKEN\nPUBLIC_SITE_URL=$PUBLIC_SITE_URL" >> ./apps/website/.env
+          echo "GH_TOKEN=$GH_TOKEN\nPUBLIC_SITE_URL=$PUBLIC_SITE_URL" >> ./.env
           pnpm build
         working-directory: ${{ env.BUILD_PATH }}
         env:
