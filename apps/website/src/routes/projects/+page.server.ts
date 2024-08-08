@@ -1,4 +1,4 @@
-import { GITHUB_TOKEN } from '$env/static/private';
+import { GH_TOKEN } from '$env/static/private';
 import type { PageServerData } from './$types';
 import { request, gql } from 'graphql-request';
 type Language = {
@@ -48,7 +48,7 @@ export const load = (async () => {
     'https://api.github.com/graphql',
     document,
     null,
-    { Authorization: `Bearer ${GITHUB_TOKEN}` }
+    { Authorization: `Bearer ${GH_TOKEN}` }
   );
   return { repositories: repositories.viewer.repositories.nodes };
 }) satisfies PageServerData;
