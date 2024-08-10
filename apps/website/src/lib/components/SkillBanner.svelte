@@ -2,7 +2,7 @@
   type ProgrammingLanguage = 'Python' | 'Rust' | 'Javascript';
   type CloudProvider = 'AWS' | 'Vercel' | 'Netlify';
   type Technology = 'IonicJS' | 'Jinja' | 'PostgreSQL';
-  type Framework = 'SvelteJS' | 'VueJS' | 'ReactJS';
+  type Framework = 'SvelteJS' | 'VueJS' | 'ReactJS' | 'AlpineJS' | 'HTMX';
 
   export type Skill = ProgrammingLanguage | CloudProvider | Framework | Technology | string;
 </script>
@@ -21,6 +21,8 @@
   import PostgreSQL from '~icons/skill-icons/postgresql-dark';
   import Vercel from '~icons/skill-icons/vercel-dark';
   import Netlify from '~icons/skill-icons/netlify-dark';
+  import HTMX from '~icons/skill-icons/htmx-dark';
+  import AlpineJS from '~icons/skill-icons/alpinejs-dark';
   import ProgressBar from './ProgressBar.svelte';
 
   const icons = {
@@ -36,6 +38,8 @@
     PostgreSQL,
     Vercel,
     Netlify,
+    HTMX,
+    AlpineJS,
   };
   export let onClick;
   export let percentage = 85;
