@@ -12,7 +12,7 @@
     timer = setTimeout(() => {
       helloName = event.target.value;
       if (helloName.length === 0) {
-        helloName = 'World';
+        helloName = '{{ World }}';
       }
       typewriter.reset();
     }, 900);
@@ -37,7 +37,7 @@
       <div class="my-auto flex flex-col gap-4">
         <TypeWriter
           style="xl:text-4xl lg:text-xl text-md md:min-w-[50%]"
-          words={`Hello {{${helloName}}},`}
+          words={`Hello ${helloName},`}
           bind:this={typewriter}
         />
         <input
@@ -55,7 +55,7 @@
         <a href={`${base}#intro`} class="variant-filled-primary btn font-serif">Introduction</a>
         <a href={`${base}/skills`} class="variant-filled-primary btn font-serif">Skills</a>
         <a href={`${base}/resume/ben-trinh`} class="variant-filled-primary btn font-serif">Resume</a>
-        <a href={`${base}/blogs`} class="variant-filled-primary btn font-serif">Blogs</a>
+        <a href={`${base}/projects`} class="variant-filled-primary btn font-serif">Projects</a>
       </div>
     </div>
     <div class="flex items-center justify-center">
