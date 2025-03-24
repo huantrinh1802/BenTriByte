@@ -3,7 +3,7 @@
   import Close from '~icons/icon-park/close';
   import SkillBanner, { type Skill } from '$lib/components/SkillBanner.svelte';
   import { type Resume } from '$lib/types/resume';
-  let dialog;
+  let dialog: HTMLDialogElement;
   let currentContent = 'Python';
   const { skills }: Resume = resume;
   let displayContents = [];
@@ -82,7 +82,7 @@
 >
   <div class="grid gap-2 p-4">
     <div class="flex items-center">
-      <button class="ml-auto mr-2" on:click={dialog.close()}><Close /></button>
+      <button class="ml-auto mr-2" on:click={() => dialog.close()}><Close /></button>
     </div>
     {#each displayContents as content}
       {#if currentContent === content.title && content.contents != null}

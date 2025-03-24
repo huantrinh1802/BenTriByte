@@ -5,6 +5,7 @@
   import LinkedIn from '~icons/skill-icons/linkedin';
   import Address from '~icons/mdi/map-marker-radius-outline';
   import { base } from '$app/paths';
+  import Kofi from '$lib/components/Kofi.svelte';
   type Social = {
     name: string;
     label: string;
@@ -90,6 +91,9 @@
           href="https://github.com/huantrinh1802">Ben Trinh</a
         >
       </span>
+    </div>
+    <div class="grid place-items-center gap-4 max-xl:pb-4">
+      <Kofi />
     </div>
   </div>
 </footer>
