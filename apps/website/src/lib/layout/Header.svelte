@@ -9,7 +9,7 @@
   };
 </script>
 
-<AppBar>
+<AppBar background="bg-primary-700 text-white">
   <svelte:fragment slot="lead"
     ><button
       class="btn btn-sm mr-4 sm:hidden"
@@ -47,9 +47,9 @@
             </button>
           </li>
           <div data-popup={item.id}>
-            <ul class="flex flex-col gap-4 rounded-md bg-surface-800 p-4 shadow-md">
+            <ul class="flex flex-col text-black rounded-md bg-surface-200 divide-y divide-black dark:divide-white dark:bg-surface-800 p-4 shadow-md">
               {#each item.subItems as subItem}
-                <li class="rounded-md bg-primary-700 px-4 py-2">
+                <li class="px-4 py-2 hover:bg-primary-600 hover:text-white dark:text-white">
                   <a href={subItem.href}>
                     {subItem.name}
                   </a>

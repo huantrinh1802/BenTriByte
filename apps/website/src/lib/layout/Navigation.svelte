@@ -17,9 +17,9 @@
         <AccordionItem padding="p-0">
           <svelte:fragment slot="summary">{item.name}</svelte:fragment>
           <svelte:fragment slot="content">
-            <ul class="flex flex-col gap-4 rounded-md bg-surface-700 px-4 py-4 shadow-md">
+            <ul class="flex flex-col rounded-md bg-surface-200 dark:bg-surface-700 px-4 py-4 divide-y divide-black dark:divide-white">
               {#each item.subItems as subItem}
-                <li class="flex">
+                <li class="flex py-2">
                   <a
                     on:click={() => drawerStore.close()}
                     class="w-full"
