@@ -1,9 +1,11 @@
 import React from "react";
 // import "../styles/global.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import {useTheme} from "next-themes";
+import Header from "../layouts/Header";
+import Footer from "../layouts/Footer";
 
 export default function Profile() {
+  const {theme, setTheme} = useTheme();
   const name = "Ben Trinh";
   const location = "Sydney, NSW, Australia";
   const position = "Software Engineer";
@@ -14,15 +16,18 @@ export default function Profile() {
       <Header title="Profile"/>
       <main className="profile-page">
         <section className="relative block" style={{ height: 500 }}>
+          
+          <div className="flex items-center justify-center w-full mt-6 md:w-1/2 md:justify-end md:mt-0">
           <div
-            className="absolute top-0 w-full h-full bg-center bg-cover"
-            style={{
-              backgroundImage:
-                // "url('https://wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-18.png')"
-                // eslint-disable-next-line no-template-curly-in-string
-                "url(/img/code-wallpaper-18.png)",
-            }}
-          />{" "}
+            className="w-full h-1/2 max-w-md"
+            
+          >
+            <img src="/img/dudeCoding.svg"/>
+          </div>
+          </div>
+
+        
+          
           {/* <span
                           id="blackOverlay"
                           className="w-full h-full absolute opacity-50 bg-black"
@@ -49,7 +54,7 @@ export default function Profile() {
         </section>{" "}
         <section className="relative py-16 bg-gray-300">
           <div className="container mx-auto px-4">
-            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+            <div className="relative bg-gray-100 flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
               <div className="px-6">
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
@@ -66,7 +71,7 @@ export default function Profile() {
                     <div className="py-6 px-3 mt-32 sm:mt-0">
                       <a href="https://www.linkedin.com/in/cong-anh-huan-trinh-54a0b073/">
                         <button
-                          className="bg-green-700 active:bg-green-100 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                          className="bg-green-900 active:bg-green-100 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
                           type="button"
                           style={{ transition: "all .15s ease" }}
                         >
@@ -141,7 +146,7 @@ export default function Profile() {
                       </p>{" "}
                       <a
                         href="#pablo"
-                        className="font-normal text-pink-500"
+                        className="font-normal text-green-500"
                         onClick={(e) => e.preventDefault()}
                       >
                         Show more{" "}
