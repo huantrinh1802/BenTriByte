@@ -1,16 +1,13 @@
 ---
-title: First blog
+title: Second blog
 description: ''
-date: 2023-02-21T11:36:54.546Z
-preview: /images/hero.png
-draft: ''
-tags: ''
+date: 2023-02-21
+preview: null
+draft: false
+tags: ['programming', 'svelte']
 categories: ''
-slug: first-blog
+summary: ''
 ---
-
-# Header 1
-
 Voluptates cupiditate neque facilis pariatur dolores sed quia consequatur. Perferendis numquam consequatur non cumque in consectetur vitae. Dolores dolores accusamus alias. Dolore odio alias aut quia voluptatem eaque reiciendis maiores. Voluptates cum iure ratione.
 
 ## Heading 2
@@ -18,3 +15,9 @@ Voluptates cupiditate neque facilis pariatur dolores sed quia consequatur. Perfe
 Consequatur voluptates explicabo sunt est. Libero officiis dolore. Dolor in qui. Culpa facere sit facere voluptate quo eum molestiae et nihil.
 
 Necessitatibus rem et perferendis maxime unde. Et asperiores sapiente. Quam rem\*\*\*\* tempore placeat consequatur. Voluptate facere quidem.
+<script>
+  import { CodeBlock } from '@skeletonlabs/skeleton';
+</script>
+<CodeBlock language="python" code={`
+def main():
+  print('Hello World')`} lineNumbers/>

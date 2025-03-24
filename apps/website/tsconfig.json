@@ -11,10 +11,10 @@
   },
   "extends": "./.svelte-kit/tsconfig.json",
   "exclude": ["**/*.md", "**/*.svx"],
-  "paths": {
-    "$contents": ["./src/contents"],
-    "$contents/*": ["./src/contents/*"]
-  }
+  // "paths": {
+  //   "$contents": ["./src/contents"],
+  //   "$contents/*": ["./src/contents/*"]
+  // }
 
   // Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
   //
