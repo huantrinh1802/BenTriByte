@@ -30,7 +30,7 @@
 
 <span
   class={`typewriter h-fit ${style}`}
-  style="font-family: 'Santanelli';"
+  style="font-family: 'Santanelli'; font-display: swap;"
 >
   {#each currentWords as char}
     {char}
