@@ -21,14 +21,14 @@
 <svelte:head><title>Ben Trinh's Homepage</title></svelte:head>
 <div
   id="sections"
-  class="h-[calc(100dvh-var(--sk-header-height)-210px)] w-screen snap-y snap-mandatory overflow-y-auto px-4 sm:h-[calc(100dvh-var(--sk-header-height)-240px)] sm:px-10"
+  class="h-[calc(100dvh-var(--sk-header-height)-198px)] w-screen snap-y snap-mandatory overflow-y-auto px-4 sm:h-[calc(100dvh-var(--sk-header-height)-204px)] sm:px-10"
 >
-  <section class="ks-hero-section show-on-scroll hide-scrollbar grid h-full snap-start grid-cols-1 gap-10 overflow-y-auto md:grid-cols-2 md:gap-10">
+  <section class="p-4 ks-hero-section show-on-scroll hide-scrollbar grid h-full snap-start grid-cols-1 gap-10 overflow-y-auto md:grid-cols-2 md:gap-10">
     <div class="my-auto flex flex-col gap-4">
       <div class="my-auto flex flex-col gap-4">
         <TypeWriter
           style="text-4xl font-bold md:min-w-[50%] md:relative "
-          words={`Hello {{${helloName}}}`}
+          words={`Hello {{${helloName}}},`}
           bind:this={typewriter}
         />
         <input
