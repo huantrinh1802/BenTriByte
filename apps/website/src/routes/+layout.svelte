@@ -5,6 +5,7 @@
   import { AppShell } from '@skeletonlabs/skeleton';
   import Header from '$lib/layout/Header.svelte';
   import { browser } from '$app/environment';
+  import { base } from '$app/paths';
   const callback = function (entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -23,7 +24,7 @@
     });
   }
   const menuItems = [
-    { name: 'Home', href: '/' },
+    { name: 'Home', href: `./` },
     // { name: 'My Resume', href: '/resume' },
     // { name: 'Blogs', href: '/blogs' },
   ];
