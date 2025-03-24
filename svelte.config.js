@@ -22,9 +22,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			$lib: path.resolve('./src/lib'),
-			'@': path.resolve('./src'),
-			$houdini: path.resolve('.', '$houdini'),
+			$contents: path.resolve('./src/contents'),
 		},
 	}
 };
