@@ -1,7 +1,6 @@
 <script
   lang="ts"
-  context="module"
->
+  context="module">
   export interface Filter {
     tag: string[] | undefined;
     type: string | null;
@@ -35,8 +34,7 @@
     {#if (filter?.tag?.length === 0 && filter.type === null) || (filter.tag !== undefined && filter.tag.length !== 0 && checkTags(post.tags)) || (filter.type !== null && post.type.toLowerCase() === filter?.type)}
       <PostCard
         {post}
-        {baseUrl}
-      />
+        {baseUrl} />
     {/if}
   {/each}
 </div>

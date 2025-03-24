@@ -19,8 +19,7 @@
     <Card {content} />
     <Card
       {content}
-      reverse={true}
-    />
+      reverse={true} />
   </div>
 </Hst.Story>
 

@@ -11,7 +11,6 @@
     <img
       src={item.preview}
       alt=""
-      loading="lazy"
-    />
+      loading="lazy" />
   </div>
 {/each}

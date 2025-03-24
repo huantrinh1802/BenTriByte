@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let title: string = '';
-  export let percentage: number = 50;
+  export let title = '';
+  export let percentage = 50;
   function hslToHex(h, s, l) {
     // Convert hue to degrees
     h %= 360;
@@ -70,12 +70,12 @@
   }
 </script>
 
-<div class="flex justify-between mb-1">
+<div class="mb-1 flex justify-between">
   <span class="text-base font-medium text-blue-700 dark:text-white">{title}</span>
   <!-- <span class="text-sm font-medium text-blue-700 dark:text-white">{percentage}%</span> -->
 </div>
-<div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+<div class="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700">
   <div
-    class={`bg-blue-600 h-2.5 rounded-full`}
+    class={`h-2.5 rounded-full bg-blue-600`}
     style={`width: ${percentage}%; background-color: ${getColor(percentage, false)}`} />
 </div>

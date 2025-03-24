@@ -50,12 +50,10 @@
           in:fly={{
             x: direction,
             easing: sineInOut,
-          }}
-        >
+          }}>
           <svelte:component
             this={item.component}
-            {...item.props}
-          />
+            {...item.props} />
         </div>
       {/if}
     {/each}
@@ -76,8 +74,7 @@
         }}
         type="button"
         class:active={current === index}
-        data-value={index}
-      />
+        data-value={index} />
     {/each}
   </div>
   <!-- Slider controls -->
@@ -93,8 +90,7 @@
     }}
     type="button"
     class="controls top-0 left-0"
-    data-carousel-prev=""
-  >
+    data-carousel-prev="">
     <span class="item">
       <p>GT</p>
       <span class="hidden">Previous</span>
@@ -112,8 +108,7 @@
     }}
     type="button"
     class="controls top-0 right-0"
-    data-carousel-next=""
-  >
+    data-carousel-next="">
     <span class="item flex items-center justify-center">
       >
       <span class="hidden">Next</span>
