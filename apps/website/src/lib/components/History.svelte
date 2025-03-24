@@ -1,11 +1,11 @@
 <script lang="ts">
   type HistoryContent = {
     title: string;
-    subtitle: string;
+    subtitle?: string;
     timeline: string;
-    location: string;
-    summary: string;
-    tasks: string[];
+    location?: string;
+    summary?: string;
+    tasks?: string[];
   };
   export let content: HistoryContent = null;
 </script>
