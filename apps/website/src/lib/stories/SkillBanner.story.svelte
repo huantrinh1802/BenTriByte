@@ -1,6 +1,6 @@
 <script lang="ts">
   export let Hst: any;
-  import SkillBanner from './SkillBanner.svelte';
+  import SkillBanner from '../components/SkillBanner.svelte';
   import Python from '~icons/skill-icons/python-dark';
   import AWS from '~icons/skill-icons/aws-dark';
   let percentage = 50;
@@ -13,13 +13,11 @@
       step={5}
       min={5}
       max={100}
-      title="Percentage"
-    />
+      title="Percentage" />
     <div class="h-20 w-20">
       <SkillBanner
         {percentage}
-        logoOnly={false}
-      >
+        logoOnly={false}>
         <Python slot="logo" />
         <div slot="content">I am very good at</div>
       </SkillBanner>
@@ -29,8 +27,7 @@
     <svelte:fragment slot="controls">
       Content: <input
         type="number"
-        bind:value={percentage}
-      />
+        bind:value={percentage} />
     </svelte:fragment>
     <div class="h-1/2 w-1/2 mx-auto">
       <SkillBanner {percentage}>

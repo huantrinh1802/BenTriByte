@@ -9,6 +9,13 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+    }
   },
   // @ts-ignore
   plugins: [require('@tailwindcss/container-queries'), require('@tailwindcss/typography'), ...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')()],

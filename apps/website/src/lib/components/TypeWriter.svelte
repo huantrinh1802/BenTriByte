@@ -30,10 +30,7 @@
   start();
 </script>
 
-<span
-  class={`typewriter h-fit ${style}`}
-  on:mouseenter={reset}
->
+<span class={`typewriter h-fit ${style}`}>
   {#each currentWords as char}
     {char}
   {/each}
