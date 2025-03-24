@@ -4,7 +4,7 @@ description: ''
 date: 2024-01-05
 preview: images/blogs/blog_placeholder.avif
 draft: false
-tags: ['programming', 'svelte', 'frontend', 'javascript']
+tags: ['programming']
 categories: ''
 summary: "This is a blog celebrating the author's daily discoveries and lessons, emphasizing that learning is a continuous, dynamic process. The blog aims to build a community of lifelong learners, offering a platform to share experiences and inspire each other. Readers are invited to join the collective pursuit of enlightenment, embracing curiosity and resilience in the journey of personal growth."
 ---
