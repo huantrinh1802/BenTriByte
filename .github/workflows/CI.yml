@@ -28,3 +28,4 @@ jobs:
       - run: pnpm run check
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PUBLIC_SITE_URL: 'http://localhost:5173'
