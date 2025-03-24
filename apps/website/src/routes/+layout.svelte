@@ -1,7 +1,15 @@
 <script lang="ts">
   import '../app.postcss';
   import 'highlight.js/styles/github-dark.css';
-  import { AppShell, Drawer, LightSwitch } from '@skeletonlabs/skeleton';
+  import {
+    AppShell,
+    Drawer,
+    LightSwitch,
+    setInitialClassState,
+    storePopup,
+    initializeStores,
+    getDrawerStore,
+  } from '@skeletonlabs/skeleton';
   import Header from '$lib/layout/Header.svelte';
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
@@ -10,7 +18,6 @@
   import Top from '~icons/mdi/arrow-top';
   import BtbIcon from '$lib/images/BtbIcon.svelte';
   import { computePosition, autoUpdate, offset, shift, flip, arrow, hide } from '@floating-ui/dom';
-  import { storePopup, initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
 
   import hljs from 'highlight.js/lib/core';
 
@@ -109,6 +116,7 @@
   ];
 </script>
 
+<svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head>
 <Drawer width="lg:w-80 w-4/5">
   {#if $drawerStore.id === 'sidebar'}
     <div class="flex flex-col gap-4 pb-4">

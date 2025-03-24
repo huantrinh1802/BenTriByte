@@ -27,16 +27,16 @@
   </div>
 
   <div class="grid gap-4">
+    <RssFeed style="ml-auto" />
     <div class="mx-auto flex gap-4 pb-4">
       <h1 class="m-0 text-center">{metadata.title}</h1>
-      <RssFeed />
     </div>
     <div class="flex flex-col justify-between gap-4 sm:mx-auto sm:w-[min(100%,80ch)] lg:flex-row">
-      <div class="flex flex-wrap gap-4">
+      <!-- <div class="flex flex-wrap gap-4">
         {#each metadata.tags as tag}
           <a href={`/blogs?tag=${tag}`}>#{tag}</a>
         {/each}
-      </div>
+      </div> -->
       <div class="ml-auto">{new Date(metadata.date).toLocaleDateString()}</div>
     </div>
     <div class="grid py-4 prose-headings:my-0">
@@ -44,6 +44,11 @@
         <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         {@html content}
       </div>
+    </div>
+    <div class="flex w-2/3 flex-wrap gap-4">
+      {#each metadata.tags as tag}
+        <a class="text-primary-600-300-token" href={`/blogs?tag=${tag}`}>#{tag}</a>
+      {/each}
     </div>
   </div>
   <div class="relative hidden lg:block">
