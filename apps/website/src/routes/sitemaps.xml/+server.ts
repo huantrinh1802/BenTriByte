@@ -3,11 +3,7 @@ import type { BlogMetadata } from '$lib/types/blog';
 import type { RequestHandler } from './$types';
 export const prerender = true;
 function generate_url(loc: string, lastmod: string) {
-  if (loc.includes('localhost')) {
-    return `<url><loc>${loc}</loc><lastmod>${lastmod}</lastmod></url>`;
-  } else {
-    return `<url><loc>https://${loc}</loc><lastmod>${lastmod}</lastmod></url>`;
-  }
+  return `<url><loc>${loc}</loc><lastmod>${lastmod}</lastmod></url>`;
 }
 export const GET = (async () => {
   //   const { data } = await siteMapStore.fetch({ event });
