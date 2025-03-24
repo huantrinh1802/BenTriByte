@@ -21,9 +21,9 @@
 <svelte:head><title>Ben Trinh's Homepage</title></svelte:head>
 <div
   id="sections"
-  class="h-[calc(100dvh-var(--sk-header-height)-198px)] w-full snap-y snap-mandatory overflow-y-auto px-4 sm:h-[calc(100dvh-180px)] sm:px-10"
+  class="w-full overflow-y-auto p-4 sm:px-10 md:snap-y md:snap-mandatory xl:h-[calc(100dvh-100px)]"
 >
-  <section class="ks-hero-section show-on-scroll hide-scrollbar grid h-full snap-start grid-cols-1 gap-10 overflow-y-auto p-4 md:grid-cols-2 md:gap-10">
+  <section class="ks-hero-section hide-scrollbar grid snap-end grid-cols-1 gap-10 overflow-y-auto sm:p-4 md:h-full md:grid-cols-2 md:gap-10">
     <div class="my-auto flex flex-col gap-4">
       <div class="my-auto flex flex-col gap-4">
         <TypeWriter
@@ -60,14 +60,14 @@
       </div>
     </div>
     <img
-      class="relative mx-auto my-auto mb-auto max-w-[400px] rounded-3xl object-cover"
+      class="relative mx-auto my-auto mb-auto w-full rounded-3xl object-cover sm:max-w-[400px]"
       srcset={`${base}/images/hero.png`}
       alt="BenTri Byte Hero"
     />
   </section>
   <section
     id="intro"
-    class="ks-section prose hide-scrollbar h-full overflow-y-auto dark:prose-invert prose-headings:my-0 prose-p:my-0"
+    class="ks-section prose hide-scrollbar overflow-y-auto dark:prose-invert prose-headings:my-0 prose-p:my-0 md:h-full"
   >
     <AboutMe />
   </section>
