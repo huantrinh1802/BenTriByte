@@ -12,9 +12,9 @@
 
   $: current = 0;
   $: direction = 500;
-  let autoplay: NodeJS.Timer | null = null;
+  let autoplay: number | null = null;
   if (autoplayEnabled) {
-    autoplay = setInterval(() => {
+    autoplay = window.setInterval(() => {
       if (current == items.length - 1) {
         calcDirection('neg');
         current = 0;
