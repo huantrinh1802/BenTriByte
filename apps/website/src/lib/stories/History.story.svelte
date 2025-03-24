@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let Hst: any;
+  export let Hst;
   import History from '$lib/components/History.svelte';
   let content = {
     title: 'Software Engineer',
@@ -10,6 +10,7 @@
       'Odio enim asperiores. Odit eius dolor minima perferendis maxime commodi illum et. Repudiandae impedit veniam qui repellendus. Est minima dolorem voluptatem eum id cum officia.',
       'Odio enim asperiores. Odit eius dolor minima perferendis maxime commodi illum et. Repudiandae impedit veniam qui repellendus. Est minima dolorem voluptatem eum id cum officia.',
     ],
+    summary: 'Odio enim asperiores. Odit eius dolor minima perferendis maxime commodi illum et.',
   };
 </script>
 

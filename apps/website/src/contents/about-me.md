@@ -1,6 +1,7 @@
 ---
 title: About me
 ---
+
 ## About me
 
 Greetings! My name is Ben Trinh. I am currently based in Sydney, Australia.

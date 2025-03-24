@@ -198,6 +198,7 @@
       {#if currentContent === content.skill}
         <ul>
           {#each content.contents as skillContent}
+            <!-- eslint-disable-next-line svelte/no-at-html-tags -->
             <li>{@html skillContent}</li>
           {/each}
         </ul>

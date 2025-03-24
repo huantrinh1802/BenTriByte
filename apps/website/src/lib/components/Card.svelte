@@ -1,6 +1,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
-  export let content: any;
+  import type { BlogMetadata } from '$lib/types/blog';
+  export let content: BlogMetadata;
   export let baseUrl = '/';
 </script>
 

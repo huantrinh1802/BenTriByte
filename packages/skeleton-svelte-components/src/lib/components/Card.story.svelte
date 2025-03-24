@@ -1,7 +1,8 @@
 <script lang="ts">
   import Card from '$lib/components/Card.svelte';
   import img from '$lib/assets/background-images/post_1.jpg';
-  export let Hst: any;
+  import type { Hst as HstType } from '@histoire/plugin-svelte';
+  export let Hst: HstType;
   let content = {
     title: 'quisquam sint et',
     contentImage: {

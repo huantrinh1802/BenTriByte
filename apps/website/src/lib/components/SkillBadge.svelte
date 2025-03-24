@@ -26,7 +26,7 @@
       });
     }
   }
-  function handleMouseMove(e: MouseEvent) {
+  function handleMouseMove() {
     direction = !direction;
   }
 </script>

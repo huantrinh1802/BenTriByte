@@ -1,6 +1,5 @@
 <script lang="ts">
   import History from '$lib/components/History.svelte';
-  import type { PageData } from './$types';
   import Email from '~icons/material-symbols/attach-email-rounded';
   import GitHub from '~icons/skill-icons/github-dark';
   import LinkedIn from '~icons/skill-icons/linkedin';
@@ -89,11 +88,12 @@
     { title: 'English', percentage: 85 },
   ];
   onMount(() => {
-    window.onbeforeprint = (event) => {
+    window.onbeforeprint = () => {
       document.getElementById('page').scrollTo(0, 0);
     };
   });
 </script>
+
 <svelte:head><title>Ben Trinh's resume</title></svelte:head>
 <div class="flex p-2 print:hidden">
   <button

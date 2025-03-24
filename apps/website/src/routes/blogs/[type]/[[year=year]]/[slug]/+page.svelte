@@ -6,10 +6,11 @@
   export let data: PageData;
   $: ({ content, metadata } = data);
 </script>
+
 <svelte:head><title>{metadata.title}</title></svelte:head>
 <div class="prose p-10 dark:prose-invert">
   <h1 class="text-center">{metadata.title}</h1>
-  <div class="flex justify-between w-[75ch] mx-auto">
+  <div class="mx-auto flex w-[75ch] justify-between">
     <div class="flex gap-4">
       {#each metadata.tags as tag}
         <a href={`/blogs?tag=${tag}`}>#{tag}</a>
@@ -17,8 +18,8 @@
     </div>
     <div>{new Date(metadata.date).toLocaleDateString()}</div>
   </div>
-  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   <div class="mx-auto w-[75ch]">
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
     {@html content}
   </div>
 </div>

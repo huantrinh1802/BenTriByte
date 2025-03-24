@@ -1,8 +1,7 @@
 <script lang="ts">
-  export let Hst: any;
+  import type { Hst as HstType } from '@histoire/plugin-svelte';
+  export let Hst: HstType;
   import SkillBanner from '../components/SkillBanner.svelte';
-  import Python from '~icons/skill-icons/python-dark';
-  import AWS from '~icons/skill-icons/aws-dark';
   let percentage = 50;
 </script>
 
@@ -17,13 +16,12 @@
     />
 
     <SkillBanner
+      onClick={null}
       {percentage}
       skill="Python"
-    >
-      <div slot="content">I am very good at</div>
-    </SkillBanner>
+    />
   </Hst.Variant>
-  <Hst.Variant title="AWS">
+  <!-- <Hst.Variant title="AWS">
     <svelte:fragment slot="controls">
       Content: <input
         type="number"
@@ -33,5 +31,5 @@
     <SkillBanner {percentage}>
       <AWS slot="logo" />
     </SkillBanner>
-  </Hst.Variant>
+  </Hst.Variant> -->
 </Hst.Story>

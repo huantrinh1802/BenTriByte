@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
-  import { fade, slide } from 'svelte/transition';
   export let words = 'Hello world';
   export let style = 'text-4xl';
   let currentWords = [];
@@ -30,7 +28,10 @@
   start();
 </script>
 
-<span class={`typewriter h-fit ${style}`} style="font-family: 'Santanelli';">
+<span
+  class={`typewriter h-fit ${style}`}
+  style="font-family: 'Santanelli';"
+>
   {#each currentWords as char}
     {char}
   {/each}
