@@ -20,17 +20,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
+          ref: ${{ github.ref }}
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
-      - run: pnpm run check
+      - run: |
+          echo "GH_TOKEN=$GH_TOKEN\nPUBLIC_SITE_URL=$PUBLIC_SITE_URL" >> ./apps/website/.env
+          pnpm run check
         env:
-          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+          GH_TOKEN: ${{secrets.GH_TOKEN}}
           PUBLIC_SITE_URL: 'http://localhost:5173'

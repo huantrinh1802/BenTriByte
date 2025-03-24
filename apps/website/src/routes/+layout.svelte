@@ -119,7 +119,7 @@
         aria-label="Toggle sidebar"
         on:click={() => drawerStore.close()}
         type="button"
-        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
         aria-controls="mobile-menu-2"
         aria-expanded="false"
       >
@@ -136,12 +136,12 @@
 </Drawer>
 <AppShell slotPageContent="print:bg-white" scrollbarGutter="stable">
   <svelte:fragment slot="header">
-    <div class="print:hidden md:hidden">
+    <div class="md:hidden print:hidden">
       <Header {menuItems} />
     </div>
   </svelte:fragment>
   <svelte:fragment slot="sidebarLeft">
-    <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 print:!hidden md:flex">
+    <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 md:flex print:!hidden">
       <a class="flex flex-col items-center gap-2 bg-transparent" aria-label="Home" href={`${base}/`}>
         <BtbIcon bg="bg-transparency px-2 h-16 w-16" partColor="dark:fill-white fill-primary-800" />
         <p style="font-family: 'Santanelli';">BenTri Byte</p>
