@@ -26,14 +26,6 @@ const config = {
     alias: {
       $contents: path.resolve('./src/contents'),
     },
-    csp: {
-      directives: {
-        'script-src': ['self'],
-      },
-      reportOnly: {
-        'script-src': ['self'],
-      },
-    },
     prerender: {
       entries: ['/blogs/'],
     },
