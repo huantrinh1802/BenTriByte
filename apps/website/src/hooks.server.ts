@@ -7,7 +7,7 @@ export const handleError = (() => {
 
 export async function handle({ event, resolve }) {
   const response = await resolve(event, {
-    preload: ({ type, path }) => false,
+    preload: () => false,
   });
 
   return response;
