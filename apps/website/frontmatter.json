@@ -1,0 +1,18 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.content.supportedFileTypes": ["md", "markdown", "mdx", "svx"],
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "blogs",
+      "path": "[[workspace]]/apps/website/src/contents/blogs"
+    },
+    {
+      "title": "projects",
+      "path": "[[workspace]]/apps/website/src/contents/projects"
+    },
+    {
+      "title": "website_contents",
+      "path": "[[workspace]]/apps/website/src/contents"
+    }
+  ]
+}
