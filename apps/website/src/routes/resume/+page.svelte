@@ -5,6 +5,7 @@
   import GitHub from '~icons/skill-icons/github-dark';
   import LinkedIn from '~icons/skill-icons/linkedin';
   import { ProgressBar } from '@skeletonlabs/skeleton';
+  import { base } from '$app/paths';
   export let data: PageData;
   const contacts = [
     { href: 'mailto:huantrinh1802@gmail.com', icon: Email, text: 'huantrinh1802@gmail.com' },
@@ -76,7 +77,7 @@
 <div class="grid kcp-layout h-full overflow-over">
   <div class="kcp-profile flex items-center">
     <div
-      style="background-image: url('/images/hero_no_filter.png')"
+      style={`background-image: url('${base}/images/hero_no_filter.png')`}
       class="kcp-profile-photo flex-shrink-0 bg-primary-700 z-10 border-white border-4 rounded-full flex justify-center items-center print:w-40 print:h-40 w-60 h-60 p-8" />
     <div class="-ml-10 z-0 bg-primary-700 flex justify-center items-center w-full print:h-32 h-40">
       <div>
