@@ -1,13 +1,14 @@
 <script lang="ts">
   import '../app.postcss';
   import 'highlight.js/styles/github-dark.css';
-  import { AppShell, Drawer } from '@skeletonlabs/skeleton';
+  import { AppShell, Drawer, LightSwitch } from '@skeletonlabs/skeleton';
   import Header from '$lib/layout/Header.svelte';
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
   import type { AfterNavigate } from '@sveltejs/kit';
   import { afterNavigate, onNavigate } from '$app/navigation';
   import Top from '~icons/mdi/arrow-top';
+  import BtbIcon from '$lib/images/BtbIcon.svelte';
   import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
   import { storePopup, initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
 
@@ -138,11 +139,24 @@
   scrollbarGutter="stable"
 >
   <svelte:fragment slot="header">
-    <div class="print:hidden">
+    <div class="print:hidden sm:hidden">
       <Header {menuItems} />
     </div>
   </svelte:fragment>
-  <!-- <svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment> -->
+  <svelte:fragment slot="sidebarLeft">
+    <div class="bg-surface-800 hidden h-full flex-col gap-6 pl-4 pt-4 sm:flex">
+      <a
+        class="flex items-center gap-4"
+        aria-label="Home"
+        href={`${base}/`}
+      >
+        <BtbIcon />
+        <p style="font-family: 'Santanelli';">BenTri Byte</p>
+      </a>
+      <Navigation {menuItems} />
+      <div class="mx-atuo flex w-full justify-center pb-4"><LightSwitch /></div>
+    </div>
+  </svelte:fragment>
   <!-- <svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
   <!-- <svelte:fragment slot="pageHeader">Page Header</svelte:fragment> -->
   <!-- Router Slot -->
