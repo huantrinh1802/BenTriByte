@@ -94,11 +94,14 @@
   });
 </script>
 
-<svelte:head><title>Ben Trinh's resume</title></svelte:head>
+<svelte:head>
+  <title>Ben Trinh's Resume</title>
+  <meta name="description" content="Summary of Ben Trinh's professional career."/>
+</svelte:head>
 <div class="kcp-layout overflow-over flex flex-col print:grid md:grid">
   <div class="kcp-profile flex flex-col items-center print:break-after-avoid print:flex-row md:flex-row">
     <div
-      style={`background-image: url('${base}/images/hero_no_filter.png')`}
+      style={`background-image: url('${base}/images/hero_no_filter.avif')`}
       class="kcp-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-primary-500 p-8 print:h-40 print:w-40"
     />
     <div

@@ -8,7 +8,7 @@
 
 <AppBar background="bg-primary-700 text-white rounded-b">
   <svelte:fragment slot="lead"
-    ><button class="mr-4 sm:hidden" on:click={() => drawerStore.open({ id: 'sidebar' })}>
+    ><button aria-label="Open sidebar" class="mr-4 sm:hidden" on:click={() => drawerStore.open({ id: 'sidebar' })}>
       <span>
         <svg viewBox="0 0 100 80" class="h-4 w-4 fill-white">
           <rect width="100" height="20" />
@@ -17,7 +17,7 @@
         </svg>
       </span>
     </button>
-    <a class="flex items-center gap-4" aria-label="Home" href={`${base}/`}>
+    <a class="flex items-center gap-4 h-12" aria-label="Home" href={`${base}/`}>
       <BtbIcon bg="h-10 w-10" partColor="fill-white" />
       <p style="font-family: 'Santanelli';">BenTri Byte</p>
     </a>
