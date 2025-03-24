@@ -26,7 +26,8 @@
   import { convertKebabToTitle } from '$lib/utils/strings';
   import Footer from '$lib/layout/Footer.svelte';
   import { page } from '$app/stores';
-  export let data;
+  import type { PageData } from './$types';
+  export let data: PageData;
   afterNavigate((params: AfterNavigate) => {
     const isNewPage: boolean = params.from?.url.pathname !== params.to?.url.pathname;
     const elemPage = document.querySelector('#page');
