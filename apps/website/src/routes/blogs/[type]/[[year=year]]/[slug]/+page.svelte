@@ -29,7 +29,7 @@
   </div>
 
   <div class="grid gap-4">
-    <div class="flex gap-4 pb-4">
+    <div class="mx-auto flex gap-4 pb-4">
       <h1 class="m-0 text-center">{metadata.title}</h1>
       <RssFeed />
     </div>
