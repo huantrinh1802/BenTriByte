@@ -26,7 +26,7 @@ export default [
       parserOptions: {
         parser: typescriptParser,
         project: './tsconfig.json',
-        extraFileExtensions: ['.svelte'],
+        extraFileExtensions: ['.svelte', '.ts'],
       },
     },
   },
