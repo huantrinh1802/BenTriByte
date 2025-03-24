@@ -37,7 +37,6 @@ const config = {
       entries: ['/blogs/', '/projects/', '/sitemaps.xml', '/blogs/feed', '/resume', '/resume/amber-duong'],
     },
     paths: {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       base: dev ? '' : process.env.BASE_PATH,
     },
