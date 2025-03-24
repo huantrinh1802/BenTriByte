@@ -37,8 +37,10 @@
 
 <style lang="postcss">
   @media print {
-    :global() {
+    p,
+    span {
       font-size: 12px;
+      line-height: 16px;
     }
   }
 </style>
