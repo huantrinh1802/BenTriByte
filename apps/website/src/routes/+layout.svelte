@@ -77,11 +77,11 @@
   const menuItems = [
     { name: 'Home', id: 'hone', href: `${base}/` },
     {
-      name: 'About Me',
-      id: 'about-me',
+      name: 'About',
+      id: 'about',
       // href: `${base}/skills`,
       subItems: [
-        { name: 'Intro', id: 'intro', href: `${base}/#intro` },
+        { name: 'Me', id: 'intro', href: `${base}/#intro` },
         { name: 'My Skills', id: 'skills', href: `${base}/skills` },
         // { name: 'My Projects', id: 'projects', href: `${base}/projects` },
         { name: 'My Resume', id: 'resume', href: `${base}/resume` },
@@ -116,13 +116,13 @@
       <button
         on:click={() => drawerStore.close()}
         type="button"
-        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
+        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         aria-controls="mobile-menu-2"
         aria-expanded="false"
       >
         <span class="sr-only">Close main menu</span>
         <svg
-          class="dark: fill-primary-800 h-6 w-6 dark:fill-white"
+          class="dark: h-6 w-6 fill-primary-800 dark:fill-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 512"
           ><path
@@ -144,14 +144,14 @@
     </div>
   </svelte:fragment>
   <svelte:fragment slot="sidebarLeft">
-    <div class="bg-surface-800 hidden h-full flex-col gap-6 pl-4 pt-4 sm:flex">
+    <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 sm:flex">
       <a
-        class="flex items-center gap-4"
+        class="flex items-center gap-4 bg-transparent"
         aria-label="Home"
         href={`${base}/`}
       >
-      <img alt="Webpage logo" src="/icon.svg"/>
-      <p style="font-family: 'Santanelli';">BenTri Byte</p>
+        <BtbIcon />
+        <p style="font-family: 'Santanelli';">BenTri Byte</p>
       </a>
       <Navigation {menuItems} />
       <div class="mx-atuo flex w-full justify-center pb-4"><LightSwitch /></div>

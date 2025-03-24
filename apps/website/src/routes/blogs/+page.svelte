@@ -23,7 +23,7 @@
 </script>
 
 <svelte:head><title>Ben Trinh's All Blogs</title></svelte:head>
-<div class="prose dark:prose-invert p-4 md:p-10">
+<div class="prose p-4 dark:prose-invert md:p-10">
   <h1>Blogs</h1>
   {#if $page.url.searchParams.getAll('tag').length === 0}
     {#each Object.entries(blogGroups) as [name, blogs]}
@@ -58,7 +58,10 @@
   {:else}
     <div>
       <p>There is no blogs for current filters</p>
-      <a href={`${base}/blogs`} aria-label="Go back to blogs">Go back</a>
+      <a
+        href={`${base}/blogs`}
+        aria-label="Go back to blogs">Go back</a
+      >
     </div>
   {/if}
 </div>

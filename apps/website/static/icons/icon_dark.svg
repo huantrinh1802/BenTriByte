@@ -19,8 +19,8 @@
         stroke-width="4"
       >
         <rect
-          fill="white"
-          stroke="white"
+          fill="black"
+          stroke="black"
           width="40"
           height="32"
           x="4"
@@ -36,7 +36,7 @@
     </mask>
   </defs>
   <path
-    fill="white"
+    fill="black"
     d="M0 0h48v48H0z"
     mask="url(#ipSTerminal0)"
   />
