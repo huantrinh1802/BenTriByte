@@ -1,18 +1,20 @@
 {
-    "short_name": "Ben Trinh's portfolio",
-    "name": "Ben Trinh's portfolio",
+    "short_name": "King Cong Studio",
+    "name": "King Cong Studio",
+    "orientation": "portrait-primary",
     "icons": [{
             "src": "favicon.ico",
             "sizes": "64x64 32x32 24x24 16x16",
             "type": "image/x-icon"
         },
         {
-            "src": "apple-icon.png",
+            "src": "apple-touch-icon-ipad-retina-152x152-precomposed.png",
             "sizes": "64x64 32x32 24x24 16x16",
             "type": "image/x-icon"
         }
     ],
-    "start_url": ".",
+    "scope": "/",
+    "start_url": "/",
     "display": "standalone",
     "theme_color": "#000000",
     "background_color": "#ffffff"
