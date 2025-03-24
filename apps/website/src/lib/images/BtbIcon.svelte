@@ -5,8 +5,6 @@
 
 <div class={`flex items-center justify-center rounded-2xl ${bg}`}>
   <svg
-    width="512"
-    height="512"
     viewBox="0 0 135.46667 135.46667"
     version="1.1"
     id="svg1"

@@ -27,12 +27,14 @@
     >{new Date(content.date).toLocaleDateString()}</span
   >
   <div class="@md:flex-row flex flex-col gap-4">
-    <img
-      loading="lazy"
-      class="@md:h-full mx-auto my-0 h-fit w-full rounded-md object-fill"
-      src={`${base}/${content?.preview ?? placeholderImage}`}
-      alt=""
-    />
+    <a href={`${baseUrl}/${content?.slug}`}>
+      <img
+        loading="lazy"
+        class="@md:h-full mx-auto my-0 h-fit w-full rounded-md object-fill"
+        src={`${base}/${content?.preview ?? placeholderImage}`}
+        alt=""
+      />
+    </a>
     <!-- <div class="flex h-full w-full"> -->
     <h4 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
       <a href={`${baseUrl}/${content?.slug}`}>{content?.title}</a>
