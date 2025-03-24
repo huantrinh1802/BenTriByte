@@ -90,7 +90,7 @@
         { name: 'Me', id: 'intro', href: `${base}/#intro` },
         { name: 'Skills', id: 'skills', href: `${base}/skills` },
         // { name: 'My Projects', id: 'projects', href: `${base}/projects` },
-        { name: 'Resume', id: 'resume', href: `${base}/resume` },
+        { name: 'Resume', id: 'resume', href: `${base}/resume/ben-trinh` },
       ],
     },
     {
