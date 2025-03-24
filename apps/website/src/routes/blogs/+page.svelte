@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-  <title>Ben Trinh's All Blogs</title>
+  <title>BenTriByte: All Blogs</title>
   <meta name="description" content="A wall of Ben Trinh's blogs" />
 </svelte:head>
 <div class="grid gap-4 p-4 md:p-10">
