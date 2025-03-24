@@ -11,7 +11,7 @@
   export let content: HistoryContent = null;
 </script>
 
-<div class="flex flex-col gap-3 print:block print:break-before-auto print:gap-1">
+<div class="grid gap-3 print:break-before-auto print:gap-2">
   <h3 class="print:!text-md">{content.title}</h3>
   {#if content.subtitle}
     <h4 class="text-surface-700-200-token print:!text-sm print:!text-gray-800">{content.subtitle}</h4>
@@ -24,9 +24,9 @@
     <p class="py-2">{content.summary}</p>
   {/if}
   {#if content.tasks}
-    <ul class="list">
+    <ul class="grid gap-2 pl-6 print:break-inside-auto print:gap-1">
       {#each content.tasks as task}
-        <li class="!whitespace-normal">
+        <li class="flex !whitespace-normal">
           <span><RightArrow /></span>
           <p>{task}</p>
         </li>
