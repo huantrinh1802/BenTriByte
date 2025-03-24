@@ -56,11 +56,7 @@
         {#if socials != null}
           {#each socials as social}
             <li class="flex gap-4">
-              <a
-                href={social.href}
-                class="pointer flex gap-2 hover:underline"
-                aria-label={social.label}
-              >
+              <a href={social.href} class="pointer flex gap-2 hover:underline" aria-label={social.label}>
                 {#if social.name === 'Phone'}
                   <Phone class="text-lg" />
                 {:else if social.name === 'Email'}
@@ -82,11 +78,7 @@
     <div class="text-primary-700-200-token flex flex-col items-center justify-center max-xl:pt-4">
       <span class="text-sm sm:text-center"
         >© {new Date().getFullYear()}
-        <a
-          href={`${base}/`}
-          aria-label="Go to Home"
-          class="mle-link hover:underline">BenTri Byte.</a
-        >
+        <a href={`${base}/`} aria-label="Go to Home" class="mle-link hover:underline">BenTri Byte.</a>
         All Rights Reserved.
       </span>
       <span class="text-sm sm:text-center"

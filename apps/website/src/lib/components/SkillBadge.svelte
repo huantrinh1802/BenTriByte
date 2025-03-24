@@ -51,10 +51,7 @@
       <slot name="content" />
     </div>
   </div>
-  <svg
-    class="absolute h-full w-full"
-    viewBox="0 0 36 36"
-  >
+  <svg class="absolute h-full w-full" viewBox="0 0 36 36">
     <path
       id="progress-bar"
       class:progress-bar-animating={animating}

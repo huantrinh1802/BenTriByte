@@ -29,10 +29,7 @@
 </script>
 
 <div class="flex w-full">
-  <div
-    class={`typewriter h-fit ${style}`}
-    style="font-family: 'Santanelli'; font-display: optimal;"
-  >
+  <div class={`typewriter h-fit ${style}`} style="font-family: 'Santanelli'; font-display: optimal;">
     {#each currentWords as char}
       {char}
     {/each}
@@ -42,7 +39,7 @@
 <style lang="postcss">
   .typewriter {
     position: relative;
-    letter-spacing: 0.15em; /* Adjust as needed */
+    letter-spacing: 0.2em; /* Adjust as needed */
     animation: typing 3.5s steps(40, end);
   }
   .typewriter::after {

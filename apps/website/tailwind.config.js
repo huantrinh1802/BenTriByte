@@ -9,7 +9,10 @@ import { customTheme } from './custom-theme';
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
-  content: ['./src/**/*.{html,js,svelte,ts,svx}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts,svx}')],
+  content: [
+    './src/**/*.{html,js,svelte,ts,svx}',
+    join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts,svx}'),
+  ],
 
   theme: {
     extend: {

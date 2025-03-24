@@ -9,8 +9,9 @@ categories: ''
 ---
 
 <script>
-  import Python from '~icons/skill-icons/python-dark'; import AWS from '~icons/skill-icons/aws-dark'; import VueJS from '~icons/skill-icons/vuejs-dark'; import SkillBanner from
-  '$lib/components/SkillBanner.svelte'; import SvelteJS from '~icons/skill-icons/svelte';
+  import Python from '~icons/skill-icons/python-dark'; import AWS from '~icons/skill-icons/aws-dark'; import VueJS from
+  '~icons/skill-icons/vuejs-dark'; import SkillBanner from '$lib/components/SkillBanner.svelte'; import SvelteJS from
+  '~icons/skill-icons/svelte';
 </script>
 
 ## My Skills

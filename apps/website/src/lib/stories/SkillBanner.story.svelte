@@ -7,19 +7,9 @@
 
 <Hst.Story>
   <Hst.Variant title="Python">
-    <Hst.Slider
-      bind:value={percentage}
-      step={5}
-      min={5}
-      max={100}
-      title="Percentage"
-    />
+    <Hst.Slider bind:value={percentage} step={5} min={5} max={100} title="Percentage" />
 
-    <SkillBanner
-      onClick={null}
-      {percentage}
-      skill="Python"
-    />
+    <SkillBanner onClick={null} {percentage} skill="Python" />
   </Hst.Variant>
   <!-- <Hst.Variant title="AWS">
     <svelte:fragment slot="controls">

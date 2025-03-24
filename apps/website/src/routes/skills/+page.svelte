@@ -149,10 +149,7 @@
 >
   <div class="grid gap-2 p-4">
     <div class="flex items-center">
-      <button
-        class="ml-auto mr-2"
-        on:click={dialog.close()}><Close /></button
-      >
+      <button class="ml-auto mr-2" on:click={dialog.close()}><Close /></button>
     </div>
     {#each [...pro_lang_contents, ...pro_clouds_contents, ...pro_tech_contents, ...casual_lang_contents, ...casual_tech_contents] as content}
       {#if currentContent === content.skill && content.contents != null}

@@ -20,7 +20,10 @@ export const GET = (async () => {
     // generate_url(`${PUBLIC_SITE_URL}/en/services/employment`, new Date().toISOString()),
     // generate_url(`${PUBLIC_SITE_URL}/vi/services/employment`, new Date().toISOString()),
   ];
-  const modules: Record<string, { metadata: BlogMetadata; content: object }> = await import.meta.glob('$contents/blogs/**/*.svx', { eager: true });
+  const modules: Record<string, { metadata: BlogMetadata; content: object }> = await import.meta.glob(
+    '$contents/blogs/**/*.svx',
+    { eager: true }
+  );
   for (const modulePath in modules) {
     const paths = modulePath.split('/');
     const slug = paths.at(-1).split('.')[0];
