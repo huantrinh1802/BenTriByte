@@ -28,14 +28,16 @@
   start();
 </script>
 
-<span
-  class={`typewriter h-fit ${style}`}
-  style="font-family: 'Santanelli'; font-display: swap;"
->
-  {#each currentWords as char}
-    {char}
-  {/each}
-</span>
+<div class="flex w-full">
+  <div
+    class={`typewriter h-fit ${style}`}
+    style="font-family: 'Santanelli'; font-display: optimal;"
+  >
+    {#each currentWords as char}
+      {char}
+    {/each}
+  </div>
+</div>
 
 <style lang="postcss">
   .typewriter {
@@ -54,7 +56,7 @@
       width: 0;
     }
     to {
-      width: fit-content;
+      width: 100%;
     }
   }
   @keyframes blink-caret {
