@@ -2,7 +2,7 @@
   import RSS from '~icons/foundation/rss';
   import { PUBLIC_SITE_URL } from '$env/static/public';
   import { popup, type PopupSettings } from '@skeletonlabs/skeleton';
-  export let style: string = '';
+  export let style = '';
   let trigger: HTMLButtonElement;
   const popupClick: PopupSettings = {
     event: 'click',
