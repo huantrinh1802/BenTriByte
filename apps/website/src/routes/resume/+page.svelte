@@ -13,7 +13,7 @@
     github: GitHub,
     linkedin: LinkedIn,
   };
-  const { profile, contacts, experiences, educations, skills, languages, oldSkills } = resumeData;
+  const { profile, contacts, experiences, educations, skills, languages } = resumeData;
   onMount(() => {
     window.onbeforeprint = () => {
       document.getElementById('page').scrollTo(0, 0);
@@ -57,7 +57,7 @@
       <div class="grid gap-2">
         <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
         <div class="grid gap-4">
-          {#each Object.entries(skills) as [skillSetName, skillSet]}
+          {#each Object.values(skills) as skillSet}
             <strong class="text-md">{skillSet.title}</strong>
             <div class="grid gap-2">
               {#each skillSet.professional as item}
@@ -101,7 +101,7 @@
         <svelte:fragment slot="content">
           <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
           <div class="grid gap-4">
-            {#each Object.entries(skills) as [skillSetName, skillSet]}
+            {#each Object.values(skills) as skillSet}
               <strong class="text-md">{skillSet.title}</strong>
               <div class="grid gap-2">
                 {#each skillSet.professional as item}

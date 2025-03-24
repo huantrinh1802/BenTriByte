@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
-  import RSS from '~icons/foundation/rss';
   import TOC from '~icons/mdi/table-of-contents';
   import type { PageData } from './$types';
   import { TableOfContents, popup, tocCrawler } from '@skeletonlabs/skeleton';
