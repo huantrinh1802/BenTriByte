@@ -98,19 +98,13 @@
       id: 'blogs',
       subItems: [
         { id: 'all-blogs', name: 'All Blogs', href: `${base}/blogs` },
-        ...data.blogs.map((blog) => {
+        ...Object.keys(data.blogs).map((blog) => {
           return { id: blog, name: convertKebabToTitle(blog), href: `${base}/blogs/${blog}` };
         }),
-        // { id: 'today-i-learn', name: 'Today I Learn', href: `${base}/blogs/today-i-learn` },
       ],
     },
   ];
   const socials = [
-    // {
-    //   name: 'Email',
-    //   label: 'huantrinh1802@gmail.com',
-    //   href: 'mailto:huantrinh1802@gmail.com',
-    // },
     { href: 'https://www.github.com/huantrinh1802', name: 'GitHub', label: 'gh/huantrinh1802' },
     { href: 'https://www.linkedin.com/in/huantrinh1802', name: 'LinkedIn', label: 'in/huantrinh1802' },
   ];
