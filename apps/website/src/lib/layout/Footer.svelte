@@ -48,7 +48,7 @@
     </div>
   </div>
   <hr class="my-4 border-gray-200 sm:mx-auto dark:border-gray-700" />
-  <div class="flex-col flex items-center justify-center">
+  <div class="flex flex-col items-center justify-center">
     <span class="text-primary-600-300-token text-sm sm:text-center"
       >© {new Date().getFullYear()}
       <a
