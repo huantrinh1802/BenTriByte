@@ -35,6 +35,11 @@
   // pull the store reference from the route props
 </script>
 
+<svelte:head>
+  <title>BenTriByte: My projects</title>
+  <meta name="description" content="A wall of Ben Trinh's public projects in Github" />
+</svelte:head>
+
 <div class="grid grid-cols-1 gap-4 rounded-md p-2 sm:grid-cols-2 lg:grid-cols-3">
   {#each data.repositories as repo}
     <div class="card relative flex flex-col gap-4 rounded-md p-4">
