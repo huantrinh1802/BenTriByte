@@ -22,18 +22,15 @@
       <TypeWriter
         style="text-4xl font-bold md:min-w-[50%] md:relative "
         words={`print("Hello ${helloName}")`}
-        bind:this={typewriter}
-      />
+        bind:this={typewriter} />
       <input
         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        on:input={({ target: { value } }) => debounce(value)}
-      />
+        on:input={({ target: { value } }) => debounce(value)} />
     </div>
     <img
       class="mx-auto my-auto mb-auto rounded-3xl max-w-lg relative object-cover"
-      srcset={`./images/hero.png`}
-      alt="King Studio Hero"
-    />
+      srcset={`/images/hero.png`}
+      alt="King Studio Hero" />
   </section>
   {#each contents as content}
     <section class="ks-section show-on-scroll overflow-y-auto">
