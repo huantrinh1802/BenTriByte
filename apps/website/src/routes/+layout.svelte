@@ -6,7 +6,7 @@
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
   import type { AfterNavigate } from '@sveltejs/kit';
-  import { afterNavigate } from '$app/navigation';
+  import { afterNavigate, onNavigate } from '$app/navigation';
   import Top from '~icons/mdi/arrow-top';
   import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
   import { storePopup, initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
@@ -28,6 +28,16 @@
   import { page } from '$app/stores';
   import type { PageData } from './$types';
   export let data: PageData;
+  onNavigate((navigation) => {
+    if (!document.startViewTransition || navigation.from === navigation.to) return;
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
   afterNavigate((params: AfterNavigate) => {
     const isNewPage: boolean = params.from?.url.pathname !== params.to?.url.pathname;
     const elemPage = document.querySelector('#page');
@@ -70,7 +80,7 @@
       id: 'about-me',
       // href: `${base}/skills`,
       subItems: [
-        { name: 'Intro', id: 'intro', href: `${base}#intro` },
+        { name: 'Intro', id: 'intro', href: `${base}/#intro` },
         { name: 'My Skills', id: 'skills', href: `${base}/skills` },
         // { name: 'My Projects', id: 'projects', href: `${base}/projects` },
         { name: 'My Resume', id: 'resume', href: `${base}/resume` },
@@ -105,13 +115,13 @@
       <button
         on:click={() => drawerStore.close()}
         type="button"
-        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
         aria-controls="mobile-menu-2"
         aria-expanded="false"
       >
         <span class="sr-only">Close main menu</span>
         <svg
-          class="dark: h-6 w-6 fill-primary-800 dark:fill-white"
+          class="dark: fill-primary-800 h-6 w-6 dark:fill-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 512"
           ><path
