@@ -2,7 +2,7 @@
 title:  "Embracing the Journey: Chronicles of Daily Learning"
 description: ''
 date: 2024-01-05
-preview: images/blogs/blog_placeholder.jpg
+preview: images/blogs/blog_placeholder.avif
 draft: false
 tags: ['programming', 'svelte', 'frontend', 'javascript']
 categories: ''

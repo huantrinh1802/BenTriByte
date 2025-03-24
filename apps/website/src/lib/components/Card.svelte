@@ -3,6 +3,7 @@
   import type { BlogMetadata } from '$lib/types/blog';
   export let content: BlogMetadata;
   export let baseUrl = '/';
+  export let placeholderImage: string;
 </script>
 
 <article class="@container card grid w-full gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800">
@@ -24,7 +25,7 @@
     <img
       loading="lazy"
       class="@md:h-full mx-auto my-0 h-fit w-full rounded-md object-fill"
-      src={`${base}/${content?.preview ?? 'images/blogs/blog_placeholder.jpg'}`}
+      src={`${base}/${content?.preview ?? placeholderImage}`}
       alt=""
     />
     <!-- <div class="flex h-full w-full"> -->
