@@ -29,16 +29,16 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
       - run: |
-          echo "GH_TOKEN=$GH_TOKEN\nPUBLIC_SITE_URL=$PUBLIC_SITE_URL" >> ./apps/website/.env
+          echo -e "GH_TOKEN=$GH_TOKEN\nPUBLIC_SITE_URL=$PUBLIC_SITE_URL" >> ./apps/website/.env
           pnpm run check
         env:
           GH_TOKEN: ${{secrets.GH_TOKEN}}
           PUBLIC_SITE_URL: 'http://localhost:5173'
       - name: Build SvelteKit
         run: |
-          echo "GH_TOKEN=$GH_TOKEN\nPUBLIC_SITE_URL=$PUBLIC_SITE_URL" >> ./.env
+          echo -e "GH_TOKEN=$GH_TOKEN\nPUBLIC_SITE_URL=$PUBLIC_SITE_URL" >> ./apps/website/.env
+          cat ./apps/website/.env
           pnpm build
-        working-directory: ${{ env.BUILD_PATH }}
         env:
           GH_TOKEN: ${{secrets.GH_TOKEN}}
           PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
