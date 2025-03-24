@@ -16,7 +16,7 @@ const config = {
   preprocess: [
     vitePreprocess(),
     preprocess({
-      postcss: {configFilePath: path.join(__dirname, 'postcss.config.cjs')}
+      postcss: { configFilePath: path.join(__dirname, 'postcss.config.cjs') },
     }),
     mdsvex(mdsvexConfig),
   ],
@@ -26,13 +26,21 @@ const config = {
     alias: {
       $contents: path.resolve('./src/contents'),
     },
+    csp: {
+      directives: {
+        'script-src': ['self'],
+      },
+      reportOnly: {
+        'script-src': ['self'],
+      },
+    },
     prerender: {
       entries: ['/blogs/'],
     },
     paths: {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      base: dev ? "" : process.env.BASE_PATH,
+      base: dev ? '' : process.env.BASE_PATH,
     },
   },
 };

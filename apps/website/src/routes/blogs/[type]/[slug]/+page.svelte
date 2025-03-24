@@ -2,10 +2,10 @@
   import type { PageData } from './$types';
 
   export let data: PageData;
-  $: ({content, metadata} = data);
+  $: ({ content, metadata } = data);
 </script>
 
-<div class="prose dark:prose-invert p-10">
+<div class="prose p-10 dark:prose-invert">
   <h1 class="text-center">{metadata.title}</h1>
   <div class="flex justify-between">
     <div class="flex gap-4">
@@ -15,5 +15,6 @@
     </div>
     <div>{new Date(metadata.date).toLocaleDateString()}</div>
   </div>
-    {@html content}
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html content}
 </div>

@@ -97,7 +97,7 @@
 
 <div class="flex p-2 print:hidden">
   <button
-    class="btn variant-filled-primary ml-auto"
+    class="variant-filled-primary btn ml-auto"
     on:click={() => {
       document.getElementById('page').scrollTo(0, 0);
       window.print();
@@ -124,7 +124,7 @@
         <svelte:fragment slot="content">
           {#each contacts as contact}
             <a
-              class="flex items-center gap-2 break-all !text-primary-900-50-token print:!text-xs print:!text-teal-900"
+              class="!text-primary-900-50-token flex items-center gap-2 break-all print:!text-xs print:!text-teal-900"
               href={contact.href}>
               <svelte:component
                 this={contact.icon}
