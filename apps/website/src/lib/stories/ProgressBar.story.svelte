@@ -6,5 +6,6 @@
 <Hst.Story>
   <ProgressBar
     percentage={50}
-    title="Python" />
+    title="Python"
+  />
 </Hst.Story>

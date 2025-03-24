@@ -1,9 +1,14 @@
-# About me
+---
+title: About me
+---
+## About me
 
-Hello, I'm a software engineer with a passion for problem-solving and creating efficient, user-friendly software. I specialize in developing scalable, high-performance applications and have experience working with a range of programming languages, including Java, Python, and JavaScript.
+Greetings! My name is Ben Trinh. I am currently based in Sydney, Australia.
 
-My love for coding started when I was in high school, and since then, I have spent countless hours honing my skills and learning new technologies. Over the years, I have had the opportunity to work on various exciting projects, from building complex web applications to designing intuitive mobile apps.
+I am a dedicated software engineer driven by a fervent passion for problem-solving and the creation of efficient, user-friendly software solutions. My expertise lies in developing scalable, high-performance applications, and I possess a versatile skill set encompassing programming languages such as Python, JavaScript, and, more recently, Rust.
 
-My approach to software development involves a deep understanding of the user's needs and an unwavering commitment to quality. I believe that great software is not just about writing clean code but also about creating a seamless user experience.
+My journey into the world of coding began during high school, igniting a flame that has propelled me to spend countless hours refining my skills and staying abreast of emerging technologies. Throughout the years, I've been fortunate to contribute to a diverse array of projects, ranging from the construction of intricate web applications to the design of intuitive mobile apps.
 
-When I'm not coding, I enjoy reading about new technologies and exploring the great outdoors. I also love giving back to the community by volunteering my time to teach coding to kids. If you're looking for a software engineer who is passionate about creating top-quality software and delivering results, I'm your guy. Let's connect and discuss how I can help you bring your ideas to life.
+At the core of my software development philosophy is a profound understanding of user needs and an unyielding commitment to quality. I firmly believe that exceptional software extends beyond clean code; it is about crafting a seamless and enjoyable user experience.
+
+Beyond coding, I find joy in exploring new technologies through avid reading and immersing myself in the beauty of the great outdoors. As a software engineer, I am not just dedicated to crafting lines of code; I am committed to shaping digital experiences that elevate and simplify the lives of users.
