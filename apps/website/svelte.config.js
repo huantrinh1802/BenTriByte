@@ -26,6 +26,12 @@ const config = {
   ],
 
   kit: {
+    csp: {
+      directives: {},
+      reportOnly: {
+        'report-uri': ['http://localhost:5174'],
+      },
+    },
     adapter: adapter({
       strict: true,
       precompress: true,
