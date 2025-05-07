@@ -1,14 +1,19 @@
 <script lang="ts">
   import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-  export let prevUrl = '/';
-  export let article: any;
+  interface Props {
+    prevUrl?: string;
+    article: any;
+  }
+
+  let { prevUrl = '/', article }: Props = $props();
 </script>
 
 <main class="mx-auto overflow-auto bg-white px-4 py-4 dark:bg-gray-900 lg:w-3/4">
   <article class="format format-sm sm:format-base lg:format-lg format-blue dark:format-invert relative w-full rounded-md">
     <header
       class={`not-format mle-article-header h-1/4 min-h-[360px] md:min-h-[400px] md:rounded-md xl:min-h-[600px]`}
-      style={`background-image: url(${article?.coverImage?.url})`} />
+      style={`background-image: url(${article?.coverImage?.url})`}>
+    </header>
     <div class="-mt-20 px-4 md:-mt-40 md:px-10">
       <div class="mx-auto flex w-full max-w-3xl flex-col gap-10 rounded-lg bg-slate-50 p-8 text-black dark:bg-slate-800 md:mx-0 md:max-w-none">
         <Breadcrumb

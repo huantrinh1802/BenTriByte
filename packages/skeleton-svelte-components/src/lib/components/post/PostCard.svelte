@@ -1,6 +1,10 @@
 <script lang="ts">
-  export let post: any;
-  export let baseUrl = '/';
+  interface Props {
+    post: any;
+    baseUrl?: string;
+  }
+
+  let { post, baseUrl = '/' }: Props = $props();
 </script>
 
 <article class="w-full rounded-lg border border-gray-200 bg-white p-6 shadow-md @container dark:border-gray-700 dark:bg-gray-800">

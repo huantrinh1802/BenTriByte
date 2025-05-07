@@ -1,7 +1,11 @@
 <script lang="ts">
   import type { Hst as HstType } from '@histoire/plugin-svelte';
-  export let Hst: HstType;
   import PostGrid from './PostGrid.svelte';
+  interface Props {
+    Hst: HstType;
+  }
+
+  let { Hst }: Props = $props();
   const recentBlogs = [
     {
       id: '3b4f3b70-32fc-5f0a-bd87-9881b1f6c27e',

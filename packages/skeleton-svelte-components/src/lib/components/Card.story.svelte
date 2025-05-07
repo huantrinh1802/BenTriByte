@@ -2,7 +2,11 @@
   import Card from '$lib/components/Card.svelte';
   import img from '$lib/assets/background-images/post_1.jpg';
   import type { Hst as HstType } from '@histoire/plugin-svelte';
-  export let Hst: HstType;
+  interface Props {
+    Hst: HstType;
+  }
+
+  let { Hst }: Props = $props();
   let content = {
     title: 'quisquam sint et',
     contentImage: {

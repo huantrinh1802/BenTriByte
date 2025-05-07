@@ -2,16 +2,22 @@
   import { sineInOut } from 'svelte/easing';
   import { fly } from 'svelte/transition';
   // import GreaterThan from '~icons/ic/baseline-greater-than';
-  // import LessThan from '~icons/ic/baseline-less-than';
 
-  export let items: any;
-  export let duration = 3000;
-  export let twStyle = '';
-  export let indicatorsStyle = 'bottom-4';
+  interface Props {
+    // import LessThan from '~icons/ic/baseline-less-than';
+    items: any;
+    duration?: number;
+    twStyle?: string;
+    indicatorsStyle?: string;
+  }
+
+  let { items, duration = 3000, twStyle = '', indicatorsStyle = 'bottom-4' }: Props = $props();
   export const autoplayEnabled = false;
 
-  $: current = 0;
-  $: direction = 500;
+  let current = $state(0);
+
+  let direction = $state(500);
+
   let autoplay: number | null = null;
   if (autoplayEnabled) {
     autoplay = window.setInterval(() => {
@@ -51,9 +57,7 @@
             x: direction,
             easing: sineInOut,
           }}>
-          <svelte:component
-            this={item.component}
-            {...item.props} />
+          <item.component {...item.props} />
         </div>
       {/if}
     {/each}
@@ -63,7 +67,7 @@
     {#each items as _, index}
       <button
         class="btn btn-sm"
-        on:click={() => {
+        onclick={() => {
           stopAutoplay();
           if (current > index) {
             calcDirection('neg');
@@ -74,12 +78,12 @@
         }}
         type="button"
         class:active={current === index}
-        data-value={index} />
+        data-value={index}></button>
     {/each}
   </div>
   <!-- Slider controls -->
   <button
-    on:click={() => {
+    onclick={() => {
       stopAutoplay();
       calcDirection('neg');
       if (current === 0) {
@@ -97,7 +101,7 @@
     </span>
   </button>
   <button
-    on:click={() => {
+    onclick={() => {
       stopAutoplay();
       calcDirection('pos');
       if (current == items.length - 1) {

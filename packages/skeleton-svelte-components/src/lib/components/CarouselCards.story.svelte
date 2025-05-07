@@ -2,7 +2,11 @@
   import Carousel from '$lib/components/Carousel.svelte';
   import PostCard from '$lib/components/post/PostCard.svelte';
   import type { Hst as HstType } from '@histoire/plugin-svelte';
-  export let Hst: HstType;
+  interface Props {
+    Hst: HstType;
+  }
+
+  let { Hst }: Props = $props();
   const contents: any[] = [
     {
       id: '3b4f3b70-32fc-5f0a-bd87-9881b1f6c27e',

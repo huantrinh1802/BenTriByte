@@ -1,8 +1,14 @@
 <script lang="ts">
-  export let url: string;
-  export let urlMetadata: any;
-  let breadcrumbs: any = [];
-  $: {
+  import { run } from 'svelte/legacy';
+
+  interface Props {
+    url: string;
+    urlMetadata: any;
+  }
+
+  let { url, urlMetadata }: Props = $props();
+  let breadcrumbs: any = $state([]);
+  run(() => {
     breadcrumbs = [
       {
         name: 'Home',
@@ -28,7 +34,7 @@
       url: url,
       current: true,
     });
-  }
+  });
 </script>
 
 <ol class="breadcrumb">
