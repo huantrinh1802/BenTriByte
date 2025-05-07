@@ -8,15 +8,17 @@
   }
 
   let { percentage = $bindable(85), content, logo }: Props = $props();
-  let hsl = $derived((() => {
-    if (percentage >= 100) {
-      percentage = 100;
-    } else if (percentage <= 0) {
-      percentage = 1;
-    }
-    let hue = (120 / 100) * percentage;
-    return `hsl(${hue}, 100%, 30%)`;
-  })());
+  let hsl = $derived(
+    (() => {
+      if (percentage >= 100) {
+        percentage = 100;
+      } else if (percentage <= 0) {
+        percentage = 1;
+      }
+      let hue = (120 / 100) * percentage;
+      return `hsl(${hue}, 100%, 30%)`;
+    })()
+  );
   let animating = $state(false);
   let duration = 1;
   let direction = $state(true);

@@ -141,23 +141,19 @@
 </Drawer>
 <AppShell slotPageContent="print:bg-white" scrollbarGutter="stable">
   {#snippet header()}
-  
-      <div class="md:hidden print:hidden">
-        <Header {menuItems} />
-      </div>
-    
+    <div class="md:hidden print:hidden">
+      <Header {menuItems} />
+    </div>
   {/snippet}
   {#snippet sidebarLeft()}
-  
-      <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 md:flex print:!hidden">
-        <a class="flex flex-col items-center gap-2 bg-transparent" aria-label="Home" href={`${base}/`}>
-          <BtbIcon bg="bg-transparency px-2 h-16 w-16" partColor="dark:fill-white fill-primary-800" />
-          <p style="font-family: 'Santanelli';">BenTri Byte</p>
-        </a>
-        <Navigation {menuItems} />
-        <div class="mx-atuo flex w-full justify-center pb-4"><LightSwitch /></div>
-      </div>
-    
+    <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 md:flex print:!hidden">
+      <a class="flex flex-col items-center gap-2 bg-transparent" aria-label="Home" href={`${base}/`}>
+        <BtbIcon bg="bg-transparency px-2 h-16 w-16" partColor="dark:fill-white fill-primary-800" />
+        <p style="font-family: 'Santanelli';">BenTri Byte</p>
+      </a>
+      <Navigation {menuItems} />
+      <div class="mx-atuo flex w-full justify-center pb-4"><LightSwitch /></div>
+    </div>
   {/snippet}
   <!-- <svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
   <!-- <svelte:fragment slot="pageHeader">Page Header</svelte:fragment> -->
@@ -165,12 +161,7 @@
   {@render children?.()}
   <!-- ---- / ---- -->
   {#snippet pageFooter()}
-  
-      <Footer {socials} />
-    
-  {/snippet}
-  {#snippet footer()}
-    <svelte:fragment ></svelte:fragment>
+    <Footer {socials} />
   {/snippet}
 </AppShell>
 <button

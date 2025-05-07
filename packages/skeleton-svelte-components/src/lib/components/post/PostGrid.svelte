@@ -28,10 +28,12 @@
   run(() => {
     page.size = posts.length;
   });
-  let paginatedSource = $derived(posts.slice(
-    page.page * page.limit, // start
-    page.page * page.limit + page.limit // end
-  ));
+  let paginatedSource = $derived(
+    posts.slice(
+      page.page * page.limit, // start
+      page.page * page.limit + page.limit // end
+    )
+  );
   function checkTags(tags: string[]) {
     return tags.some((t) => filter?.tag?.includes(t));
   }

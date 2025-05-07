@@ -17,25 +17,23 @@
     <div class="h-20 w-20">
       <SkillBadge {percentage}>
         {#snippet logo()}
-                <Python  />
-              {/snippet}
+          <Python />
+        {/snippet}
         {#snippet content()}
-                <div >I am very good at</div>
-              {/snippet}
+          <div>I am very good at</div>
+        {/snippet}
       </SkillBadge>
     </div>
   </Hst.Variant>
   <Hst.Variant title="AWS">
     {#snippet controls()}
-      
-        Content: <input type="number" bind:value={percentage} />
-      
-      {/snippet}
+      Content: <input type="number" bind:value={percentage} />
+    {/snippet}
     <div class="mx-auto h-1/2 w-1/2">
       <SkillBadge {percentage}>
         {#snippet logo()}
-                <AWS  />
-              {/snippet}
+          <AWS />
+        {/snippet}
       </SkillBadge>
     </div>
   </Hst.Variant>

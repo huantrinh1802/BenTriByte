@@ -15,7 +15,7 @@
 >
   <div class="@xs:flex-row flex flex-col items-center gap-2 text-gray-500">
     <div class="flex w-full flex-wrap gap-2">
-      {#each content?.tags as tag}
+      {#each content?.tags as tag (tag)}
         <span
           class="inline-flex items-center rounded bg-primary-600 px-2.5 py-1 text-base font-medium text-white dark:bg-primary-500"
         >

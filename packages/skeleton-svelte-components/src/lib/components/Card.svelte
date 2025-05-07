@@ -10,7 +10,6 @@
 </script>
 
 <script lang="ts">
-  
   interface Props {
     twStyle?: string;
     reverse?: boolean;

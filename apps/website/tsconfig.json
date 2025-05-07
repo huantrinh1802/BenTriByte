@@ -9,6 +9,7 @@
     "sourceMap": true,
     "strict": false
   },
+  "moduleResolution": "bundler",
   "extends": "./.svelte-kit/tsconfig.json",
   "exclude": ["**/*.md", "**/*.svx"]
   // "paths": {
