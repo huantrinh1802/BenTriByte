@@ -4,8 +4,8 @@
   import HeroImage from '$lib/images/hero.avif?enhanced';
   import { base } from '$app/paths';
 
-  let helloName = 'World';
-  let typewriter;
+  let helloName = $state('World');
+  let typewriter = $state();
   let timer;
   const debounce = (event) => {
     if (timer) clearTimeout(timer);
@@ -46,7 +46,7 @@
           class={`${
             helloName.length > 12 ? 'w-64' : 'w-44'
           } focus:shadow-outline h-12 appearance-none rounded-md border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none`}
-          on:input={debounce}
+          oninput={debounce}
         />
       </div>
       <!-- <p class="font-serif">My name is Ben.</p>

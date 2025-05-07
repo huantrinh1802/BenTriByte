@@ -1,6 +1,10 @@
 <script lang="ts">
-  export let bg = 'dark:bg-white bg-primary-700';
-  export let partColor = 'dark:fill-primary-700 fill-white';
+  interface Props {
+    bg?: string;
+    partColor?: string;
+  }
+
+  let { bg = 'dark:bg-white bg-primary-700', partColor = 'dark:fill-primary-700 fill-white' }: Props = $props();
 </script>
 
 <div class={`flex items-center justify-center rounded-2xl ${bg}`}>

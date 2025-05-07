@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import { base } from '$app/paths';
   import type { PageData } from './$types';
   import { type BlogMetadata } from '$lib/types/blog';
@@ -7,11 +9,17 @@
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
   import RssFeed from '$lib/components/RssFeed.svelte';
-  export let data: PageData;
-  let blogGroups: { string: { years: string[]; items: BlogMetadata[] } } | undefined = undefined;
-  $: ({ blogs: blogGroups } = data);
-  let filteredBlogs: BlogMetadata[] = [];
-  $: {
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
+  let blogGroups: { string: { years: string[]; items: BlogMetadata[] } } | undefined = $state(undefined);
+  run(() => {
+    ({ blogs: blogGroups } = data);
+  });
+  let filteredBlogs: BlogMetadata[] = $state([]);
+  run(() => {
     if (browser && $page.url.searchParams.getAll('tag').length > 0) {
       let blogs: BlogMetadata[] = [];
       const tags = $page.url.searchParams.getAll('tag');
@@ -20,7 +28,7 @@
       });
       filteredBlogs = blogs.filter((blog: BlogMetadata) => blog.tags.some((blogTags) => tags.includes(blogTags)));
     }
-  }
+  });
 </script>
 
 <svelte:head>

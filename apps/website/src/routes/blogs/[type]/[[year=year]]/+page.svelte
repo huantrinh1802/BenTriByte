@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import { Paginator, type PaginationSettings } from '@skeletonlabs/skeleton';
   import { base } from '$app/paths';
   import type { PageData } from './$types';
@@ -6,22 +8,28 @@
   import { convertKebabToTitle } from '$lib/utils/strings';
   import { goto } from '$app/navigation';
   import RssFeed from '$lib/components/RssFeed.svelte';
-  export let data: PageData;
-  $: ({ blogs, type, year, years } = data);
-  let paginationSettings = {
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
+  let { blogs, type, year, years } = $derived(data);
+  let paginationSettings = $state({
     page: 0,
     limit: 6,
     size: 0,
     amounts: [6, 18, 48, 96],
-  } satisfies PaginationSettings;
-  $: {
+  } satisfies PaginationSettings);
+  run(() => {
     if (blogs != null) {
       paginationSettings.size = blogs.length;
     }
-  }
-  $: paginatedBlogs = blogs.slice(
-    paginationSettings.page * paginationSettings.limit,
-    paginationSettings.page * paginationSettings.limit + paginationSettings.limit
+  });
+  let paginatedBlogs = $derived(
+    blogs.slice(
+      paginationSettings.page * paginationSettings.limit,
+      paginationSettings.page * paginationSettings.limit + paginationSettings.limit
+    )
   );
 </script>
 
@@ -40,7 +48,7 @@
       class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Select an option</label
     > -->
     <select
-      on:change={(event) => goto(`${base}/blogs/${type}/${event.currentTarget?.value}`)}
+      onchange={(event) => goto(`${base}/blogs/${type}/${event.currentTarget?.value}`)}
       id="year"
       class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
     >

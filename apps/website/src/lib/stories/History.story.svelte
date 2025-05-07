@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let Hst;
   import History from '$lib/components/History.svelte';
+  let { Hst } = $props();
   let content = {
     title: 'Software Engineer',
     subtitle: 'Fonto',

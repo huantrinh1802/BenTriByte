@@ -1,7 +1,11 @@
 <script lang="ts">
-  export let words = 'Hello world';
-  export let style = 'text-4xl';
-  let currentWords = [];
+  interface Props {
+    words?: string;
+    style?: string;
+  }
+
+  let { words = 'Hello world', style = 'text-4xl' }: Props = $props();
+  let currentWords = $state([]);
   let current = 0;
   let end = false;
   function start() {

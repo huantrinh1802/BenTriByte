@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let data;
+  let { data } = $props();
   function getContrastYIQ(hexColor) {
     // Convert hex color to RGB
     const hexToRGB = (hex) => {
