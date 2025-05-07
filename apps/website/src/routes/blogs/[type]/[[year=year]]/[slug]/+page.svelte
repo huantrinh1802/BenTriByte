@@ -4,8 +4,12 @@
   import { TableOfContents, popup, tocCrawler } from '@skeletonlabs/skeleton';
   import RssFeed from '$lib/components/RssFeed.svelte';
 
-  export let data: PageData;
-  $: ({ content, metadata } = data);
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
+  let { content, metadata } = $derived(data);
 </script>
 
 <svelte:head>

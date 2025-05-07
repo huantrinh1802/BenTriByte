@@ -1,8 +1,14 @@
 <script lang="ts">
   import { browser } from '$app/environment';
 
-  export let percentage = 85;
-  $: hsl = (() => {
+  interface Props {
+    percentage?: number;
+    content?: import('svelte').Snippet;
+    logo?: import('svelte').Snippet;
+  }
+
+  let { percentage = $bindable(85), content, logo }: Props = $props();
+  let hsl = $derived((() => {
     if (percentage >= 100) {
       percentage = 100;
     } else if (percentage <= 0) {
@@ -10,10 +16,10 @@
     }
     let hue = (120 / 100) * percentage;
     return `hsl(${hue}, 100%, 30%)`;
-  })();
-  let animating = false;
+  })());
+  let animating = $state(false);
   let duration = 1;
-  let direction = true;
+  let direction = $state(true);
   async function animate() {
     direction = !direction;
     if (browser) {
@@ -36,19 +42,19 @@
   tabindex="0"
   class="rotate relative flex h-full items-center justify-center"
   style={`--dashoffset: ${percentage};`}
-  on:mouseenter={animate}
-  on:mouseleave={handleMouseMove}
+  onmouseenter={animate}
+  onmouseleave={handleMouseMove}
 >
   <div
     class="ks-skill-icon-wrapper relative flex h-full w-full grow items-center justify-center"
     class:rotated={direction}
-    class:logo-only={!$$slots.content}
+    class:logo-only={!content}
   >
     <div class="ks-banner-logo absolute flex h-full w-full grow items-center justify-center p-[20%]">
-      <slot name="logo" />
+      {@render logo?.()}
     </div>
     <div class="ks-banner-content absolute flex items-center justify-center">
-      <slot name="content" />
+      {@render content?.()}
     </div>
   </div>
   <svg class="absolute h-full w-full" viewBox="0 0 36 36">

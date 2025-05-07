@@ -11,7 +11,11 @@
     label: string;
     href: string;
   };
-  export let socials: Social[] = [];
+  interface Props {
+    socials?: Social[];
+  }
+
+  let { socials = [] }: Props = $props();
 </script>
 
 <footer class="bg-surface-100-800-token relative p-4 text-gray-600 dark:text-gray-400 sm:p-4 print:hidden">

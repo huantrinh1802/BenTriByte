@@ -1,9 +1,13 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import type { BlogMetadata } from '$lib/types/blog';
-  export let content: BlogMetadata;
-  export let baseUrl = '/';
-  export let placeholderImage: string;
+  interface Props {
+    content: BlogMetadata;
+    baseUrl?: string;
+    placeholderImage: string;
+  }
+
+  let { content, baseUrl = '/', placeholderImage }: Props = $props();
 </script>
 
 <article

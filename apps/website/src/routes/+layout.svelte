@@ -34,7 +34,12 @@
   import { convertKebabToTitle } from '$lib/utils/strings';
   import Footer from '$lib/layout/Footer.svelte';
   import type { PageData } from './$types';
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+    children?: import('svelte').Snippet;
+  }
+
+  let { data, children }: Props = $props();
   onNavigate((navigation) => {
     if (!document.startViewTransition || navigation.from === navigation.to) return;
 
@@ -117,7 +122,7 @@
     <div class="flex flex-col gap-4 pb-4">
       <button
         aria-label="Toggle sidebar"
-        on:click={() => drawerStore.close()}
+        onclick={() => drawerStore.close()}
         type="button"
         class="ml-auto inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
         aria-controls="mobile-menu-2"
@@ -135,35 +140,43 @@
   {/if}
 </Drawer>
 <AppShell slotPageContent="print:bg-white" scrollbarGutter="stable">
-  <svelte:fragment slot="header">
-    <div class="md:hidden print:hidden">
-      <Header {menuItems} />
-    </div>
-  </svelte:fragment>
-  <svelte:fragment slot="sidebarLeft">
-    <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 md:flex print:!hidden">
-      <a class="flex flex-col items-center gap-2 bg-transparent" aria-label="Home" href={`${base}/`}>
-        <BtbIcon bg="bg-transparency px-2 h-16 w-16" partColor="dark:fill-white fill-primary-800" />
-        <p style="font-family: 'Santanelli';">BenTri Byte</p>
-      </a>
-      <Navigation {menuItems} />
-      <div class="mx-atuo flex w-full justify-center pb-4"><LightSwitch /></div>
-    </div>
-  </svelte:fragment>
+  {#snippet header()}
+  
+      <div class="md:hidden print:hidden">
+        <Header {menuItems} />
+      </div>
+    
+  {/snippet}
+  {#snippet sidebarLeft()}
+  
+      <div class="bg-surface-200-700-token hidden h-full flex-col gap-6 pl-4 pt-4 md:flex print:!hidden">
+        <a class="flex flex-col items-center gap-2 bg-transparent" aria-label="Home" href={`${base}/`}>
+          <BtbIcon bg="bg-transparency px-2 h-16 w-16" partColor="dark:fill-white fill-primary-800" />
+          <p style="font-family: 'Santanelli';">BenTri Byte</p>
+        </a>
+        <Navigation {menuItems} />
+        <div class="mx-atuo flex w-full justify-center pb-4"><LightSwitch /></div>
+      </div>
+    
+  {/snippet}
   <!-- <svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
   <!-- <svelte:fragment slot="pageHeader">Page Header</svelte:fragment> -->
   <!-- Router Slot -->
-  <slot />
+  {@render children?.()}
   <!-- ---- / ---- -->
-  <svelte:fragment slot="pageFooter">
-    <Footer {socials} />
-  </svelte:fragment>
-  <svelte:fragment slot="footer"></svelte:fragment>
+  {#snippet pageFooter()}
+  
+      <Footer {socials} />
+    
+  {/snippet}
+  {#snippet footer()}
+    <svelte:fragment ></svelte:fragment>
+  {/snippet}
 </AppShell>
 <button
   type="button"
   aria-label="Go to top"
-  on:click={() => {
+  onclick={() => {
     const sections = document.querySelector('#sections');
     if (sections != null) {
       sections.scrollTo({ top: 0, behavior: 'smooth' });

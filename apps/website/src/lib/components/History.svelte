@@ -8,7 +8,11 @@
     summary?: string;
     tasks?: string[];
   };
-  export let content: HistoryContent = null;
+  interface Props {
+    content?: HistoryContent;
+  }
+
+  let { content = null }: Props = $props();
 </script>
 
 <div class="grid gap-3 print:break-before-auto print:gap-2">

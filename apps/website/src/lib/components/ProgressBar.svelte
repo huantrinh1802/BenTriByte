@@ -1,6 +1,10 @@
 <script lang="ts">
-  export let title = '';
-  export let percentage = 50;
+  interface Props {
+    title?: string;
+    percentage?: number;
+  }
+
+  let { title = '', percentage = $bindable(50) }: Props = $props();
   // function hslToHex(h, s, l) {
   //   // Convert hue to degrees
   //   h %= 360;
@@ -68,15 +72,17 @@
   //   }
   //   return `hsl(${hue}, 100%, 25%)`;
   // }
-  $: hsl = (() => {
-    if (percentage >= 100) {
-      percentage = 100;
-    } else if (percentage <= 0) {
-      percentage = 1;
-    }
-    let hue = (120 / 100) * percentage;
-    return `hsl(${hue}, 100%, 30%)`;
-  })();
+  let hsl = $derived(
+    (() => {
+      if (percentage >= 100) {
+        percentage = 100;
+      } else if (percentage <= 0) {
+        percentage = 1;
+      }
+      let hue = (120 / 100) * percentage;
+      return `hsl(${hue}, 100%, 30%)`;
+    })()
+  );
 </script>
 
 <div class="flex w-full flex-col print:!min-w-fit">
@@ -90,6 +96,6 @@
       style={`width: ${percentage}%; background-color: ${getColor(percentage, false)}`} />
   </div> -->
   <div class="h-2.5 w-full rounded-full bg-white dark:bg-surface-800 print:!bg-gray-300">
-    <div class={`h-2.5 rounded-full print:bg-black`} style={`width: ${percentage}%; background-color: ${hsl}`} />
+    <div class={`h-2.5 rounded-full print:bg-black`} style={`width: ${percentage}%; background-color: ${hsl}`}></div>
   </div>
 </div>

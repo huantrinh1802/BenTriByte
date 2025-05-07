@@ -1,8 +1,12 @@
 <script lang="ts">
   import type { Hst as HstType } from '@histoire/plugin-svelte';
-  export let Hst: HstType;
   import SkillBanner from '../components/SkillBanner.svelte';
-  let percentage = 50;
+  interface Props {
+    Hst: HstType;
+  }
+
+  let { Hst }: Props = $props();
+  let percentage = $state(50);
 </script>
 
 <Hst.Story>

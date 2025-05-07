@@ -2,9 +2,9 @@
   import Close from '~icons/icon-park/close';
   import SkillBanner, { type Skill } from '$lib/components/SkillBanner.svelte';
   import { type Resume } from '$lib/types/resume';
-  export let data;
-  let dialog: HTMLDialogElement;
-  let currentContent = 'Python';
+  let { data } = $props();
+  let dialog: HTMLDialogElement = $state();
+  let currentContent = $state('Python');
   const { skills } = data.resume as Resume;
   let displayContents = [];
   Object.values(skills).forEach((skillSet) => {
@@ -69,12 +69,12 @@
   </div>
 </section>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog
   class="prose relative rounded-md prose-ul:my-0"
   bind:this={dialog}
-  on:click={(e) => {
+  onclick={(e) => {
     if (e.target == dialog) {
       dialog.close();
     }
@@ -82,7 +82,7 @@
 >
   <div class="grid gap-2 p-4">
     <div class="flex items-center">
-      <button class="ml-auto mr-2" on:click={() => dialog.close()}><Close /></button>
+      <button class="ml-auto mr-2" onclick={() => dialog.close()}><Close /></button>
     </div>
     {#each displayContents as content}
       {#if currentContent === content.title && content.contents != null}

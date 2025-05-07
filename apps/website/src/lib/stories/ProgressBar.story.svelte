@@ -1,7 +1,11 @@
 <script lang="ts">
   import type { Hst as HstType } from '@histoire/plugin-svelte';
-  export let Hst: HstType;
   import ProgressBar from '$lib/components/ProgressBar.svelte';
+  interface Props {
+    Hst: HstType;
+  }
+
+  let { Hst }: Props = $props();
 </script>
 
 <Hst.Story>
