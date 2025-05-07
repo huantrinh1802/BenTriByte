@@ -5,6 +5,8 @@ import Icons from 'unplugin-icons/vite';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 import { enhancedImages } from '@sveltejs/enhanced-img';
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineConfig({
   plugins: [
     enhancedImages(),
@@ -19,6 +21,7 @@ export default defineConfig({
     Icons({
       compiler: 'svelte',
     }),
+    tailwindcss(),
   ],
   histoire: {
     plugins: [HstSvelte()],
