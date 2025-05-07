@@ -1,5 +1,5 @@
 <script
-  context="module"
+  module
   lang="ts">
   export interface CardContent {
     title: string;
@@ -10,10 +10,15 @@
 </script>
 
 <script lang="ts">
-  export let twStyle = 'w-full';
-  export let reverse = false;
-  // export let class: string = '';
-  export let content: CardContent | null;
+  
+  interface Props {
+    twStyle?: string;
+    reverse?: boolean;
+    // export let class: string = '';
+    content: CardContent | null;
+  }
+
+  let { twStyle = 'w-full', reverse = false, content }: Props = $props();
 </script>
 
 <section class={` ${twStyle}`}>

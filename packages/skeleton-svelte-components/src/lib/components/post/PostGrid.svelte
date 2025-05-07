@@ -1,6 +1,6 @@
 <script
   lang="ts"
-  context="module">
+  module>
   export interface Filter {
     tag: string[] | undefined;
     type: string | null;
@@ -8,22 +8,30 @@
 </script>
 
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import PostCard from './PostCard.svelte';
   import { Paginator } from '@skeletonlabs/skeleton';
-  export let posts: any[] = [];
-  export let baseUrl = '/';
-  export let filter: Filter = { tag: [], type: null };
-  let page = {
+  interface Props {
+    posts?: any[];
+    baseUrl?: string;
+    filter?: Filter;
+  }
+
+  let { posts = [], baseUrl = '/', filter = { tag: [], type: null } }: Props = $props();
+  let page = $state({
     page: 0,
     limit: 15,
     size: posts.length,
     amounts: [15, 25],
-  };
-  $: page.size = posts.length;
-  $: paginatedSource = posts.slice(
+  });
+  run(() => {
+    page.size = posts.length;
+  });
+  let paginatedSource = $derived(posts.slice(
     page.page * page.limit, // start
     page.page * page.limit + page.limit // end
-  );
+  ));
   function checkTags(tags: string[]) {
     return tags.some((t) => filter?.tag?.includes(t));
   }
