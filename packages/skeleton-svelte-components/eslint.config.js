@@ -1,33 +1,55 @@
-import eslintPluginSvelte from 'eslint-plugin-svelte';
-import * as svelteParser from 'svelte-eslint-parser';
-import * as typescriptParser from '@typescript-eslint/parser';
-export default [
+import js from '@eslint/js';
+import svelte from 'eslint-plugin-svelte';
+import globals from 'globals';
+import ts from 'typescript-eslint';
+import prettier from 'eslint-config-prettier';
+import svelteConfig from './svelte.config.js';
+
+export default ts.config(
+  js.configs.recommended,
+  ...ts.configs.recommended,
+  ...svelte.configs['flat/recommended'],
+  prettier,
+  ...svelte.configs['flat/prettier'],
   {
-    ignores: [
-      '.DS_Store',
-      'node_modules',
-      'build',
-      '.svelte-kit',
-      'package',
-      '.env',
-      '.env.*',
-      '!env.example', // Negation isn't directly supported, see note below
-      'dist',
-      'pnpm-lock.yaml',
-      'package-lock.json',
-      'yarn.lock',
-    ],
-  },
-  ...eslintPluginSvelte.configs['flat/prettier'],
-  {
-    files: ['**/*.svelte'],
     languageOptions: {
-      parser: svelteParser,
-      parserOptions: {
-        parser: typescriptParser,
-        project: './tsconfig.json',
-        extraFileExtensions: ['.svelte'],
+      globals: {
+        ...globals.browser,
+        ...globals.node, // Add this if you are using SvelteKit in non-SPA mode
       },
     },
   },
-];
+  {
+    files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
+    // See more details at: https://typescript-eslint.io/packages/parser/
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        extraFileExtensions: ['.svelte'], // Add support for additional file extensions, such as .svelte
+        parser: ts.parser,
+        // Specify a parser for each language, if needed:
+        // parser: {
+        //   ts: ts.parser,
+        //   js: espree,    // Use espree for .js files (add: import espree from 'espree')
+        //   typescript: ts.parser
+        // },
+
+        // We recommend importing and specifying svelte.config.js.
+        // By doing so, some rules in eslint-plugin-svelte will automatically read the configuration and adjust their behavior accordingly.
+        // While certain Svelte settings may be statically loaded from svelte.config.js even if you don’t specify it,
+        // explicitly specifying it ensures better compatibility and functionality.
+        svelteConfig,
+      },
+    },
+  },
+  {
+    rules: {
+      // Override or add rule settings here, such as:
+      // 'svelte/rule-name': 'error'
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
+  {
+    ignores: ['build/', '.svelte-kit/', 'dist/'],
+  }
+);

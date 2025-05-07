@@ -16,11 +16,11 @@ const config = {
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
   preprocess: [
-    sveltePreprocess({
-      postcss: {
-        configFilePath: join(__dirname, 'postcss.config.cjs'),
-      },
-    }),
+    // sveltePreprocess({
+    //   postcss: {
+    //     configFilePath: join(__dirname, 'postcss.config.cjs'),
+    //   },
+    // }),
     vitePreprocess(),
     mdsvex(mdsvexConfig),
   ],

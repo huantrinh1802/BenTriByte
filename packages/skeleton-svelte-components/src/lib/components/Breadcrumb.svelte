@@ -38,7 +38,7 @@
 </script>
 
 <ol class="breadcrumb">
-  {#each breadcrumbs as bc}
+  {#each breadcrumbs as bc (bc.name)}
     {#if !bc.current}
       <li class="crumb">
         <a
@@ -47,7 +47,7 @@
       </li>
       <li
         class="crumb-separator"
-        aria-hidden>
+        aria-hidden="true">
         &rsaquo;
       </li>
     {:else}

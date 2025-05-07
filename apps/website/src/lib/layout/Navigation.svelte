@@ -23,25 +23,23 @@
       <Accordion>
         <AccordionItem padding="py-2 pl-4" regionCaret="!mx-4" hover="highlight">
           {#snippet summary()}
-                    {item.name}
-                  {/snippet}
+            {item.name}
+          {/snippet}
           {#snippet content()}
-                  
-              <div class="grid divide-black rounded-l-2xl dark:divide-white">
-                {#each item.subItems as subItem}
-                  <a
-                    onclick={() => drawerStore.close()}
-                    class="highlight w-full rounded-l-2xl px-4 py-2"
-                    class:active={subItem.href === `${$page.url.pathname}${$page.url.hash}` ||
-                      ($page.params.year && subItem.href === $page.url.pathname.split(`/${$page.params.year}`)[0])}
-                    href={subItem.href}
-                  >
-                    {subItem.name}
-                  </a>
-                {/each}
-              </div>
-            
-                  {/snippet}
+            <div class="grid divide-black rounded-l-2xl dark:divide-white">
+              {#each item.subItems as subItem}
+                <a
+                  onclick={() => drawerStore.close()}
+                  class="highlight w-full rounded-l-2xl px-4 py-2"
+                  class:active={subItem.href === `${$page.url.pathname}${$page.url.hash}` ||
+                    ($page.params.year && subItem.href === $page.url.pathname.split(`/${$page.params.year}`)[0])}
+                  href={subItem.href}
+                >
+                  {subItem.name}
+                </a>
+              {/each}
+            </div>
+          {/snippet}
         </AccordionItem>
       </Accordion>
     {/if}

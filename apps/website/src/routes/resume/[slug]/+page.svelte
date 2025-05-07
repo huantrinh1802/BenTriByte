@@ -20,7 +20,9 @@
     github: GitHub,
     linkedin: LinkedIn,
   };
-  let { profile, contacts, experiences, educations, skills, languages, references, summary } = $derived(data.resume as Resume);
+  let { profile, contacts, experiences, educations, skills, languages, references, summary } = $derived(
+    data.resume as Resume
+  );
   onMount(() => {
     window.onbeforeprint = () => {
       document.getElementById('page').scrollTo(0, 0);
@@ -38,7 +40,7 @@
       <div
         style={`background-image: url('${base}/${profile.image}'); background-color: ${profile.themeColour};`}
         class="btb-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-surface-200 bg-primary-500 p-8 dark:border-surface-900 print:h-40 print:w-40 print:!border-white"
-></div>
+      ></div>
     {/if}
     <div
       style={`background-color: ${profile.themeColour};`}
@@ -106,74 +108,68 @@
     <Accordion class="print:hidden">
       <AccordionItem>
         {#snippet summary()}
-                <h2 class="btb-section-heading">Contacts</h2>
-              {/snippet}
+          <h2 class="btb-section-heading">Contacts</h2>
+        {/snippet}
         {#snippet content()}
-              
-            {#each contacts as contact}
-              {@const SvelteComponent_1 = contactsIcons[contact.type]}
+          {#each contacts as contact}
+            {@const SvelteComponent_1 = contactsIcons[contact.type]}
             <a
-                class="!text-primary-900-50-token flex items-center gap-2 break-all print:!text-xs print:!text-teal-900"
-                href={contact.href}
-              >
-                <SvelteComponent_1 class="text-2xl print:!text-sm" />
-                <p class="print:!text-xs">{contact.text}</p>
-              </a>
-            {/each}
-          
-              {/snippet}
+              class="!text-primary-900-50-token flex items-center gap-2 break-all print:!text-xs print:!text-teal-900"
+              href={contact.href}
+            >
+              <SvelteComponent_1 class="text-2xl print:!text-sm" />
+              <p class="print:!text-xs">{contact.text}</p>
+            </a>
+          {/each}
+        {/snippet}
       </AccordionItem>
     </Accordion>
     <Accordion class="print:hidden">
       <AccordionItem>
         {#snippet summary()}
-                <h2 class="btb-section-heading">Skills</h2>
-              {/snippet}
+          <h2 class="btb-section-heading">Skills</h2>
+        {/snippet}
         {#snippet content()}
-              
-            <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
-            <div class="grid gap-4">
-              {#each Object.values(skills) as skillSet}
-                {#if skillSet.title}
-                  <strong class="text-md">{skillSet.title}</strong>
-                {/if}
-                <div class="grid gap-2">
-                  {#each skillSet.professional as item}
-                    {#if item.percentage != null}
-                      <ProgressBar title={item.title} percentage={item.percentage} />
-                    {:else}
-                      <div class="mb-1 flex justify-between">
-                        <span class="text-primary-900-50-token text-base font-medium print:!text-xs print:!text-black"
-                          >{item.title}</span
-                        >
-                      </div>
-                    {/if}
-                  {/each}
-                  {#if skillSet.casual}
-                    {#each skillSet.casual as item}
-                      <ProgressBar title={item.title} percentage={item.percentage} />
-                    {/each}
+          <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
+          <div class="grid gap-4">
+            {#each Object.values(skills) as skillSet}
+              {#if skillSet.title}
+                <strong class="text-md">{skillSet.title}</strong>
+              {/if}
+              <div class="grid gap-2">
+                {#each skillSet.professional as item}
+                  {#if item.percentage != null}
+                    <ProgressBar title={item.title} percentage={item.percentage} />
+                  {:else}
+                    <div class="mb-1 flex justify-between">
+                      <span class="text-primary-900-50-token text-base font-medium print:!text-xs print:!text-black"
+                        >{item.title}</span
+                      >
+                    </div>
                   {/if}
-                </div>
-              {/each}
-            </div>
-            <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
-          
-              {/snippet}
+                {/each}
+                {#if skillSet.casual}
+                  {#each skillSet.casual as item}
+                    <ProgressBar title={item.title} percentage={item.percentage} />
+                  {/each}
+                {/if}
+              </div>
+            {/each}
+          </div>
+          <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
+        {/snippet}
       </AccordionItem>
     </Accordion>
     <Accordion class="print:hidden">
       <AccordionItem>
         {#snippet summary()}
-                <h2 class="btb-section-heading">Languages</h2>
-              {/snippet}
+          <h2 class="btb-section-heading">Languages</h2>
+        {/snippet}
         {#snippet content()}
-              
-            {#each languages as language}
-              <ProgressBar title={language.title} percentage={language.percentage} />
-            {/each}
-          
-              {/snippet}
+          {#each languages as language}
+            <ProgressBar title={language.title} percentage={language.percentage} />
+          {/each}
+        {/snippet}
       </AccordionItem>
     </Accordion>
   </div>
