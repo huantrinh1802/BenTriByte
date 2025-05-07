@@ -79,7 +79,7 @@
     <div class="text-primary-700-200-token flex flex-col items-center justify-center max-xl:py-4">
       <span class="text-sm sm:text-center"
         >© {new Date().getFullYear()}
-        <a href={`${base}/`} aria-label="Go to Home" class="mle-link hover:underline">BenTri Byte.</a>
+        <a href={`${base}/`} aria-label="Go to Home" class="mle-link hover:underline">BenTriByte.</a>
         All Rights Reserved.
       </span>
       <span class="text-sm sm:text-center"
