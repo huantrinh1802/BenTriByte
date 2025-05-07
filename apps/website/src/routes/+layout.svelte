@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '../app.postcss';
+  import '../app.css';
   import 'highlight.js/styles/github-dark.css';
   import {
     AppShell,
