@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { run } from 'svelte/legacy';
 
   import { base } from '$app/paths';
   import type { PageData } from './$types';
   import { type BlogMetadata } from '$lib/types/blog';
   import Card from '$lib/components/Card.svelte';
   import { convertKebabToTitle } from '$lib/utils/strings';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { browser } from '$app/environment';
   import RssFeed from '$lib/components/RssFeed.svelte';
   interface Props {
@@ -15,14 +14,14 @@
 
   let { data }: Props = $props();
   let blogGroups: { string: { years: string[]; items: BlogMetadata[] } } | undefined = $state(undefined);
-  run(() => {
+  $effect(() => {
     ({ blogs: blogGroups } = data);
   });
   let filteredBlogs: BlogMetadata[] = $state([]);
-  run(() => {
-    if (browser && $page.url.searchParams.getAll('tag').length > 0) {
+  $effect(() => {
+    if (browser && page.url.searchParams.getAll('tag').length > 0) {
       let blogs: BlogMetadata[] = [];
-      const tags = $page.url.searchParams.getAll('tag');
+      const tags = page.url.searchParams.getAll('tag');
       Object.entries(blogGroups).forEach((blogGroup) => {
         blogs.push(...blogGroup[1].items);
       });
@@ -40,8 +39,8 @@
     <h1 class="m-0">Blogs</h1>
     <RssFeed />
   </div>
-  {#if browser && $page.url.searchParams.getAll('tag').length === 0}
-    {#each Object.entries(blogGroups) as [name, blogs]}
+  {#if browser && page.url.searchParams.getAll('tag').length === 0}
+    {#each Object.entries(blogGroups) as [name, blogs] (name)}
       <div class="grid gap-2">
         <a
           class="prose dark:prose-invert"
@@ -51,7 +50,7 @@
           <h2>{convertKebabToTitle(name)}</h2>
         </a>
         <div class="grid auto-rows-auto gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-          {#each blogs.items.slice(0, 2) as blog}
+          {#each blogs.items.slice(0, 2) as blog (blog.slug)}
             <Card
               content={blog}
               baseUrl={`${base}/blogs/${name}/${blog.date.split('-')[0]}`}
@@ -63,7 +62,7 @@
     {/each}
   {:else if filteredBlogs.length > 0}
     <div class="grid auto-rows-auto gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-      {#each filteredBlogs as blog}
+      {#each filteredBlogs as blog (blog.slug)}
         <Card
           content={blog}
           baseUrl={`${base}/blogs/${blog.type}/${blog.date.split('-')[0]}`}

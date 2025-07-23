@@ -34,13 +34,14 @@
 
 <div class="flex w-full">
   <div class={`typewriter h-fit ${style}`} style="font-family: 'Santanelli'; font-display: optimal;">
-    {#each currentWords as char}
+    {#each currentWords as char, i (i)}
       {char}
     {/each}
   </div>
 </div>
 
-<style lang="postcss">
+<style>
+  @reference '../../app.css';
   .typewriter {
     position: relative;
     letter-spacing: 0.2em; /* Adjust as needed */

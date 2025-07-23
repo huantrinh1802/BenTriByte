@@ -87,7 +87,7 @@
 
 <div class="flex w-full flex-col print:!min-w-fit">
   <div class="mb-1 flex justify-between">
-    <span class="text-primary-900-50-token text-base font-medium print:!text-xs print:!text-black">{title}</span>
+    <span class="text-primary-950-50 text-base font-medium print:!text-xs print:!text-black">{title}</span>
     <!-- <span class="text-sm font-medium text-blue-700 dark:text-white">{percentage}%</span> -->
   </div>
   <!-- <div class="bg-surface-800-100-token h-2.5 w-full rounded-full print:bg-gray-800">

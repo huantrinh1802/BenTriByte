@@ -48,7 +48,7 @@
       <li
         class="crumb-separator"
         aria-hidden="true">
-        &rsaquo;
+        ›
       </li>
     {:else}
       <li class="mle-link">{bc.name}</li>

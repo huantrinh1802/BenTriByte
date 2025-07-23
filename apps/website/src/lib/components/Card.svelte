@@ -23,11 +23,11 @@
         </span>
       {/each}
     </div>
-    <span class="@xs:block text-primary-700-200-token ml-auto hidden justify-self-end text-sm"
+    <span class="@xs:block text-primary-800-200 ml-auto hidden justify-self-end text-sm"
       >{new Date(content.date).toLocaleDateString()}</span
     >
   </div>
-  <span class="@xs:hidden text-primary-700-200-token ml-auto justify-self-end text-sm"
+  <span class="@xs:hidden text-primary-800-200 ml-auto justify-self-end text-sm"
     >{new Date(content.date).toLocaleDateString()}</span
   >
   <div class="@md:flex-row flex flex-col gap-4">
@@ -63,7 +63,8 @@
   </div>
 </article>
 
-<style lang="postcss">
+<style>
+  @reference '../../app.css';
   .card {
     grid-template-rows: subgrid;
     grid-row: span 4;

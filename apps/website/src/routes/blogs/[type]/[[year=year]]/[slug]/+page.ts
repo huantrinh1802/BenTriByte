@@ -1,6 +1,6 @@
 import { base } from '$app/paths';
 import { redirect } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 import type { BlogMetadata } from '$lib/types/blog';
 
 export const load = (async ({ params }) => {
@@ -10,5 +10,5 @@ export const load = (async ({ params }) => {
   } catch {
     redirect(301, `${base}/blogs/${params.type}`);
   }
-  return { content: blog.default.render().html, metadata: blog.metadata as BlogMetadata };
-}) satisfies PageServerLoad;
+  return { content: blog.default, metadata: blog.metadata as BlogMetadata };
+}) satisfies PageLoad;

@@ -11,7 +11,7 @@
   import { run } from 'svelte/legacy';
 
   import PostCard from './PostCard.svelte';
-  import { Paginator } from '@skeletonlabs/skeleton';
+  import { Pagination } from '@skeletonlabs/skeleton-svelte';
   interface Props {
     posts?: any[];
     baseUrl?: string;
@@ -49,5 +49,5 @@
   {/each}
 </div>
 <div class="mx-auto w-2/3 md:w-3/4">
-  <Paginator bind:settings={page} />
+  <Pagination bind:settings={page} />
 </div>
