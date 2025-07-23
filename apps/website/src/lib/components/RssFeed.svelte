@@ -17,10 +17,10 @@
   onclick={async () => {
     copied = !copied;
     navigator.clipboard.writeText(`${PUBLIC_SITE_URL}/blogs/feed`);
-    await new Promise((resolve) => {
+    await new Promise<void>((resolve) => {
       setTimeout(() => {
         copied = !copied;
-        resolve;
+        resolve();
       }, 800);
     });
   }}

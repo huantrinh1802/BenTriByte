@@ -13,12 +13,13 @@
   };
   interface Props {
     socials?: Social[];
+    className?: string;
   }
 
-  let { socials = [] }: Props = $props();
+  let { socials = [], className = '' }: Props = $props();
 </script>
 
-<footer class="bg-surface-100-800-token relative p-4 text-gray-600 dark:text-gray-400 sm:p-4 print:hidden">
+<footer id="footer" class={`bg-surface-100-900 relative p-4 text-gray-600 dark:text-gray-400 sm:p-4 print:hidden ${className}`}>
   <!-- <div class="flex">
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-1 sm:gap-6">
       <div class="grid gap-4">
@@ -55,11 +56,11 @@
   <hr class="my-4 border-gray-200 sm:mx-auto dark:border-gray-700" /> -->
 
   <div class="grid px-2 max-xl:divide-y xl:grid-cols-3">
-    <div class="grid gap-4 max-xl:pb-4">
-      <h2 class="!text-xl font-semibold">Reach Me @</h2>
-      <ul class="flex gap-4">
+    <div class="grid gap-4 max-xl:pb-4 ">
+      <h2 class="!text-xl font-semibold mr-auto">Reach Me @</h2>
+      <ul class="flex gap-4 mx-auto">
         {#if socials != null}
-          {#each socials as social}
+          {#each socials as social (social.name)}
             <li class="flex gap-4">
               <a href={social.href} class="pointer flex gap-2 hover:underline" aria-label={social.label}>
                 {#if social.name === 'Phone'}
@@ -80,7 +81,7 @@
         {/if}
       </ul>
     </div>
-    <div class="text-primary-700-200-token flex flex-col items-center justify-center max-xl:py-4">
+    <div class="text-primary-800-200 flex flex-col items-center justify-center max-xl:py-4">
       <span class="text-sm sm:text-center"
         >© {new Date().getFullYear()}
         <a href={`${base}/`} aria-label="Go to Home" class="mle-link hover:underline">BenTriByte.</a>

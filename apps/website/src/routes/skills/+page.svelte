@@ -26,17 +26,17 @@
   <meta name="description" content="Summary of Ben Trinh's programming skills." />
 </svelte:head>
 <section class="ks-section">
-  <div class="prose gap-4 px-4 py-6 dark:prose-invert prose-headings:my-2 prose-p:my-0 sm:px-10">
+  <div class="prose dark:prose-invert prose-headings:my-2 prose-p:my-0 gap-4 px-4 py-6 sm:px-10">
     <h2>My Skills</h2>
     <div class="grid gap-2">
-      {#each Object.values(skills) as skillSet, index}
+      {#each Object.values(skills) as skillSet, index (skillSet.title)}
         <h3>{skillSet.title}</h3>
-        <div class="bg grid divide-y divide-surface-600 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+        <div class="bg divide-surface-600 grid divide-y sm:grid-cols-2 sm:divide-x sm:divide-y-0">
           {#if skillSet.professional}
-            <div class="pb-6 pr-0 sm:pb-0 sm:pr-6">
+            <div class="pr-0 pb-6 sm:pr-6 sm:pb-0">
               <h4>Professional</h4>
               <div class="grid grid-cols-2 grid-rows-subgrid gap-4 xl:grid-cols-3 2xl:grid-cols-4">
-                {#each skillSet.professional as pro}
+                {#each skillSet.professional as pro (pro.title)}
                   <SkillBanner
                     onClick={pro.contents == null ? handleShowContent : null}
                     percentage={pro.percentage}
@@ -47,10 +47,10 @@
             </div>
           {/if}
           {#if skillSet.casual}
-            <div class="pl-0 pt-6 sm:pl-6 sm:pt-0">
+            <div class="pt-6 pl-0 sm:pt-0 sm:pl-6">
               <h4>Casual</h4>
               <div class="grid grid-cols-2 grid-rows-subgrid gap-4 xl:grid-cols-3 2xl:grid-cols-4">
-                {#each skillSet.casual as cas}
+                {#each skillSet.casual as cas (cas.title)}
                   <SkillBanner
                     onClick={cas.contents == null ? handleShowContent : null}
                     percentage={cas.percentage}
@@ -62,7 +62,7 @@
           {/if}
         </div>
         {#if index < Object.keys(skills).length - 1}
-          <hr class="mb-4 h-1 bg-surface-600" />
+          <hr class="bg-surface-600 mb-4 h-1" />
         {/if}
       {/each}
     </div>
@@ -72,7 +72,7 @@
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog
-  class="prose relative rounded-md prose-ul:my-0"
+  class="prose prose-ul:my-0 relative rounded-md"
   bind:this={dialog}
   onclick={(e) => {
     if (e.target == dialog) {
@@ -82,12 +82,12 @@
 >
   <div class="grid gap-2 p-4">
     <div class="flex items-center">
-      <button class="ml-auto mr-2" onclick={() => dialog.close()}><Close /></button>
+      <button class="mr-2 ml-auto" onclick={() => dialog.close()}><Close /></button>
     </div>
-    {#each displayContents as content}
+    {#each displayContents as content (content.title)}
       {#if currentContent === content.title && content.contents != null}
         <ul>
-          {#each content.contents as skillContent}
+          {#each content.contents as skillContent, index (index)}
             <!-- eslint-disable-next-line svelte/no-at-html-tags -->
             <li>{@html skillContent}</li>
           {/each}
@@ -97,8 +97,9 @@
   </div>
 </dialog>
 
-<style lang="postcss">
+<style>
+  @reference "../../app.css";
   .ks-section {
-    @apply mx-auto flex min-h-full flex-col gap-4 md:justify-center;
+    @apply mx-auto flex flex-col gap-4 md:justify-center;
   }
 </style>

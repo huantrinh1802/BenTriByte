@@ -18,9 +18,9 @@
 <div class="grid gap-3 print:break-before-auto print:gap-2">
   <h3 class="print:!text-md">{content.title}</h3>
   {#if content.subtitle}
-    <h4 class="text-surface-700-200-token print:!text-sm print:!text-gray-800">{content.subtitle}</h4>
+    <h4 class="text-surface-800-200 print:!text-sm print:!text-gray-800">{content.subtitle}</h4>
   {/if}
-  <div class="text-surface-700-200-token flex justify-between print:!text-gray-800">
+  <div class="text-surface-800-200 flex justify-between print:!text-gray-800">
     <div class="text-sm print:!text-xs">{content.timeline}</div>
     <div class="text-sm print:!text-xs">{content.location}</div>
   </div>
@@ -29,7 +29,7 @@
   {/if}
   {#if content.tasks}
     <ul class="grid gap-2 pl-6 print:break-inside-auto print:gap-1">
-      {#each content.tasks as task}
+      {#each content.tasks as task (task)}
         <li class="flex !whitespace-normal">
           <span><RightArrow /></span>
           <p>{task}</p>
@@ -39,7 +39,8 @@
   {/if}
 </div>
 
-<style lang="postcss">
+<style>
+  @reference '../../app.css';
   @media print {
     p,
     span {

@@ -1,13 +1,15 @@
 <script lang="ts">
   import { base } from '$app/paths';
+  import LightSwitch from '$lib/components/LightSwitch.svelte';
   import BtbIcon from '$lib/images/BtbIcon.svelte';
-  import { AppBar, LightSwitch, popup, getDrawerStore } from '@skeletonlabs/skeleton';
+  import { sidebarOpened, toggleSidebar } from '$lib/utils/sidebar';
+  import { AppBar } from '@skeletonlabs/skeleton-svelte';
   interface Props {
     menuItems?: any;
   }
 
   let { menuItems = null }: Props = $props();
-  const drawerStore = getDrawerStore();
+  let activeSubMenu = $state(null);
 </script>
 
 <AppBar background="bg-primary-700 text-white rounded-b">
@@ -18,32 +20,32 @@
     </a>
   {/snippet}
   {#snippet trail()}
-    <ul class="hidden gap-4 sm:flex">
-      {#each menuItems as item}
+    <ul class="hidden gap-4 sm:flex items-center">
+      {#each menuItems as item, index (index)}
         {#if item.href != undefined}
           <li><a href={item.href}>{item.name}</a></li>
         {:else}
-          <li>
-            <button class="" use:popup={{ event: 'click', target: item.id, placement: 'bottom' }}>
+          <li class="relative">
+            <button onclick={() => (activeSubMenu = activeSubMenu === index ? null : index)}>
               {item.name}
             </button>
+            <div class="absolute hidden z-100 right-[-75%] top-[2rem]" class:hidden={activeSubMenu !== index}>
+              <ul
+                class="flex flex-col divide-y divide-black rounded-md bg-surface-200 p-4 text-black shadow-md dark:divide-white dark:bg-surface-800"
+              >
+                {#each item.subItems as subItem (subItem.name)}
+                  <a class="min-w-max px-4 py-2 hover:bg-primary-600 hover:text-white dark:text-white" href={subItem.href}>
+                    {subItem.name}
+                  </a>
+                {/each}
+              </ul>
+            </div>
           </li>
-          <div data-popup={item.id}>
-            <ul
-              class="flex flex-col divide-y divide-black rounded-md bg-surface-200 p-4 text-black shadow-md dark:divide-white dark:bg-surface-800"
-            >
-              {#each item.subItems as subItem}
-                <a class="px-4 py-2 hover:bg-primary-600 hover:text-white dark:text-white" href={subItem.href}>
-                  {subItem.name}
-                </a>
-              {/each}
-            </ul>
-          </div>
         {/if}
       {/each}
     </ul>
     <LightSwitch />
-    <button aria-label="Open sidebar" class="mr-4 sm:hidden" onclick={() => drawerStore.open({ id: 'sidebar' })}>
+    <button aria-label="Open sidebar" class="mr-4 sm:hidden" onclick={() => toggleSidebar()}>
       <span>
         <svg viewBox="0 0 100 80" class="h-4 w-4 fill-white">
           <rect width="100" height="20" />

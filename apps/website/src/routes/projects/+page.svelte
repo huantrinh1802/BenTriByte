@@ -74,14 +74,15 @@
       <hr />
       {#if repo.homepageUrl}
         <div class="flex justify-center">
-          <a target="_blank" href={repo.homepageUrl} class="btn-primary variant-filled-primary btn">Visit website</a>
+          <a target="_blank" href={repo.homepageUrl} class="btn-primary preset-filled-primary-500 btn">Visit website</a>
         </div>
       {/if}
     </div>
   {/each}
 </div>
 
-<style lang="postcss">
+<style>
+  @reference "../../app.css";
   .language-wrapper {
     min-width: var(--buttonWidth);
     background-color: var(--backgroundColor);

@@ -4,10 +4,11 @@
   import GitHub from '~icons/skill-icons/github-dark';
   import LinkedIn from '~icons/skill-icons/linkedin';
   import Mobile from '~icons/fluent/call-20-regular';
+  import Address from '~icons/mdi/address-marker-outline';
   import { base } from '$app/paths';
   import { type Resume } from '$lib/types/resume';
   import ProgressBar from '$lib/components/ProgressBar.svelte';
-  import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+  import { Accordion } from '@skeletonlabs/skeleton-svelte';
   import { onMount } from 'svelte';
   import type { PageData } from './$types';
   interface Props {
@@ -19,6 +20,7 @@
     email: Email,
     github: GitHub,
     linkedin: LinkedIn,
+    address: Address
   };
   let { profile, contacts, experiences, educations, skills, languages, references, summary } = $derived(
     data.resume as Resume
@@ -58,7 +60,7 @@
   <div class="btb-summary flex flex-col gap-4 print:divide-y">
     <div class="hidden flex-col gap-4 px-10 py-4 print:flex print:break-after-avoid print:px-1 print:py-1">
       <h2 class="btb-section-heading">Contacts</h2>
-      {#each contacts as contact}
+      {#each contacts as contact (contact.printText)}
         {@const SvelteComponent = contactsIcons[contact.type]}
         <a class="flex items-center gap-2 break-all text-white print:!text-xs print:text-black" href={contact.href}>
           <SvelteComponent class="text-2xl print:!text-sm" />
@@ -72,22 +74,22 @@
       <!-- <div class="grid gap-2"> -->
       <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
       <div class="grid break-inside-auto gap-4">
-        {#each Object.values(skills) as skillSet}
+        {#each Object.values(skills) as skillSet (skillSet.title)}
           {#if skillSet.title}
             <strong class="text-md">{skillSet?.title}</strong>
           {/if}
           <div class="grid gap-2">
-            {#each skillSet.professional as item}
+            {#each skillSet.professional as item (item.title)}
               {#if item.percentage != null}
                 <ProgressBar title={item.title} percentage={item.percentage} />
               {:else}
                 <div class="mb-1 flex justify-between">
-                  <span class="text-primary-900-50-token text-base print:!text-xs print:!text-black">{item.title}</span>
+                  <span class="text-primary-950-50 text-base print:!text-xs print:!text-black">{item.title}</span>
                 </div>
               {/if}
             {/each}
             {#if skillSet.casual}
-              {#each skillSet.casual as item}
+              {#each skillSet.casual as item (item.title)}
                 <ProgressBar title={item.title} percentage={item.percentage} />
               {/each}
             {/if}
@@ -100,21 +102,21 @@
     <div class="hidden flex-col gap-4 px-10 py-4 print:flex print:px-2">
       <h2 class="btb-section-heading">Languages</h2>
       <div class="grid gap-2">
-        {#each languages as language}
+        {#each languages as language (language.title)}
           <ProgressBar title={language.title} percentage={language.percentage} />
         {/each}
       </div>
     </div>
-    <Accordion class="print:hidden">
-      <AccordionItem>
-        {#snippet summary()}
+    <Accordion classes="print:hidden">
+      <Accordion.Item value="contacts">
+        {#snippet control()}
           <h2 class="btb-section-heading">Contacts</h2>
         {/snippet}
-        {#snippet content()}
-          {#each contacts as contact}
+        {#snippet panel()}
+          {#each contacts as contact (contact.type)}
             {@const SvelteComponent_1 = contactsIcons[contact.type]}
             <a
-              class="!text-primary-900-50-token flex items-center gap-2 break-all print:!text-xs print:!text-teal-900"
+              class="!text-primary-950-50 flex items-center gap-2 break-all print:!text-xs print:!text-teal-900"
               href={contact.href}
             >
               <SvelteComponent_1 class="text-2xl print:!text-sm" />
@@ -122,34 +124,34 @@
             </a>
           {/each}
         {/snippet}
-      </AccordionItem>
+      </Accordion.Item>
     </Accordion>
-    <Accordion class="print:hidden">
-      <AccordionItem>
-        {#snippet summary()}
+    <Accordion classes="print:hidden" collapsible >
+      <Accordion.Item value="skills">
+        {#snippet control()}
           <h2 class="btb-section-heading">Skills</h2>
         {/snippet}
-        {#snippet content()}
+        {#snippet panel()}
           <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
           <div class="grid gap-4">
-            {#each Object.values(skills) as skillSet}
+            {#each Object.values(skills) as skillSet (skillSet.title)}
               {#if skillSet.title}
                 <strong class="text-md">{skillSet.title}</strong>
               {/if}
               <div class="grid gap-2">
-                {#each skillSet.professional as item}
+                {#each skillSet.professional as item (item.title)}
                   {#if item.percentage != null}
                     <ProgressBar title={item.title} percentage={item.percentage} />
                   {:else}
                     <div class="mb-1 flex justify-between">
-                      <span class="text-primary-900-50-token text-base font-medium print:!text-xs print:!text-black"
+                      <span class="text-primary-950-50 text-base font-medium print:!text-xs print:!text-black"
                         >{item.title}</span
                       >
                     </div>
                   {/if}
                 {/each}
                 {#if skillSet.casual}
-                  {#each skillSet.casual as item}
+                  {#each skillSet.casual as item (item.title)}
                     <ProgressBar title={item.title} percentage={item.percentage} />
                   {/each}
                 {/if}
@@ -158,19 +160,19 @@
           </div>
           <!-- TODO (BT - 25/01/2024): Use snippet in Svelte 5  -->
         {/snippet}
-      </AccordionItem>
+      </Accordion.Item>
     </Accordion>
-    <Accordion class="print:hidden">
-      <AccordionItem>
-        {#snippet summary()}
+    <Accordion classes="print:hidden">
+      <Accordion.Item value="languages">
+        {#snippet control()}
           <h2 class="btb-section-heading">Languages</h2>
         {/snippet}
-        {#snippet content()}
-          {#each languages as language}
+        {#snippet panel()}
+          {#each languages as language (language.title)}
             <ProgressBar title={language.title} percentage={language.percentage} />
           {/each}
         {/snippet}
-      </AccordionItem>
+      </Accordion.Item>
     </Accordion>
   </div>
   <div class="btb-history flex flex-col gap-2 px-4 print:gap-1 print:pl-0 print:text-black">
@@ -181,7 +183,7 @@
     {/if}
     <h2 class="btb-section-heading">Experiences</h2>
     <div class="flex flex-col gap-2">
-      {#each experiences as content, index}
+      {#each experiences as content, index (content.title + content.subtitle)}
         <History {content} />
         {#if index != experiences.length - 1}
           <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700 print:my-1" />
@@ -191,7 +193,7 @@
     <hr class="my-8 h-[2px] border-0 bg-gray-700 dark:bg-gray-200 print:my-1" />
     <div class="flex flex-col gap-4">
       <h2 class="btb-section-heading">Educations</h2>
-      {#each educations as content, index}
+      {#each educations as content, index (content.title)}
         <History {content} />
         {#if index != educations.length - 1}
           <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700 print:my-1" />
@@ -202,7 +204,7 @@
       <div class="grid">
         <h2 class="py-2 text-center text-lg print:text-black">References</h2>
         <div class="grid gap-4">
-          {#each references as ref}
+          {#each references as ref (ref.name)}
             <div class="grid gap-2 print:break-after-auto print:gap-1">
               <h3 class="font-semibold print:!text-base">{ref.name}</h3>
               <h4 class="text-gray-800 dark:text-gray-200 print:!text-sm print:!text-gray-800">{ref.title}</h4>
@@ -227,7 +229,7 @@
 </div>
 <div class="flex p-2 print:hidden">
   <button
-    class="variant-filled-primary btn ml-auto"
+    class="preset-filled-primary-500 btn ml-auto"
     onclick={() => {
       document.getElementById('page').scrollTo(0, 0);
       window.print();
@@ -237,7 +239,8 @@
   </button>
 </div>
 
-<style lang="postcss">
+<style>
+@reference "../../../app.css";
   .btb-profile-photo {
     background-size: cover;
     background-position: 20% 20%;

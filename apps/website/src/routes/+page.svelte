@@ -28,10 +28,10 @@
 </svelte:head>
 <div
   id="sections"
-  class="w-full gap-4 overflow-y-auto p-4 max-md:grid sm:px-10 md:snap-y md:snap-mandatory xl:h-[calc(100dvh-100px)]"
+  class="w-full gap-4 overflow-y-auto p-4 max-md:grid sm:px-10 md:snap-y md:snap-mandatory xl:h-full justify-center items-center"
 >
   <section
-    class="ks-hero-section hide-scrollbar grid snap-end grid-cols-1 gap-10 overflow-y-auto sm:p-4 md:h-full md:grid-cols-2 md:gap-10"
+    class="ks-hero-section hide-scrollbar grid snap-end grid-cols-1 gap-10 overflow-y-auto sm:p-4 md:p-0 md:h-full md:grid-cols-2 md:gap-10"
   >
     <div class="my-auto flex flex-col gap-4">
       <div class="my-auto flex flex-col gap-4">
@@ -45,17 +45,17 @@
           maxlength="24"
           class={`${
             helloName.length > 12 ? 'w-64' : 'w-44'
-          } focus:shadow-outline h-12 appearance-none rounded-md border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none`}
+          } focus:shadow-outline h-12 appearance-none rounded-md border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none dark:bg-white`}
           oninput={debounce}
         />
       </div>
       <!-- <p class="font-serif">My name is Ben.</p>
       <p class="font-serif">Welcome to my page,</p> -->
       <div class="grid grid-cols-2 gap-4 xl:grid-cols-3">
-        <a href={`${base}#intro`} class="variant-filled-primary btn font-serif">Introduction</a>
-        <a href={`${base}/skills`} class="variant-filled-primary btn font-serif">Skills</a>
-        <a href={`${base}/resume/ben-trinh`} class="variant-filled-primary btn font-serif">Resume</a>
-        <a href={`${base}/projects`} class="variant-filled-primary btn font-serif">Projects</a>
+        <a href={`${base}#intro`} class="preset-filled-primary-500 btn font-serif">Introduction</a>
+        <a href={`${base}/skills`} class="preset-filled-primary-500 btn font-serif">Skills</a>
+        <a href={`${base}/resume/ben-trinh`} class="preset-filled-primary-500 btn font-serif">Resume</a>
+        <a href={`${base}/projects`} class="preset-filled-primary-500 btn font-serif">Projects</a>
       </div>
     </div>
     <div class="flex items-center justify-center">
@@ -69,14 +69,15 @@
   </section>
   <section
     id="intro"
-    class="ks-section prose hide-scrollbar overflow-y-auto dark:prose-invert prose-headings:my-0 prose-p:my-0 md:h-full"
+    class="ks-section prose dark:prose-invert prose-headings:my-0 prose-p:my-0 h-full"
   >
     <AboutMe />
   </section>
 </div>
 
-<style lang="postcss">
+<style>
+  @reference "../app.css";
   .ks-section {
-    @apply mx-auto flex snap-start flex-col gap-4 px-4 sm:w-[min(100%,80ch)] md:justify-center;
+    @apply flex mx-auto snap-start flex-col gap-4 px-4 sm:w-[min(100%,80ch)] md:justify-center;
   }
 </style>

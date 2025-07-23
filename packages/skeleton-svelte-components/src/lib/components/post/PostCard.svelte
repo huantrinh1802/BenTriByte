@@ -9,7 +9,7 @@
 
 <article class="w-full rounded-lg border border-gray-200 bg-white p-6 shadow-md @container dark:border-gray-700 dark:bg-gray-800">
   <div class="mb-5 flex flex-col items-center gap-2 text-gray-500 @xs:flex-row">
-    <span class="text-primary-700-200-token ml-auto justify-self-end text-sm @xs:hidden">{new Date(post.date).toLocaleDateString()}</span>
+    <span class="text-primary-800-200 ml-auto justify-self-end text-sm @xs:hidden">{new Date(post.date).toLocaleDateString()}</span>
     <div class="flex w-full flex-wrap gap-2">
       {#each post?.tags as tag}
         <span class="!dark:text-primary-800 inline-flex items-center rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium !text-primary-800 dark:bg-primary-200">
@@ -17,7 +17,7 @@
         </span>
       {/each}
     </div>
-    <span class="text-primary-700-200-token ml-auto hidden justify-self-end text-sm @xs:block">{new Date(post.date).toLocaleDateString()}</span>
+    <span class="text-primary-800-200 ml-auto hidden justify-self-end text-sm @xs:block">{new Date(post.date).toLocaleDateString()}</span>
   </div>
   <div class="flex flex-col place-items-center gap-4 @md:flex-row">
     <img
@@ -26,7 +26,7 @@
       alt="" />
     <div class="w-full">
       <h4 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"><a href={`${baseUrl}/${post?.slug}`}>{post?.title}</a></h4>
-      <p class="text-primary-700-200-token mb-5 font-light">{post?.summary}</p>
+      <p class="text-primary-800-200 mb-5 font-light">{post?.summary}</p>
       <div class="flex items-center justify-between">
         <a
           href={`${baseUrl}/${post?.slug}`}

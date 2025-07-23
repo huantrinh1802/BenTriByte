@@ -4,7 +4,7 @@ import { HstSvelte } from '@histoire/plugin-svelte';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [sveltekit()],
+  plugins: [tailwindcss(), sveltekit()],
   histoire: {
     plugins: [HstSvelte(), tailwindcss],
     setupFile: './src/histoire.setup.ts',
