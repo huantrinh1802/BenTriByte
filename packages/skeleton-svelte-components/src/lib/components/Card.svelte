@@ -34,7 +34,7 @@
     <div class="mle-card-content mr-auto grid grid-flow-row gap-4 place-self-center md:basis-3/4">
       <!-- <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">{content.title}</h1> -->
       <h2 class="leading-none tracking-tight">{content?.title}</h2>
-      <div class="prose max-w-2xl font-light text-gray-500 dark:prose-invert dark:text-gray-400 md:text-lg lg:text-xl">
+      <div class="prose dark:prose-invert max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">
         {@html content?.content.html}
       </div>
     </div>

@@ -17,7 +17,7 @@
     <div class="flex w-full flex-wrap gap-2">
       {#each content?.tags as tag (tag)}
         <span
-          class="inline-flex items-center rounded bg-primary-600 px-2.5 py-1 text-base font-medium text-white dark:bg-primary-500"
+          class="bg-primary-600 dark:bg-primary-500 inline-flex items-center rounded px-2.5 py-1 text-base font-medium text-white"
         >
           <a class="text-inherit" href={`${baseUrl}?tag=${tag}`}>#{tag}</a>
         </span>
@@ -49,7 +49,7 @@
   <div class="flex items-center">
     <a
       href={`${baseUrl}/${content?.slug}`}
-      class="ml-auto inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-400"
+      class="text-primary-600 dark:text-primary-400 ml-auto inline-flex items-center font-medium hover:underline"
     >
       Read more
       <svg class="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"

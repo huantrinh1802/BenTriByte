@@ -20,7 +20,7 @@
     email: Email,
     github: GitHub,
     linkedin: LinkedIn,
-    address: Address
+    address: Address,
   };
   let { profile, contacts, experiences, educations, skills, languages, references, summary } = $derived(
     data.resume as Resume
@@ -41,7 +41,7 @@
     {#if profile.showPhoto}
       <div
         style={`background-image: url('${base}/${profile.image}'); background-color: ${profile.themeColour};`}
-        class="btb-profile-photo z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 border-surface-200 bg-primary-500 p-8 dark:border-surface-900 print:h-40 print:w-40 print:!border-white"
+        class="btb-profile-photo border-surface-200 bg-primary-500 dark:border-surface-900 z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 p-8 print:h-40 print:w-40 print:!border-white"
       ></div>
     {/if}
     <div
@@ -56,7 +56,7 @@
       </div>
     </div>
   </div>
-  <div class="btb-break h-full border-l-2 border-surface-200"></div>
+  <div class="btb-break border-surface-200 h-full border-l-2"></div>
   <div class="btb-summary flex flex-col gap-4 print:divide-y">
     <div class="hidden flex-col gap-4 px-10 py-4 print:flex print:break-after-avoid print:px-1 print:py-1">
       <h2 class="btb-section-heading">Contacts</h2>
@@ -126,7 +126,7 @@
         {/snippet}
       </Accordion.Item>
     </Accordion>
-    <Accordion classes="print:hidden" collapsible >
+    <Accordion classes="print:hidden" collapsible>
       <Accordion.Item value="skills">
         {#snippet control()}
           <h2 class="btb-section-heading">Skills</h2>
@@ -240,7 +240,7 @@
 </div>
 
 <style>
-@reference "../../../app.css";
+  @reference "../../../app.css";
   .btb-profile-photo {
     background-size: cover;
     background-position: 20% 20%;

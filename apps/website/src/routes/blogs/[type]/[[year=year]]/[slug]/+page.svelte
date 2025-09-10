@@ -16,7 +16,7 @@
   <meta name="description" content={metadata.description} />
 </svelte:head>
 
-<div class="prose relative grid gap-4 p-4 dark:prose-invert md:p-10 lg:grid-cols-[1fr_20ch]">
+<div class="prose dark:prose-invert relative grid gap-4 p-4 md:p-10 lg:grid-cols-[1fr_20ch]">
   <!-- <div -->
   <!--   data-popup="toc" -->
   <!--   class="max-h-[60dvh] w-max max-w-[80%] overflow-auto rounded-sm bg-surface-700 px-4 py-4 text-white" -->
@@ -37,7 +37,7 @@
       </div> -->
       <div class="ml-auto">{new Date(metadata.date).toLocaleDateString()}</div>
     </div>
-    <div class="grid py-4 prose-headings:my-0">
+    <div class="prose-headings:my-0 grid py-4">
       <!-- <div class="mx-auto w-[min(100%,80ch)]" use:tocCrawler={{ mode: 'generate' }}> -->
       <div class="mx-auto w-[min(100%,80ch)]">
         <!-- eslint-disable-next-line svelte/no-at-html-tags -->
