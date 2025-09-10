@@ -52,7 +52,7 @@
   const SvelteComponent = $derived(icons[skill]);
 </script>
 
-<div class="prose grid place-items-center gap-4 rounded-lg bg-primary-700 p-4 prose-headings:my-0 dark:bg-slate-700">
+<div class="prose bg-primary-700 prose-headings:my-0 grid place-items-center gap-4 rounded-lg p-4 dark:bg-slate-700">
   <h4 class="text-center text-white">{skill}</h4>
   <SvelteComponent class="h-16 w-16 text-white" />
   {#if onClick != null}

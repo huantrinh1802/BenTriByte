@@ -43,7 +43,7 @@
 <div class="grid grid-cols-1 gap-4 rounded-md p-2 sm:grid-cols-2 lg:grid-cols-3">
   {#each data.repositories as repo}
     <div class="card relative flex flex-col gap-4 rounded-md p-4">
-      <div class="absolute right-0 top-0 flex h-10 w-full items-center justify-center rounded-t-md bg-primary-600">
+      <div class="bg-primary-600 absolute right-0 top-0 flex h-10 w-full items-center justify-center rounded-t-md">
         <h2>
           <a target="_blank" href={repo.url} class="hover:underline"> {repo.name}</a>
         </h2>

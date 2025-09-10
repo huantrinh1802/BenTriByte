@@ -1,10 +1,10 @@
-@import "tailwindcss";
-@import "@skeletonlabs/skeleton";
+@import 'tailwindcss';
+@import '@skeletonlabs/skeleton';
 
-@import "@skeletonlabs/skeleton/optional/presets";
+@import '@skeletonlabs/skeleton/optional/presets';
 
 /* Add your theme import for your theme: "custom-theme" here */
-@import "../custom-theme.css";
+@import '../custom-theme.css';
 
 @source "../node_modules/@skeletonlabs/skeleton-svelte/dist";
 
@@ -201,7 +201,7 @@ body {
   .app-container {
     height: 100%;
     overflow-y: auto;
-    grid-template-areas: "header" "main" "footer";
+    grid-template-areas: 'header' 'main' 'footer';
   }
   #sidebar {
     position: fixed;
@@ -214,7 +214,7 @@ body {
 
 @media (width >= 64rem) {
   .app-container {
-    grid-template-areas: "sidebar main" "sidebar footer";
+    grid-template-areas: 'sidebar main' 'sidebar footer';
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     height: 100vh;
@@ -228,7 +228,7 @@ body {
 #sidebar {
   z-index: 1;
   grid-area: sidebar;
-  #sidebar-panel[data-open="true"] {
+  #sidebar-panel[data-open='true'] {
     .sidebar-items {
       @apply items-start;
     }
@@ -236,14 +236,14 @@ body {
       @apply w-full;
     }
   }
-  #sidebar-panel[data-open="false"] {
+  #sidebar-panel[data-open='false'] {
     .sidebar-items {
       @apply items-center;
     }
   }
   @media (width < 64rem) {
     &.opened {
-      transform: translateX(0);  
+      transform: translateX(0);
     }
     top: 0;
     right: 0;
@@ -256,10 +256,8 @@ body {
 #main {
   grid-area: main;
   overflow-y: auto;
-
 }
 
 #footer {
   grid-area: footer;
 }
-

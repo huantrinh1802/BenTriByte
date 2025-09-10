@@ -24,7 +24,7 @@
       }, 800);
     });
   }}
-  class={`btn btn-icon h-10 w-fit bg-primary-500 ${style}`}
+  class={`btn btn-icon bg-primary-500 h-10 w-fit ${style}`}
 >
   {#if copied}
     <p class="px-2 py-1 text-base">Copied link</p>

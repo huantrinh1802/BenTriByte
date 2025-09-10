@@ -43,7 +43,7 @@
     // Pre Style Props
     preBase = '',
     prePadding = '[&>pre]:p-4',
-    preClasses = ''
+    preClasses = '',
   }: CodeBlockProps = $props();
 
   // Shiki convert to HTML
@@ -51,6 +51,6 @@
 </script>
 
 <div class="{base} {rounded} {shadow} {classes} {preBase} {prePadding} {preClasses}">
-<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html generatedHtml}
 </div>

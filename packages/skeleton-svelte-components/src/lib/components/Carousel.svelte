@@ -144,6 +144,6 @@
     @apply absolute bottom-0 z-30 flex h-full cursor-pointer items-center justify-center focus:outline-none md:px-2;
   }
   .carousel .controls .item {
-    @apply inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/30 dark:bg-gray-800/30 sm:h-10 sm:w-10;
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/30 sm:h-10 sm:w-10 dark:bg-gray-800/30;
   }
 </style>

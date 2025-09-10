@@ -20,7 +20,7 @@
     </a>
   {/snippet}
   {#snippet trail()}
-    <ul class="hidden gap-4 sm:flex items-center">
+    <ul class="hidden items-center gap-4 sm:flex">
       {#each menuItems as item, index (index)}
         {#if item.href != undefined}
           <li><a href={item.href}>{item.name}</a></li>
@@ -29,12 +29,15 @@
             <button onclick={() => (activeSubMenu = activeSubMenu === index ? null : index)}>
               {item.name}
             </button>
-            <div class="absolute hidden z-100 right-[-75%] top-[2rem]" class:hidden={activeSubMenu !== index}>
+            <div class="z-100 absolute right-[-75%] top-[2rem] hidden" class:hidden={activeSubMenu !== index}>
               <ul
-                class="flex flex-col divide-y divide-black rounded-md bg-surface-200 p-4 text-black shadow-md dark:divide-white dark:bg-surface-800"
+                class="bg-surface-200 dark:bg-surface-800 flex flex-col divide-y divide-black rounded-md p-4 text-black shadow-md dark:divide-white"
               >
                 {#each item.subItems as subItem (subItem.name)}
-                  <a class="min-w-max px-4 py-2 hover:bg-primary-600 hover:text-white dark:text-white" href={subItem.href}>
+                  <a
+                    class="hover:bg-primary-600 min-w-max px-4 py-2 hover:text-white dark:text-white"
+                    href={subItem.href}
+                  >
                     {subItem.name}
                   </a>
                 {/each}

@@ -5,4 +5,4 @@ repos:
         name: Run linter and formatter
         language: system
         pass_filenames: false
-        entry: zsh -c 'pnpm format && pnpm lint && pnpm check'
+        entry: zsh -c 'pnpm lint && pnpm check'

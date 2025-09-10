@@ -21,8 +21,14 @@
       >
     {:else}
       <Accordion collapsible>
-        <Accordion.Item controlClasses="hover:bg-transparent" controlPadding="py-2 pl-4" indicatorClasses="!mx-4" value={item.name} panelPadding="py-2 pl-4">
-          {#snippet control() }
+        <Accordion.Item
+          controlClasses="hover:bg-transparent"
+          controlPadding="py-2 pl-4"
+          indicatorClasses="!mx-4"
+          value={item.name}
+          panelPadding="py-2 pl-4"
+        >
+          {#snippet control()}
             {item.name}
           {/snippet}
           {#snippet panel()}
@@ -30,7 +36,7 @@
               {#each item.subItems as subItem (subItem.name)}
                 <a
                   onclick={() => toggleSidebar()}
-                  class="highlight w-full rounded-l-2xl pl-4 py-2"
+                  class="highlight w-full rounded-l-2xl py-2 pl-4"
                   class:active={subItem.href === `${page.url.pathname}${page.url.hash}` ||
                     (page.params.year && subItem.href === page.url.pathname.split(`/${page.params.year}`)[0])}
                   href={subItem.href}
@@ -55,7 +61,7 @@
     background-color: var(--background-color);
     /* @apply bg-surface-50-950; */
   }
-  :global([data-mode="dark"]) .active {
+  :global([data-mode='dark']) .active {
     --background-color: var(--color-surface-950);
   }
   .active:not(:hover)::after {
@@ -81,6 +87,6 @@
     z-index: 0;
   }
   .highlight:hover {
-    @apply z-20 bg-primary-600 text-white;
+    @apply bg-primary-600 z-20 text-white;
   }
 </style>

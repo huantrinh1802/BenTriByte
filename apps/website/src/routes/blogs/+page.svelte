@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import { base } from '$app/paths';
   import type { PageData } from './$types';
   import { type BlogMetadata } from '$lib/types/blog';
@@ -35,7 +34,7 @@
   <meta name="description" content="A wall of Ben Trinh's blogs" />
 </svelte:head>
 <div class="grid gap-4 p-4 md:p-10">
-  <div class="prose flex gap-4 dark:prose-invert">
+  <div class="prose dark:prose-invert flex gap-4">
     <h1 class="m-0">Blogs</h1>
     <RssFeed />
   </div>

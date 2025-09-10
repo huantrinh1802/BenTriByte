@@ -89,7 +89,7 @@
   <header id="header" class="lg:hidden">
     <Header {menuItems} />
   </header>
-  <aside id="sidebar" class="w-4/5 lg:w-80 lg:block sm:hidden" class:opened={$sidebarOpened}>
+  <aside id="sidebar" class="w-4/5 sm:hidden lg:block lg:w-80" class:opened={$sidebarOpened}>
     <div class="bg-surface-200-800 h-full flex-col gap-6 pl-4 pt-4 md:flex print:!hidden">
       <a class="flex flex-col items-center gap-2 bg-transparent" aria-label="Home" href={`${base}/`}>
         <BtbIcon bg="bg-transparency px-2 h-16 w-16" partColor="dark:fill-white fill-primary-800" />
@@ -98,7 +98,6 @@
       <Navigation {menuItems} />
       <div class="mx-atuo flex w-full justify-center pb-4"><LightSwitch /></div>
     </div>
-
   </aside>
   <main id="main">
     {@render children?.()}
@@ -117,5 +116,5 @@
       document.querySelector('#page').scrollTo({ top: 0, behavior: 'smooth' });
     }
   }}
-  class="preset-filled btn-icon fixed right-4 bottom-10 print:hidden"><Top /></button
+  class="preset-filled btn-icon fixed bottom-10 right-4 print:hidden"><Top /></button
 >
