@@ -63,7 +63,7 @@
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.32.0",
     "unplugin-icons": "^0.18.2",
-    "vite": "^6.2.7"
+    "vite": "^6.4.1"
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
