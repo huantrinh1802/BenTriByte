@@ -43,5 +43,14 @@ export default ts.config(
       // 'svelte/rule-name': 'error'
       '@typescript-eslint/no-explicit-any': 'off',
     },
+  },
+  {
+  ignores: [
+      '**/build/**',
+      '**/.svelte-kit/**',
+      '**/dist/**',
+      '**/.turbo/**',
+      '**/node_modules/**',
+    ],
   }
 );

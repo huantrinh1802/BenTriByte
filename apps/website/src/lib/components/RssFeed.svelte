@@ -24,11 +24,11 @@
       }, 800);
     });
   }}
-  class={`btn btn-icon bg-primary-500 h-10 w-fit ${style}`}
+  class={`btn btn-icon bg-primary-500 aspect-square h-fit w-fit rounded-full ${style}`}
 >
   {#if copied}
     <p class="px-2 py-1 text-base">Copied link</p>
   {:else}
-    <RSS class="px-2 text-2xl text-white" />
+    <RSS class="text-xl text-white" />
   {/if}
 </button>

@@ -11,9 +11,9 @@
 </script>
 
 <article
-  class="@container card grid w-full gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800"
+  class="card @container grid w-full gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800"
 >
-  <div class="@xs:flex-row flex flex-col items-center gap-2 text-gray-500">
+  <div class="flex flex-col items-center gap-2 text-gray-500 @xs:flex-row">
     <div class="flex w-full flex-wrap gap-2">
       {#each content?.tags as tag (tag)}
         <span
@@ -23,15 +23,15 @@
         </span>
       {/each}
     </div>
-    <span class="@xs:block text-primary-800-200 ml-auto hidden justify-self-end text-sm"
+    <span class="text-primary-800-200 ml-auto hidden justify-self-end text-sm @xs:block"
       >{new Date(content.date).toLocaleDateString()}</span
     >
   </div>
-  <span class="@xs:hidden text-primary-800-200 ml-auto justify-self-end text-sm"
+  <span class="text-primary-800-200 ml-auto justify-self-end text-sm @xs:hidden"
     >{new Date(content.date).toLocaleDateString()}</span
   >
-  <div class="@md:flex-row flex flex-col gap-4">
-    <a class="@md:h-full mx-auto my-0 h-fit w-full" href={`${baseUrl}/${content?.slug}`}>
+  <div class="flex flex-col gap-4 @md:flex-row">
+    <a class="mx-auto my-0 h-fit w-full @md:h-full" href={`${baseUrl}/${content?.slug}`}>
       <img
         loading="lazy"
         class="rounded-md object-fill"
