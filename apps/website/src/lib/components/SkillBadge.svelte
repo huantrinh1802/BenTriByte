@@ -29,7 +29,7 @@
       new Promise((resolve) => {
         setTimeout(() => {
           animating = false;
-          resolve;
+          resolve(true);
         }, duration * 1000);
       });
     }

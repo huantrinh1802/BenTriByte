@@ -8,8 +8,7 @@
 
 <div class={`grid grid-cols-${numberOfCols} gap-10`}>
   {#each props as prop}
-    <svelte:component
-      this={component}
-      {...prop} />
+    {@const Component = component}
+    <Component {...prop} />
   {/each}
 </div>

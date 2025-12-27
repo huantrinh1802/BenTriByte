@@ -5,7 +5,7 @@
   import { base } from '$app/paths';
 
   let helloName = $state('World');
-  let typewriter = $state();
+  let typewriter: TypeWriter = $state();
   let timer;
   const debounce = (event) => {
     if (timer) clearTimeout(timer);
@@ -14,7 +14,7 @@
       if (helloName.length === 0) {
         helloName = '{{ World }}';
       }
-      typewriter.reset();
+      typewriter?.reset();
     }, 900);
   };
 </script>
@@ -72,8 +72,8 @@
   </section>
 </div>
 
-<style>
-  @reference "../app.css";
+<style lang="postcss">
+  @reference "tailwindcss";
   .ks-section {
     @apply mx-auto flex snap-start flex-col gap-4 px-4 sm:w-[min(100%,80ch)] md:justify-center;
   }

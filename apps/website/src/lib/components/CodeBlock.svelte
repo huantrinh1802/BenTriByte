@@ -29,8 +29,6 @@
 </script>
 
 <script lang="ts">
-  import type { CodeBlockProps } from './types';
-
   let {
     code = '',
     lang = 'console',
@@ -44,7 +42,7 @@
     preBase = '',
     prePadding = '[&>pre]:p-4',
     preClasses = '',
-  }: CodeBlockProps = $props();
+  } = $props();
 
   // Shiki convert to HTML
   const generatedHtml = shiki.codeToHtml(code, { lang, theme });

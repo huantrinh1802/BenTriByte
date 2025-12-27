@@ -96,6 +96,6 @@
       style={`width: ${percentage}%; background-color: ${getColor(percentage, false)}`} />
   </div> -->
   <div class="dark:bg-surface-800 h-2.5 w-full rounded-full bg-white print:!bg-gray-300">
-    <div class={`h-2.5 rounded-full print:bg-black`} style={`width: ${percentage}%; background-color: ${hsl}`}></div>
+    <div class="h-2.5 rounded-full print:bg-black" style={`width: ${percentage}%; background-color: ${hsl}`}></div>
   </div>
 </div>

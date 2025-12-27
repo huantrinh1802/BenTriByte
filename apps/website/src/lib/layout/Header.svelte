@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
   import LightSwitch from '$lib/components/LightSwitch.svelte';
   import BtbIcon from '$lib/images/BtbIcon.svelte';
-  import { sidebarOpened, toggleSidebar } from '$lib/utils/sidebar';
+  import { toggleSidebar } from '$lib/utils/sidebar';
   import { AppBar } from '@skeletonlabs/skeleton-svelte';
   interface Props {
     menuItems?: any;
@@ -29,7 +29,7 @@
             <button onclick={() => (activeSubMenu = activeSubMenu === index ? null : index)}>
               {item.name}
             </button>
-            <div class="z-100 absolute right-[-75%] top-[2rem] hidden" class:hidden={activeSubMenu !== index}>
+            <div class="absolute top-[2rem] right-[-75%] z-100 hidden" class:hidden={activeSubMenu !== index}>
               <ul
                 class="bg-surface-200 dark:bg-surface-800 flex flex-col divide-y divide-black rounded-md p-4 text-black shadow-md dark:divide-white"
               >

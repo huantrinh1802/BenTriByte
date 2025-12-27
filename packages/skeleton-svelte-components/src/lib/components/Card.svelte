@@ -35,6 +35,7 @@
       <!-- <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">{content.title}</h1> -->
       <h2 class="leading-none tracking-tight">{content?.title}</h2>
       <div class="prose dark:prose-invert max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
         {@html content?.content.html}
       </div>
     </div>

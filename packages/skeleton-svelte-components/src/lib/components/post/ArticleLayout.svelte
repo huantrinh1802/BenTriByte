@@ -19,7 +19,7 @@
         <Breadcrumb
           url={`${prevUrl}/${article?.slug}`}
           urlMetadata={{ name: article?.title, type: article?.type }} />
-        <h1 class="text-center text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-3xl dark:text-white">{article?.title}</h1>
+        <h1 class="text-center text-3xl leading-tight font-extrabold text-gray-900 lg:mb-6 lg:text-3xl dark:text-white">{article?.title}</h1>
         <div class="flex gap-2">
           {#each article?.tags as tag}
             <a
@@ -29,6 +29,7 @@
           <time class="!text-primary-800-200 ml-auto">{new Date(article.date).toLocaleDateString()}</time>
         </div>
         <div class="md-wrapper prose dark:prose-invert max-w-none">
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html article?.content.html}
         </div>
       </div>

@@ -1,13 +1,13 @@
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.js';
-import sveltePreprocess from 'svelte-preprocess';
+// import sveltePreprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import path from 'path';
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
+// import { dirname, join } from 'path';
+// import { fileURLToPath } from 'url';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+// const __dirname = dirname(fileURLToPath(import.meta.url));
 const dev = process.argv.includes('dev');
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -43,7 +43,6 @@ const config = {
       entries: ['/blogs/', '/projects/', '/sitemaps.xml', '/blogs/feed', '/resume', '/resume/amber-duong'],
     },
     paths: {
-      // @ts-ignore
       base: dev ? '' : process.env.BASE_PATH,
     },
   },

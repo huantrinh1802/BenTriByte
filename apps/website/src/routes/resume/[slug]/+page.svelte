@@ -211,11 +211,11 @@
               <h5 class="text-gray-800 dark:text-gray-200 print:!text-[10px] print:!text-gray-800">
                 {ref.company}
               </h5>
-              <a class="flex items-center gap-2 break-all text-sm print:!text-gray-900" href={ref.mobile.href}>
+              <a class="flex items-center gap-2 text-sm break-all print:!text-gray-900" href={ref.mobile.href}>
                 <Mobile class="text-lg print:!text-sm" />
                 <p class="print:!text-xs">{ref.mobile.text}</p>
               </a>
-              <a class="flex items-center gap-2 break-all text-sm print:text-black" href={ref.email.href}>
+              <a class="flex items-center gap-2 text-sm break-all print:text-black" href={ref.email.href}>
                 <Email class="text-lg print:!text-sm" />
                 <p class="print:!text-xs">{ref.email.text}</p>
               </a>

@@ -26,9 +26,9 @@
     </div>
   </Hst.Variant>
   <Hst.Variant title="AWS">
-    {#snippet controls()}
-      Content: <input type="number" bind:value={percentage} />
-    {/snippet}
+    <!-- {#snippet controls()} -->
+    <!--   Content: <input type="number" bind:value={percentage} /> -->
+    <!-- {/snippet} -->
     <div class="mx-auto h-1/2 w-1/2">
       <SkillBadge {percentage}>
         {#snippet logo()}

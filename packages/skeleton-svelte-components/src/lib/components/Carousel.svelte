@@ -64,9 +64,12 @@
   </div>
   <!-- Slider indicators -->
   <div class={`indicators ${indicatorsStyle}`}>
-    {#each items as _, index}
+    <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+    {#each items as _item, index}
       <button
         class="btn btn-sm"
+        aria-current={current === index ? 'true' : 'false'}
+        aria-label={`Slide ${index + 1}`}
         onclick={() => {
           stopAutoplay();
           if (current > index) {
@@ -93,7 +96,7 @@
       }
     }}
     type="button"
-    class="controls left-0 top-0"
+    class="controls top-0 left-0"
     data-carousel-prev="">
     <span class="item">
       <p>GT</p>
@@ -111,7 +114,7 @@
       }
     }}
     type="button"
-    class="controls right-0 top-0"
+    class="controls top-0 right-0"
     data-carousel-next="">
     <span class="item flex items-center justify-center">
       >

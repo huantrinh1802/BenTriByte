@@ -1,5 +1,5 @@
 <script lang="ts">
-  import TOC from '~icons/mdi/table-of-contents';
+  // import TOC from '~icons/mdi/table-of-contents';
   import type { PageData } from './$types';
   import RssFeed from '$lib/components/RssFeed.svelte';
 
@@ -40,9 +40,10 @@
     <div class="prose-headings:my-0 grid py-4">
       <!-- <div class="mx-auto w-[min(100%,80ch)]" use:tocCrawler={{ mode: 'generate' }}> -->
       <div class="mx-auto w-[min(100%,80ch)]">
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-        <!-- {@render content} -->
-        <svelte:component this={content} />
+        {#if content}
+          {@const Content = content}
+          <Content />
+        {/if}
       </div>
     </div>
     <div class="flex w-2/3 flex-wrap gap-4">

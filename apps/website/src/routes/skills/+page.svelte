@@ -33,7 +33,7 @@
         <h3>{skillSet.title}</h3>
         <div class="bg divide-surface-600 grid divide-y sm:grid-cols-2 sm:divide-x sm:divide-y-0">
           {#if skillSet.professional}
-            <div class="pb-6 pr-0 sm:pb-0 sm:pr-6">
+            <div class="pr-0 pb-6 sm:pr-6 sm:pb-0">
               <h4>Professional</h4>
               <div class="grid grid-cols-2 grid-rows-subgrid gap-4 xl:grid-cols-3 2xl:grid-cols-4">
                 {#each skillSet.professional as pro (pro.title)}
@@ -47,7 +47,7 @@
             </div>
           {/if}
           {#if skillSet.casual}
-            <div class="pl-0 pt-6 sm:pl-6 sm:pt-0">
+            <div class="pt-6 pl-0 sm:pt-0 sm:pl-6">
               <h4>Casual</h4>
               <div class="grid grid-cols-2 grid-rows-subgrid gap-4 xl:grid-cols-3 2xl:grid-cols-4">
                 {#each skillSet.casual as cas (cas.title)}
@@ -69,8 +69,6 @@
   </div>
 </section>
 
-<!-- svelte-ignore a11y_click_events_have_key_events -->
-<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog
   class="prose prose-ul:my-0 relative rounded-md"
   bind:this={dialog}
@@ -82,7 +80,7 @@
 >
   <div class="grid gap-2 p-4">
     <div class="flex items-center">
-      <button class="ml-auto mr-2" onclick={() => dialog.close()}><Close /></button>
+      <button class="mr-2 ml-auto" onclick={() => dialog.close()}><Close /></button>
     </div>
     {#each displayContents as content (content.title)}
       {#if currentContent === content.title && content.contents != null}

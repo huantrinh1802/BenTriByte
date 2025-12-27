@@ -41,9 +41,9 @@
 </svelte:head>
 
 <div class="grid grid-cols-1 gap-4 rounded-md p-2 sm:grid-cols-2 lg:grid-cols-3">
-  {#each data.repositories as repo}
+  {#each data.repositories as repo (repo.name)}
     <div class="card relative flex flex-col gap-4 rounded-md p-4">
-      <div class="bg-primary-600 absolute right-0 top-0 flex h-10 w-full items-center justify-center rounded-t-md">
+      <div class="bg-primary-600 absolute top-0 right-0 flex h-10 w-full items-center justify-center rounded-t-md">
         <h2>
           <a target="_blank" href={repo.url} class="hover:underline"> {repo.name}</a>
         </h2>
@@ -52,7 +52,7 @@
       <hr />
       <div class="grid grid-cols-3 justify-center gap-4">
         {#if repo.repositoryTopics.nodes.length !== 0}
-          {#each repo.repositoryTopics.nodes as node}
+          {#each repo.repositoryTopics.nodes as node (node.topic.name)}
             <div class="rounded-md bg-slate-200 px-4 py-2 text-center">
               <p class="text-black">{node.topic.name}</p>
             </div>
@@ -62,7 +62,7 @@
       <hr />
       <h2 class="text-center">Written in</h2>
       <div class="grid grid-cols-3 justify-center gap-4">
-        {#each repo.languages.nodes as language}
+        {#each repo.languages.nodes as language (language.name)}
           <div
             class="language-wrapper rounded-md px-4 py-2 text-center"
             style={`--backgroundColor: ${language.color};`}

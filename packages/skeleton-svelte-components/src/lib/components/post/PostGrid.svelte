@@ -8,10 +8,13 @@
 </script>
 
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import PostCard from './PostCard.svelte';
   import { Pagination } from '@skeletonlabs/skeleton-svelte';
+  import IconEllipsis from '~icons/lucide/ellipsis';
+  import IconArrowRight from '~icons/lucide/arrow-right';
+  import IconArrowLeft from '~icons/lucide/arrow-left';
+  import IconFirst from '~icons/lucide/chevron-first';
+  import IconLast from '~icons/lucide/chevron-last';
   interface Props {
     posts?: any[];
     baseUrl?: string;
@@ -19,21 +22,9 @@
   }
 
   let { posts = [], baseUrl = '/', filter = { tag: [], type: null } }: Props = $props();
-  let page = $state({
-    page: 0,
-    limit: 15,
-    size: posts.length,
-    amounts: [15, 25],
-  });
-  run(() => {
-    page.size = posts.length;
-  });
-  let paginatedSource = $derived(
-    posts.slice(
-      page.page * page.limit, // start
-      page.page * page.limit + page.limit // end
-    )
-  );
+  let page = $state(0);
+  let size = $state(10);
+  let paginatedSource = $derived(posts.slice((page - 1) * size, page * size));
   function checkTags(tags: string[]) {
     return tags.some((t) => filter?.tag?.includes(t));
   }
@@ -49,5 +40,17 @@
   {/each}
 </div>
 <div class="mx-auto w-2/3 md:w-3/4">
-  <Pagination bind:settings={page} />
+  <Pagination
+    data={posts}
+    {page}
+    onPageChange={(e) => (page = e.page)}
+    pageSize={size}
+    onPageSizeChange={(e) => (size = e.pageSize)}
+    siblingCount={4}>
+    {#snippet labelEllipsis()}<IconEllipsis class="size-4" />{/snippet}
+    {#snippet labelNext()}<IconArrowRight class="size-4" />{/snippet}
+    {#snippet labelPrevious()}<IconArrowLeft class="size-4" />{/snippet}
+    {#snippet labelFirst()}<IconFirst class="size-4" />{/snippet}
+    {#snippet labelLast()}<IconLast class="size-4" />{/snippet}
+  </Pagination>
 </div>
