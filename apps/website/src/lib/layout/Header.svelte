@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import LightSwitch from '$lib/components/LightSwitch.svelte';
   import BtbIcon from '$lib/images/BtbIcon.svelte';
   import { toggleSidebar } from '$lib/utils/sidebar';
@@ -12,9 +12,11 @@
   let activeSubMenu = $state(null);
 </script>
 
+<!-- eslint-disable svelte/no-navigation-without-resolve -->
+
 <AppBar background="bg-primary-700 text-white rounded-b">
   {#snippet lead()}
-    <a class="flex h-12 items-center gap-4" aria-label="Home" href={`${base}/`}>
+    <a class="flex h-12 items-center gap-4" aria-label="Home" href={resolve('/')}>
       <BtbIcon bg="h-10 w-10" partColor="fill-white" />
       <p style="font-family: 'Santanelli';">BenTri Byte</p>
     </a>

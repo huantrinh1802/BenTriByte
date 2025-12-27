@@ -2,7 +2,7 @@
   import TypeWriter from '$lib/components/TypeWriter.svelte';
   import AboutMe from '$contents/about-me.md';
   import HeroImage from '$lib/images/hero.avif?enhanced';
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
 
   let helloName = $state('World');
   let typewriter: TypeWriter = $state();
@@ -52,10 +52,10 @@
       <!-- <p class="font-serif">My name is Ben.</p>
       <p class="font-serif">Welcome to my page,</p> -->
       <div class="grid grid-cols-2 gap-4 xl:grid-cols-3">
-        <a href={`${base}#intro`} class="preset-filled-primary-500 btn font-serif">Introduction</a>
-        <a href={`${base}/skills`} class="preset-filled-primary-500 btn font-serif">Skills</a>
-        <a href={`${base}/resume/ben-trinh`} class="preset-filled-primary-500 btn font-serif">Resume</a>
-        <a href={`${base}/projects`} class="preset-filled-primary-500 btn font-serif">Projects</a>
+        <a href="#intro" class="preset-filled-primary-500 btn font-serif">Introduction</a>
+        <a href={resolve('/skills')} class="preset-filled-primary-500 btn font-serif">Skills</a>
+        <a href={resolve('/resume/ben-trinh')} class="preset-filled-primary-500 btn font-serif">Resume</a>
+        <a href={resolve('/projects')} class="preset-filled-primary-500 btn font-serif">Projects</a>
       </div>
     </div>
     <div class="flex items-center justify-center">
@@ -73,7 +73,7 @@
 </div>
 
 <style lang="postcss">
-  @reference "tailwindcss";
+  @reference "../app.css";
   .ks-section {
     @apply mx-auto flex snap-start flex-col gap-4 px-4 sm:w-[min(100%,80ch)] md:justify-center;
   }

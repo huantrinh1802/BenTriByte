@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   // import type { PageData } from './$types';
   import { type BlogMetadata } from '$lib/types/blog';
   import Card from '$lib/components/Card.svelte';
@@ -52,7 +52,7 @@
         <a
           class="prose dark:prose-invert"
           aria-label={`View more ${convertKebabToTitle(name)} blogs`}
-          href={`${base}/blogs/${name}`}
+          href={resolve(`/blogs/${name}`)}
         >
           <h2>{convertKebabToTitle(name)}</h2>
         </a>
@@ -60,7 +60,7 @@
           {#each blogs?.items.slice(0, 2) as blog (blog.slug)}
             <Card
               content={blog}
-              baseUrl={`${base}/blogs/${name}/${blog.date.split('-')[0]}`}
+              baseUrl={resolve(`/blogs/${name}/${blog.date.split('-')[0]}`)}
               placeholderImage="images/blogs/blog_placeholder.avif"
             />
           {/each}
@@ -72,7 +72,7 @@
       {#each filteredBlogs as blog (blog.slug)}
         <Card
           content={blog}
-          baseUrl={`${base}/blogs/${blog.type}/${blog.date.split('-')[0]}`}
+          baseUrl={resolve(`/blogs/${blog.type}/${blog.date.split('-')[0]}`)}
           placeholderImage="images/blogs/blog_placeholder.avif"
         />
       {/each}
@@ -80,7 +80,7 @@
   {:else}
     <div>
       <p>There is no blogs for current filters</p>
-      <a href={`${base}/blogs`} aria-label="Go back to blogs">Go back</a>
+      <a href={resolve(`/blogs`)} aria-label="Go back to blogs">Go back</a>
     </div>
   {/if}
 </div>

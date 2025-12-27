@@ -45,6 +45,7 @@
     <div class="card relative flex flex-col gap-4 rounded-md p-4">
       <div class="bg-primary-600 absolute top-0 right-0 flex h-10 w-full items-center justify-center rounded-t-md">
         <h2>
+          <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
           <a target="_blank" href={repo.url} class="hover:underline"> {repo.name}</a>
         </h2>
       </div>
@@ -74,6 +75,7 @@
       <hr />
       {#if repo.homepageUrl}
         <div class="flex justify-center">
+          <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
           <a target="_blank" href={repo.homepageUrl} class="btn-primary preset-filled-primary-500 btn">Visit website</a>
         </div>
       {/if}
