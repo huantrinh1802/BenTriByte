@@ -19,9 +19,11 @@
   let direction = $state(500);
 
   let autoplay: number | null = null;
-  if (autoplayEnabled) {
+  $effect(() => {
+    if (!autoplayEnabled) return;
+
     autoplay = window.setInterval(() => {
-      if (current == items.length - 1) {
+      if (current === items.length - 1) {
         calcDirection('neg');
         current = 0;
       } else {
@@ -29,7 +31,15 @@
         current++;
       }
     }, duration);
-  }
+
+    // cleanup when duration / items / enabled changes
+    return () => {
+      if (autoplay !== null) {
+        clearInterval(autoplay);
+        autoplay = null;
+      }
+    };
+  });
   function stopAutoplay() {
     if (autoplay !== null) {
       clearInterval(autoplay);

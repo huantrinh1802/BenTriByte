@@ -4,7 +4,7 @@
   import GitHub from '~icons/skill-icons/github-dark';
   import LinkedIn from '~icons/skill-icons/linkedin';
   import Address from '~icons/mdi/map-marker-radius-outline';
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import Kofi from '$lib/components/Kofi.svelte';
   type Social = {
     name: string;
@@ -65,6 +65,7 @@
         {#if socials != null}
           {#each socials as social (social.name)}
             <li class="flex gap-4">
+              <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
               <a href={social.href} class="pointer flex gap-2 hover:underline" aria-label={social.label}>
                 {#if social.name === 'Phone'}
                   <Phone class="text-lg" />
@@ -87,7 +88,7 @@
     <div class="text-primary-800-200 flex flex-col items-center justify-center max-xl:py-4">
       <span class="text-sm sm:text-center"
         >© {new Date().getFullYear()}
-        <a href={`${base}/`} aria-label="Go to Home" class="mle-link hover:underline">BenTriByte.</a>
+        <a href={resolve('/')} aria-label="Go to Home" class="mle-link hover:underline">BenTriByte.</a>
         All Rights Reserved.
       </span>
       <span class="text-sm sm:text-center"

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Pagination } from '@skeletonlabs/skeleton-svelte';
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import type { PageData } from './$types';
   import Card from '$lib/components/Card.svelte';
   import { convertKebabToTitle } from '$lib/utils/strings';
@@ -37,7 +37,7 @@
       class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Select an option</label
     > -->
     <select
-      onchange={(event) => goto(`${base}/blogs/${type}/${event.currentTarget?.value}`)}
+      onchange={(event) => goto(resolve(`/blogs/${type}/${event.currentTarget?.value}`))}
       id="year"
       class="focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
     >
@@ -50,7 +50,7 @@
     {#each paginatedBlogs as item (item.slug)}
       <Card
         content={item}
-        baseUrl={`${base}/blogs/${type}/${year}`}
+        baseUrl={resolve(`/blogs/${type}/${year}`)}
         placeholderImage="images/blogs/blog_placeholder.avif"
       />
     {/each}

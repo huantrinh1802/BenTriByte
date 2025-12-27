@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import type { BlogMetadata } from '$lib/types/blog';
   interface Props {
     content: BlogMetadata;
@@ -9,6 +8,8 @@
 
   let { content, baseUrl = '/', placeholderImage }: Props = $props();
 </script>
+
+<!-- eslint-disable svelte/no-navigation-without-resolve -->
 
 <article
   class="card @container grid w-full gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-800"
@@ -35,7 +36,7 @@
       <img
         loading="lazy"
         class="rounded-md object-fill"
-        src={`${base}/${content?.preview ?? placeholderImage}`}
+        src={`${content?.preview ?? placeholderImage}`}
         alt="Blog's preview"
       />
     </a>
@@ -63,7 +64,7 @@
   </div>
 </article>
 
-<style>
+<style lang="postcss">
   @reference '../../app.css';
   .card {
     grid-template-rows: subgrid;

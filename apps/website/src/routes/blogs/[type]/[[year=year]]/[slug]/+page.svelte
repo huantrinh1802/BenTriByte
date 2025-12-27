@@ -1,5 +1,6 @@
 <script lang="ts">
   // import TOC from '~icons/mdi/table-of-contents';
+  import { resolve } from '$app/paths';
   import type { PageData } from './$types';
   import RssFeed from '$lib/components/RssFeed.svelte';
 
@@ -48,7 +49,8 @@
     </div>
     <div class="flex w-2/3 flex-wrap gap-4">
       {#each metadata.tags as tag (tag)}
-        <a class="text-primary-700-300" href={`/blogs?tag=${tag}`}>#{tag}</a>
+        <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+        <a class="text-primary-700-300" href={`${resolve('/blogs')}?tag=${tag}`}>#{tag}</a>
       {/each}
     </div>
   </div>

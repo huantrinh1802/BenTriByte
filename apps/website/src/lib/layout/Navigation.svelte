@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
+  import { resolve } from '$app/paths';
   import { toggleSidebar } from '$lib/utils/sidebar';
   import { Accordion } from '@skeletonlabs/skeleton-svelte';
   interface Props {
@@ -17,7 +18,7 @@
         class="highlight rounded-l-2xl px-4 py-2"
         class:active={item.href === `${page.url.pathname}${page.url.hash}`}
         onclick={() => toggleSidebar()}
-        href={item.href}>{item.name}</a
+        href={resolve(item.href)}>{item.name}</a
       >
     {:else}
       <Accordion collapsible>
@@ -39,7 +40,7 @@
                   class="highlight w-full rounded-l-2xl py-2 pl-4"
                   class:active={subItem.href === `${page.url.pathname}${page.url.hash}` ||
                     (page.params.year && subItem.href === page.url.pathname.split(`/${page.params.year}`)[0])}
-                  href={subItem.href}
+                  href={resolve(subItem.href)}
                 >
                   {subItem.name}
                 </a>
@@ -52,7 +53,7 @@
   {/each}
 </div>
 
-<style>
+<style lang="postcss">
   @reference "../../app.css";
   .active {
     --decorate-corner-size: 1em;

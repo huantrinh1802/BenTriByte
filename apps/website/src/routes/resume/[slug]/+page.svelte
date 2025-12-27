@@ -5,7 +5,7 @@
   import LinkedIn from '~icons/skill-icons/linkedin';
   import Mobile from '~icons/fluent/call-20-regular';
   import Address from '~icons/mdi/address-marker-outline';
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import { type Resume } from '$lib/types/resume';
   import ProgressBar from '$lib/components/ProgressBar.svelte';
   import { Accordion } from '@skeletonlabs/skeleton-svelte';
@@ -32,6 +32,8 @@
   });
 </script>
 
+<!-- eslint-disable svelte/no-navigation-without-resolve -->
+
 <svelte:head>
   <title>{profile['name']}'s Resume</title>
   <meta name="description" content={`Summary of ${profile['name']}'s professional career.`} />
@@ -40,7 +42,7 @@
   <div class="btb-profile flex flex-col items-center lg:flex-row print:break-after-avoid print:flex-row">
     {#if profile.showPhoto}
       <div
-        style={`background-image: url('${base}/${profile.image}'); background-color: ${profile.themeColour};`}
+        style={`background-image: url('${resolve('/')}${profile.image}'); background-color: ${profile.themeColour};`}
         class="btb-profile-photo border-surface-200 bg-primary-500 dark:border-surface-900 z-10 flex h-60 w-60 flex-shrink-0 items-center justify-center rounded-full border-4 p-8 print:h-40 print:w-40 print:!border-white"
       ></div>
     {/if}

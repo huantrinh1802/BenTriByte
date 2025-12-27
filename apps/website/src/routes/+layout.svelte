@@ -2,7 +2,7 @@
   import '../app.css';
   import Header from '$lib/layout/Header.svelte';
   import { browser } from '$app/environment';
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import { sidebarOpened } from '$lib/utils/sidebar';
   import type { AfterNavigate } from '@sveltejs/kit';
   import { afterNavigate, onNavigate } from '$app/navigation';
@@ -56,25 +56,24 @@
     });
   }
   const menuItems = [
-    { name: 'Home', id: 'hone', href: `${base}/` },
+    { name: 'Home', id: 'hone', href: '/' },
     {
       name: 'About',
       id: 'about',
-      // href: `${base}/skills`,
       subItems: [
-        { name: 'Me', id: 'intro', href: `${base}/#intro` },
-        { name: 'Skills', id: 'skills', href: `${base}/skills` },
-        { name: 'Projects', id: 'projects', href: `${base}/projects` },
-        { name: 'Resume', id: 'resume', href: `${base}/resume/ben-trinh` },
+        { name: 'Me', id: 'intro', href: '/#intro' },
+        { name: 'Skills', id: 'skills', href: '/skills' },
+        { name: 'Projects', id: 'projects', href: '/projects' },
+        { name: 'Resume', id: 'resume', href: '/resume/ben-trinh' },
       ],
     },
     {
       name: 'Blogs',
       id: 'blogs',
       subItems: [
-        { id: 'all-blogs', name: 'All Blogs', href: `${base}/blogs` },
+        { id: 'all-blogs', name: 'All Blogs', href: '/blogs' },
         ...Object.keys(data.blogs).map((blog) => {
-          return { id: blog, name: convertKebabToTitle(blog), href: `${base}/blogs/${blog}` };
+          return { id: blog, name: convertKebabToTitle(blog), href: `/blogs/${blog}` };
         }),
       ],
     },
@@ -91,7 +90,7 @@
   </header>
   <aside id="sidebar" class="w-4/5 sm:hidden lg:block lg:w-80" class:opened={$sidebarOpened}>
     <div class="bg-surface-200-800 h-full flex-col gap-6 pt-4 pl-4 md:flex print:!hidden">
-      <a class="flex flex-col items-center gap-2 bg-transparent" aria-label="Home" href={`${base}/`}>
+      <a class="flex flex-col items-center gap-2 bg-transparent" aria-label="Home" href={resolve('/')}>
         <BtbIcon bg="bg-transparency px-2 h-16 w-16" partColor="dark:fill-white fill-primary-800" />
         <p style="font-family: 'Santanelli';">BenTri Byte</p>
       </a>
